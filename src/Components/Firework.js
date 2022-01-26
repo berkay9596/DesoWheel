@@ -12,18 +12,22 @@ const Firework = ({ winner }) => {
     }),
   };
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "20vh",
+      }}
+    >
       <Fireworks {...fxProps} />
       <h1
         style={{
-          position:"absolute",
           color: "black",
           fontWeight: "bold",
-         left:"25%",
-         top:"30%"
         }}
       >
-        Congrats! <span style={{color:"red"}}>{winner}</span>
+        Congrats! <span style={{ color: "red" }}>{winner}</span>
       </h1>
     </div>
   );

@@ -38,7 +38,7 @@ const Circle3 = () => {
   };
 
   return (
-    <>
+    <div style={{ display: "relative" }}>
       {profileNames.length === 0 ? (
         <div
           style={{
@@ -51,7 +51,17 @@ const Circle3 = () => {
           <TailSpin heigth="100" width="100" color="red" ariaLabel="loading" />
         </div>
       ) : (
-        <div style={{ position: "absolute", left: "30%", marginTop: "6rem" ,zIndex:"-2"}}>
+        <div
+          style={{
+            position: "absolute",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "100vw",
+            height: "85vh",
+            zIndex: "-2",
+          }}
+        >
           <Wheel
             mustStartSpinning={mustSpin}
             prizeNumber={prizeNumber}
@@ -85,7 +95,7 @@ const Circle3 = () => {
           />
           <button
             className="btn btn-warning"
-            style={{ position: "relative", left: "15%" }}
+            style={{ position: "absolute", top: "75%", cursor: "pointer" }}
             onClick={handleSpinClick}
           >
             SPIN
@@ -99,7 +109,7 @@ const Circle3 = () => {
           <WinnerModal winner={profileNames[prizeNumber]} />{" "}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

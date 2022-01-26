@@ -16,18 +16,10 @@ const customStyles = {
     zIndex: "1",
   },
 };
-
-// Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement("#root");
 
 const WinnerModal = ({ winner }) => {
-  let subtitle;
   const [modalIsOpen, setIsOpen] = useState(true);
-
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = "#f00";
-  }
 
   function closeModal() {
     setIsOpen(false);
@@ -37,7 +29,6 @@ const WinnerModal = ({ winner }) => {
     <div>
       <Modal
         isOpen={modalIsOpen}
-        // onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
       >
