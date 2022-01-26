@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useEffect } from "react";
 import Firework from "./Firework";
+import { TailSpin } from "react-loader-spinner";
 
 const Circle3 = () => {
   const [profileNames, setProfileNames] = useState([]);
@@ -12,7 +13,6 @@ const Circle3 = () => {
   const [durum, setDurum] = useState(false);
 
   const state = useSelector((state) => state.users);
-
   const getUserNames = async () => {
     if (state?.profiles?.Likers) {
       const a = await Object.values(
@@ -39,7 +39,11 @@ const Circle3 = () => {
 
   return (
     <>
-      {profileNames !== null ? (
+      {profileNames.length === 0 ? (
+        <div style={{position:"absolute",top:"50%",left:"50%",transform:"translate(-50%,-50%)"}}>
+        <TailSpin heigth="100" width="100" color="red" ariaLabel="loading" />
+        </div>
+      ) : (
         <div style={{ position: "absolute", left: "30%", marginTop: "6rem" }}>
           <Wheel
             mustStartSpinning={mustSpin}
@@ -80,10 +84,14 @@ const Circle3 = () => {
             SPIN
           </button>
         </div>
-      ) : (
-        ""
       )}
-      {durum &&<div style={{position:"relative",top:"20%"}}> <Firework winner={profileNames[prizeNumber]} /> </div>}
+
+      {durum && (
+        <div style={{ position: "relative", top: "20%" }}>
+          {" "}
+          <Firework winner={profileNames[prizeNumber]} />{" "}
+        </div>
+      )}
     </>
   );
 };

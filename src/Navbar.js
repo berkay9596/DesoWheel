@@ -5,21 +5,15 @@ import { useEffect } from "react";
 import { handledarkMode } from "./redux/actions/darkModeActions";
 const Navbar = () => {
   const dispatch = useDispatch();
-
-  // calling our state from the reduxer using useSelector hook of redux
   const mode = useSelector((state) => state.darkMode);
-
-  // destructuring isdarkMode state from mode variable called using useSelector hook of redux
   const { isdarkMode } = mode;
 
-  // function to be fired on onChange method to switch the mode
   const switchDarkMode = () => {
     isdarkMode
       ? dispatch(handledarkMode(false))
       : dispatch(handledarkMode(true));
   };
   useEffect(() => {
-    //changing color of body with darkmode in useEffect
     document.body.style.backgroundColor = isdarkMode ? "#292c35" : "#fff";
   }, [isdarkMode]);
 
@@ -27,7 +21,11 @@ const Navbar = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
+          <a
+            className="navbar-brand"
+            href="/"
+            style={{ fontWeight: "bold", color: "rebeccapurple" }}
+          >
             DESOWHEEL
           </a>
           <button

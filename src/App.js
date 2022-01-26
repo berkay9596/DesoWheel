@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { getProfiles } from "../src/redux/actions/profilesActions";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 function App() {
@@ -21,9 +21,16 @@ function App() {
   return (
     <div>
       {/* <Fireworks/>  */}
-      <h1 style={{color:"black",fontWeight:"bold",fontSize:"3rem",marginTop:"3rem"}}>
+      <h1
+        style={{
+          color: "black",
+          fontWeight: "bold",
+          fontSize: "3rem",
+          marginTop: "3rem",
+        }}
+      >
         Simply paste the url of any post on DESO. <br />
-        See the magic.
+        Pick a winner with the DESOWHEEL.
       </h1>
       <form onSubmit={formSubmit} className="form-group">
         <div
