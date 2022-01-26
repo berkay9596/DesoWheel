@@ -3,7 +3,7 @@ import { Fireworks } from "fireworks/lib/react";
 const Firework = ({ winner }) => {
   let fxProps = {
     count: 2,
-    interval: 150,
+    interval: 300,
     colors: ["#cc3333", "#4CAF50", "#81C784"],
     calc: (props, i) => ({
       ...props,
@@ -16,14 +16,14 @@ const Firework = ({ winner }) => {
       <Fireworks {...fxProps} />
       <h1
         style={{
-          position: "relative",
-          left: "37%",
-          marginTop: "50px",
+          position:"absolute",
           color: "black",
           fontWeight: "bold",
+         left:"25%",
+         top:"30%"
         }}
       >
-        Congrats! {winner}
+        Congrats! <span style={{color:"red"}}>{winner}</span>
       </h1>
     </div>
   );

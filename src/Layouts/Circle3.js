@@ -3,8 +3,8 @@ import { Wheel } from "react-custom-roulette";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useEffect } from "react";
-import Firework from "./Firework";
 import { TailSpin } from "react-loader-spinner";
+import WinnerModal from "../Components/WinnerModal";
 
 const Circle3 = () => {
   const [profileNames, setProfileNames] = useState([]);
@@ -40,11 +40,18 @@ const Circle3 = () => {
   return (
     <>
       {profileNames.length === 0 ? (
-        <div style={{position:"absolute",top:"50%",left:"50%",transform:"translate(-50%,-50%)"}}>
-        <TailSpin heigth="100" width="100" color="red" ariaLabel="loading" />
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%,-50%)",
+          }}
+        >
+          <TailSpin heigth="100" width="100" color="red" ariaLabel="loading" />
         </div>
       ) : (
-        <div style={{ position: "absolute", left: "30%", marginTop: "6rem" }}>
+        <div style={{ position: "absolute", left: "30%", marginTop: "6rem" ,zIndex:"-2"}}>
           <Wheel
             mustStartSpinning={mustSpin}
             prizeNumber={prizeNumber}
@@ -89,7 +96,7 @@ const Circle3 = () => {
       {durum && (
         <div style={{ position: "relative", top: "20%" }}>
           {" "}
-          <Firework winner={profileNames[prizeNumber]} />{" "}
+          <WinnerModal winner={profileNames[prizeNumber]} />{" "}
         </div>
       )}
     </>

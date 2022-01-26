@@ -12,8 +12,8 @@ import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "./redux/reducers";
-import Circle3 from "./Circle3";
-import Navbar from "./Navbar";
+import Circle3 from './Layouts/Circle3'
+import Navbar from "./Components/Navbar";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(

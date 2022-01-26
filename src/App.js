@@ -2,6 +2,7 @@ import { useState } from "react";
 import { getProfiles } from "../src/redux/actions/profilesActions";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import WinnerModal from "./Components/WinnerModal";
 
 function App() {
   const [url, setUrl] = useState("");
@@ -20,7 +21,6 @@ function App() {
 
   return (
     <div>
-      {/* <Fireworks/>  */}
       <h1
         style={{
           color: "black",
@@ -29,8 +29,7 @@ function App() {
           marginTop: "3rem",
         }}
       >
-        Simply paste the url of any post on DESO. <br />
-        Pick a winner with the DESOWHEEL.
+        Paste the url of any post on DESO.
       </h1>
       <form onSubmit={formSubmit} className="form-group">
         <div

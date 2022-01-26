@@ -1,8 +1,8 @@
 import { BsMoonStarsFill, BsFillSunFill } from "react-icons/bs";
-import "./App.css";
+import "../App.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { handledarkMode } from "./redux/actions/darkModeActions";
+import { handledarkMode } from "../redux/actions/darkModeActions";
 const Navbar = () => {
   const dispatch = useDispatch();
   const mode = useSelector((state) => state.darkMode);
