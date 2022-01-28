@@ -40,10 +40,7 @@ const Navbar = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div
-            className="collapse navbar-collapse"
-            id="navbarNavAltMarkup"
-          >
+          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
               <a className="nav-link active" href="/">
                 Home
@@ -54,24 +51,29 @@ const Navbar = () => {
               <a className="nav-link" href="/">
                 Pricing
               </a>
-              {/* <a className="nav-link" target="_blank" rel="noreferrer" href="https://www.livecoinwatch.com/price/DecentralizedSocial-DESO">
-                <DesoPrice/>
-              </a> */}
+              <a
+                className="nav-link"
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.livecoinwatch.com/price/DecentralizedSocial-DESO"
+              >
+                <DesoPrice />
+              </a>
               <a className="nav-link" href="/">
-              <div id="darkmode">
-                <input
-                  type="checkbox"
-                  className="checkbox"
-                  id="checkbox"
-                  onChange={switchDarkMode}
-                  checked={isdarkMode}
-                />
-                <label htmlFor="checkbox" className="label">
-                  <BsMoonStarsFill color="white" />
-                  <BsFillSunFill color="yellow" />
-                  <div className="ball"></div>
-                </label>
-              </div>
+                <div id="darkmode">
+                  <input
+                    type="checkbox"
+                    className="checkbox"
+                    id="checkbox"
+                    onChange={switchDarkMode}
+                    checked={isdarkMode}
+                  />
+                  <label htmlFor="checkbox" className="label">
+                    <BsMoonStarsFill color="white" />
+                    <BsFillSunFill color="yellow" />
+                    <div className="ball"></div>
+                  </label>
+                </div>
               </a>
             </div>
           </div>
