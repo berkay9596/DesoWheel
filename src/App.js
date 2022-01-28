@@ -2,7 +2,6 @@ import { useState } from "react";
 import { getProfiles } from "../src/redux/actions/profilesActions";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import WinnerModal from "./Components/WinnerModal";
 
 function App() {
   const [url, setUrl] = useState("");
@@ -45,7 +44,6 @@ function App() {
             type="text"
             className="form-control"
             value={url}
-            type="text"
             onChange={(e) => setUrl(e.target.value)}
           />
 

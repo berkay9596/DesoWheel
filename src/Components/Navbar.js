@@ -3,6 +3,7 @@ import "../App.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { handledarkMode } from "../redux/actions/darkModeActions";
+import DesoPrice from "./DesoPrice";
 const Navbar = () => {
   const dispatch = useDispatch();
   const mode = useSelector((state) => state.darkMode);
@@ -53,6 +54,10 @@ const Navbar = () => {
               <a className="nav-link" href="/">
                 Pricing
               </a>
+              <a className="nav-link" target="_blank" rel="noreferrer" href="https://www.livecoinwatch.com/price/DecentralizedSocial-DESO">
+                <DesoPrice/>
+              </a>
+              
               <div id="darkmode">
                 <input
                   type="checkbox"
