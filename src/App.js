@@ -30,14 +30,14 @@ function App() {
       >
         Paste the url of any post on DESO.
       </h1>
-      <form onSubmit={formSubmit} className="form-group">
+      <form onSubmit={formSubmit} className="form-group" style={{position:"relative"}}>
         <div
           className="input-group"
           style={{
             position: "absolute",
-            top: "30%",
+            top: "5rem",
             left: "28%",
-            width: "50%",
+            width: "60%",
           }}
         >
           <input
@@ -48,7 +48,7 @@ function App() {
           />
 
           <button type="submit" className="btn btn-success">
-            Get Likes
+            Submit
           </button>
         </div>
       </form>

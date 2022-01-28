@@ -54,10 +54,10 @@ const Navbar = () => {
               <a className="nav-link" href="/">
                 Pricing
               </a>
-              <a className="nav-link" target="_blank" rel="noreferrer" href="https://www.livecoinwatch.com/price/DecentralizedSocial-DESO">
+              {/* <a className="nav-link" target="_blank" rel="noreferrer" href="https://www.livecoinwatch.com/price/DecentralizedSocial-DESO">
                 <DesoPrice/>
-              </a>
-              
+              </a> */}
+              <a className="nav-link" href="/">
               <div id="darkmode">
                 <input
                   type="checkbox"
@@ -72,6 +72,7 @@ const Navbar = () => {
                   <div className="ball"></div>
                 </label>
               </div>
+              </a>
             </div>
           </div>
         </div>
