@@ -20,6 +20,7 @@
 }
 body {
   margin: 0;
+  padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #3d7eaa !important;
@@ -130,9 +131,23 @@ h2 {
   }
 }
 
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
   .res {
     position: relative;
     left:10%;
   }
-}
+} 
+
+
+@media (max-width: 472px) {
+  .btns{
+    justify-content: center;
+  }
+  .button-49{
+    width: 8rem;
+  }
+  h1{
+    line-height: 10px;
+    padding: 10px ;
+  }
+} 

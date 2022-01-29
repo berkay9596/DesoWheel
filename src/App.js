@@ -20,9 +20,9 @@ function App() {
                 marginTop: "3rem",
               }}
             >
-              Deso 
+              Deso Wheel
             </h1>
-            <h1
+            {/* <h1
               style={{
                 color: "#007BFF",
                 fontWeight: "bold",
@@ -31,13 +31,13 @@ function App() {
               }}
             >
                Wheel
-            </h1>
+            </h1> */}
             <h2 style={{ color: "black" }}>
               Paste the URL of any post on DESO.
               <br /> Get a winner among the lucky <b>Reposter</b> or{" "}
               <b>Liker.</b>
             </h2>
-            <div className="d-flex">
+            <div className="d-flex btns">
               <Link to="/like">
                 <button className="button-49">Reposts</button>
               </Link>
