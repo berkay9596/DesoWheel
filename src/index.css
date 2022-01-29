@@ -1,13 +1,185 @@
+@import url(//db.onlinewebfonts.com/c/47d5fd8c3738de46ef0b3fe3f68c289a?family=Perfect+DOS+VGA+437);
+
+/* @font-face {
+  font-family: Perfect DOS VGA 437,Perfect DOS VGA 437 Win,sans-serif !important;
+  src: url("/src/assets/Perfect\ DOS\ VGA\ 437.ttf")format("truetype") !important ;
+} */
+@font-face {
+  font-family: "Perfect DOS VGA 437";
+  src: url("//db.onlinewebfonts.com/t/47d5fd8c3738de46ef0b3fe3f68c289a.eot");
+  src: url("//db.onlinewebfonts.com/t/47d5fd8c3738de46ef0b3fe3f68c289a.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/47d5fd8c3738de46ef0b3fe3f68c289a.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/47d5fd8c3738de46ef0b3fe3f68c289a.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/47d5fd8c3738de46ef0b3fe3f68c289a.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/47d5fd8c3738de46ef0b3fe3f68c289a.svg#Perfect DOS VGA 437")
+      format("svg");
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #3d7eaa !important;
+  background: -webkit-linear-gradient(to right, #ffe47a, #3d7eaa) !important ;
+  background: linear-gradient(to right, #ffe47a, #3d7eaa) !important ;
 }
-
+h1 {
+  font-family: 'Perfect DOS VGA 437', sans-serif;
+}
+h2 {
+  font-family:'Roboto",sans-serif';
+}
+/* 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+} */
+
+.button-49,
+.button-49:after {
+  width: 160px;
+  height: 76px;
+  line-height: 78px;
+  font-size: 20px;
+  font-family: "Bebas Neue", sans-serif;
+  background: linear-gradient(45deg, transparent 5%, #ff013c 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  box-shadow: 6px 0px 0px #00e6f6;
+  outline: transparent;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-49:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+
+  content: "DECENTRALIZED";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 3%,
+    #00e6f6 3%,
+    #00e6f6 5%,
+    #ff013c 5%
+  );
+  text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+  clip-path: var(--slice-0);
+}
+
+.button-49:hover:after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .button-49,
+  .button-49:after {
+    width: 300px;
+    height: 86px;
+    line-height: 88px;
+  }
+}
+
+nav {
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+  /* background: #afb0e4; */
+  height: 3rem;
+}
+
+.nav-links {
+  flex: 1;
+  text-align: left;
+}
+.nav-links ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+  z-index: 1000;
+}
+.nav-links ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.nav-links ul li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #007bff;
+  display: block;
+  margin: auto;
+  transition: 0.4s;
+}
+.nav-links ul li:hover::after {
+  width: 100%;
 }

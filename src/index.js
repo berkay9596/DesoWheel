@@ -14,6 +14,7 @@ import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "./redux/reducers";
 import Circle3 from './Layouts/Circle3'
 import Navbar from "./Components/Navbar";
+import LikeInput from "./Layouts/LikeInput";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -29,6 +30,7 @@ ReactDOM.render(
         <Routes>
           <Route path="/" element={<App />}></Route>
           <Route path="/wheel" element={<Circle3 />}></Route>
+          <Route path="/like" element={<LikeInput />}></Route>
         </Routes>
       </BrowserRouter>
     </Provider>
