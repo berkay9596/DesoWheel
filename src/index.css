@@ -1,9 +1,4 @@
 @import url(//db.onlinewebfonts.com/c/47d5fd8c3738de46ef0b3fe3f68c289a?family=Perfect+DOS+VGA+437);
-
-/* @font-face {
-  font-family: Perfect DOS VGA 437,Perfect DOS VGA 437 Win,sans-serif !important;
-  src: url("/src/assets/Perfect\ DOS\ VGA\ 437.ttf")format("truetype") !important ;
-} */
 @font-face {
   font-family: "Perfect DOS VGA 437";
   src: url("//db.onlinewebfonts.com/t/47d5fd8c3738de46ef0b3fe3f68c289a.eot");
@@ -51,6 +46,7 @@ h2 {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  z-index: -5;
 }
 
 .button-49:after {
@@ -131,23 +127,22 @@ h2 {
   }
 }
 
- @media (max-width: 768px) {
+@media (max-width: 768px) {
   .res {
     position: relative;
-    left:10%;
+    left: 10%;
   }
-} 
-
+}
 
 @media (max-width: 472px) {
-  .btns{
+  .btns {
     justify-content: center;
   }
-  .button-49{
+  .button-49 {
     width: 8rem;
   }
-  h1{
+  h1 {
     line-height: 10px;
-    padding: 10px ;
+    padding: 10px;
   }
-} 
+}

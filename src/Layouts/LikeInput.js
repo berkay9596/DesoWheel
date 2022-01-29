@@ -20,17 +20,14 @@ const LikeInput = () => {
   };
 
   return (
-    <div style={{position:"relative",top:"20rem"}}>
+    <div style={{ position: "relative", top: "20rem" }}>
       <h1 className="text-center">Your Post URL</h1>
-      <form
-        onSubmit={formSubmit}
-        className="form-group"
-      >
+      <form onSubmit={formSubmit} className="form-group">
         <div
           className="input-group"
           style={{
             position: "absolute",
-            top: "5rem",
+            top: "10rem",
             left: "16%",
             width: "70%",
           }}

@@ -1,9 +1,9 @@
 import "../App.css";
-import DesoPrice from "./DesoPrice";
 import React from "react";
 
 import { Navbar } from "responsive-navbar-react";
 import "responsive-navbar-react/dist/index.css";
+import Logo from "../assets/desologo.png";
 const TopBar = () => {
   const props = {
     items: [
@@ -12,20 +12,22 @@ const TopBar = () => {
         link: "/",
       },
       {
-        text: "Doc",
-        link: "#docs",
+        text: "Roadmap",
+        link: "/",
       },
       {
-        text: "Custom",
-        link: "#custom-bar",
+        text: "What is DESO?",
+        link: "/",
       },
       {
-        text: "Contact",
-        link: "#contact",
+        text: "Support",
+        link: "/",
       },
     ],
     logo: {
-      text: "Deso-wheel.com",
+      text: "Deso Wheel App",
+      link: "/",
+      img: Logo,
     },
     style: {
       barStyles: {
