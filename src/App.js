@@ -9,7 +9,7 @@ function App() {
       >
         <div className="row container d-flex justify-content-center ">
           <div
-            className="row col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-flex"
+            className="row col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-flex res"
             style={{ marginRight: "2.2em" }}
           >
             <h1
@@ -20,7 +20,17 @@ function App() {
                 marginTop: "3rem",
               }}
             >
-              Deso Wheel
+              Deso 
+            </h1>
+            <h1
+              style={{
+                color: "#007BFF",
+                fontWeight: "bold",
+                fontSize: "3rem",
+                
+              }}
+            >
+               Wheel
             </h1>
             <h2 style={{ color: "black" }}>
               Paste the URL of any post on DESO.

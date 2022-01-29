@@ -21,14 +21,14 @@ const Firework = ({ winner }) => {
       }}
     >
       <Fireworks {...fxProps} />
-      <h1
+      <h3
         style={{
           color: "black",
           fontWeight: "bold",
         }}
       >
         Congrats! <span style={{ color: "red" }}>{winner}</span>
-      </h1>
+      </h3>
     </div>
   );
 };

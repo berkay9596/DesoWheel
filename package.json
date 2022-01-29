@@ -21,6 +21,7 @@
     "react-wheel-of-prizes": "^1.0.9",
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.1",
+    "responsive-navbar-react": "^1.2.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
