@@ -1,9 +1,8 @@
-import "../App.css";
 import React from "react";
 
 import { Navbar } from "responsive-navbar-react";
 import "responsive-navbar-react/dist/index.css";
-import Logo from "../assets/desologo.png";
+import Logo from "../assets/wheel.gif";
 const TopBar = () => {
   const props = {
     items: [

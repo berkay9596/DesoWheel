@@ -1,6 +1,6 @@
 import wheel from "./assets/wheel.gif";
 import { Link } from "react-router-dom";
-import Wave from 'react-wavify'
+import Wave from "react-wavify";
 function App() {
   return (
     <>
@@ -17,7 +17,7 @@ function App() {
               style={{
                 color: "#007BFF",
                 fontWeight: "bold",
-               
+
                 fontSize: "3rem",
               }}
             >
@@ -28,6 +28,7 @@ function App() {
                 color: "#007BFF",
                 fontWeight: "bold",
                 fontSize: "3rem",
+                zIndex: -1,
               }}
             >
               Wheel
@@ -47,19 +48,20 @@ function App() {
             </div>
           </div>
           <div className="row col-xl-6 col-lg-6 col-md-6 col-12 col-sm-12">
-            <img className="wheel-gif"  src={wheel} alt="wheel" />
+            <img className="wheel-gif" src={wheel} alt="wheel" />
           </div>
         </div>
       </div>
-      <Wave fill='#A2B391'
+      <Wave
+        fill="#A2B391"
         paused={false}
         options={{
           height: -3,
           amplitude: 20,
           speed: 0.35,
-          points: 3
+          points: 3,
         }}
-  />
+      />
     </>
   );
 }
