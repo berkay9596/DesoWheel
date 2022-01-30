@@ -18,9 +18,10 @@ body {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #3d7eaa !important;
+  /* background: #3d7eaa !important;
   background: -webkit-linear-gradient(to right, #ffe47a, #3d7eaa) !important ;
-  background: linear-gradient(to right, #ffe47a, #3d7eaa) !important ;
+  background: linear-gradient(to right, #ffe47a, #3d7eaa) !important ; */
+  background: #F0A30A !important;
 }
 h1 {
   font-family: "Perfect DOS VGA 437", sans-serif;

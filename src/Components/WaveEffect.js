@@ -4,7 +4,7 @@ import Wave from "react-wavify";
 const WaveEffect = () => {
   return (
     <Wave
-      fill="#A2B391"
+      fill="#191CA9"
       paused={false}
       options={{
         height: -3,
