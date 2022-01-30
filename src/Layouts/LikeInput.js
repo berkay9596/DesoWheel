@@ -3,6 +3,7 @@ import { useState } from "react";
 import { getProfiles } from ".././redux/actions/profilesActions";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const LikeInput = () => {
   const [url, setUrl] = useState("");
@@ -15,8 +16,12 @@ const LikeInput = () => {
   };
   const formSubmit = async (e) => {
     e.preventDefault();
-    await dispatch(getProfiles(headers));
-    navigate("/wheel");
+    if (!url) {
+      toast.error('Please enter the url.')
+    } else {
+      await dispatch(getProfiles(headers));
+      navigate("/wheel");
+    }
   };
 
   return (

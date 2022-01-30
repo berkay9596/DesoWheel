@@ -4,7 +4,7 @@ export const getProfiles = (body) => {
   return (dispatch) => {
     axios
       .post(
-        "https://my-first-bitclout-api.herokuapp.com/API/GET_USERS_WHO_LIKED_POST",
+        "https://api-diamondapp-likes-on-posts.herokuapp.com/API/GET_USERS_WHO_LIKED_POST",
         body
       )
       .then((resp) =>
