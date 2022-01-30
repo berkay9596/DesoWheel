@@ -131,6 +131,7 @@ h2 {
   .res {
     position: relative;
     left: 10%;
+    margin-top: 12em !important;
   }
 }
 

@@ -53,7 +53,9 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <WaveEffect />
+      <div style={{ marginTop: "5em" }}>
+        <WaveEffect />
+      </div>
     </>
   );
 };
