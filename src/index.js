@@ -1,18 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "./redux/reducers";
-import Circle3 from './Layouts/Circle3'
+import HomePage from "./Layouts/HomePage";
+import Circle3 from "./Layouts/Circle3";
 import TopBar from "./Components/TopBar";
 import LikeInput from "./Layouts/LikeInput";
 
@@ -26,11 +25,11 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-      <div style={{position:"fixed",top:"0",width:"100%"}}>
-      <TopBar/>
-      </div>
+        <div style={{ position: "fixed", top: "0", width: "100%" }}>
+          <TopBar />
+        </div>
         <Routes>
-          <Route path="/" element={<App />}></Route>
+          <Route path="/" element={<HomePage />}></Route>
           <Route path="/wheel" element={<Circle3 />}></Route>
           <Route path="/like" element={<LikeInput />}></Route>
         </Routes>
