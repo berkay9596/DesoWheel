@@ -53,14 +53,12 @@ const RepostInput = () => {
             className="form-control"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
-            style={{ zIndex: -2 }}
           />
 
           <button
             type="submit"
             className="btn btn-success"
-            style={{ zIndex: -2 }}
-          >
+           >
             Submit
           </button>
         </div>
