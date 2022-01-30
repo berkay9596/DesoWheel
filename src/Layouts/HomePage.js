@@ -2,6 +2,7 @@ import React from "react";
 import wheel from "../assets/wheel.gif";
 import { Link } from "react-router-dom";
 import WaveEffect from "../Components/WaveEffect";
+import Repost from '../assets/repost.png'
 const HomePage = () => {
   return (
     <>
@@ -41,10 +42,10 @@ const HomePage = () => {
             </h2>
             <div className="d-flex btns" style={{}}>
               <Link to="/repost">
-                <button className="button-49">Reposts</button>
+                <button className="button-49">Reposts <img src={Repost} style={{width:"25px"}}/></button>
               </Link>
               <Link to="/like">
-                <button className="button-49 mx-3">Likes</button>
+                <button className="button-49 mx-3">Likes ❤️</button>
               </Link>
             </div>
           </div>
