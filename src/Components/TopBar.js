@@ -35,6 +35,7 @@ const TopBar = () => {
       sidebarStyles: {
         background: "black",
         buttonColor: "white",
+        zindex:10
       },
     },
   };
