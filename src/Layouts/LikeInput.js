@@ -17,7 +17,7 @@ const LikeInput = () => {
   const formSubmit = async (e) => {
     e.preventDefault();
     if (!url) {
-      toast.error('Please enter the url.')
+      toast.error("Please enter the url.");
     } else {
       await dispatch(getProfiles(headers));
       navigate("/wheel");
@@ -26,8 +26,14 @@ const LikeInput = () => {
 
   return (
     <div style={{ position: "relative", top: "20rem" }}>
-      <h1 className="text-center">Your Post URL</h1>
-      <p className='text-center' style={{fontWeight:"bold",color:"white",fontSize:"25px"}}>LIKERS</p>
+      <h1 className="text-center zindex" >Your Post URL</h1>
+      <p
+        className="text-center"
+        style={{ fontWeight: "bold", color: "white", fontSize: "25px",zIndex:-2 }}
+
+      >
+        LIKERS
+      </p>
       <form onSubmit={formSubmit} className="form-group">
         <div
           className="input-group"
@@ -43,9 +49,14 @@ const LikeInput = () => {
             className="form-control"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
+            style={{ zIndex: -2 }}
           />
 
-          <button type="submit" className="btn btn-success">
+          <button
+            type="submit"
+            className="btn btn-success"
+            style={{ zIndex: -2 }}
+          >
             Submit
           </button>
         </div>

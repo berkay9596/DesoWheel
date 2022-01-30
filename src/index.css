@@ -43,19 +43,22 @@ h2 {
   color: #fff;
   letter-spacing: 3px;
   outline: transparent;
+  z-index: -10 !important;
 }
 .button-49:hover {
   background: white !important;
   color: black;
 }
+.res{
+  letter-spacing: 3px;
+}
 
 @media (max-width: 768px) {
   .res {
-    position: relative;
-    left: 10%;
+    text-align: center;
   }
-  .button-49 {
-    z-index: -1 !important;
+  .btns {
+    justify-content: center;
   }
 }
 

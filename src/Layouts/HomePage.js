@@ -6,7 +6,7 @@ const HomePage = () => {
   return (
     <>
       <div
-        className="container d-flex align-items-center"
+        className="container d-flex align-items-center justify-content-center"
         style={{ height: "100vh" }}
       >
         <div className="row container d-flex justify-content-center ">
