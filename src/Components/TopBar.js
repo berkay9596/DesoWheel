@@ -12,15 +12,15 @@ const TopBar = () => {
       },
       {
         text: "Roadmap",
-        link: "/",
+        link: "/roadmap",
       },
       {
-        text: "What is DESO?",
-        link: "/",
+        text: "What is Deso Wheel?",
+        link: "/desowheel",
       },
       {
-        text: "Support",
-        link: "/",
+        text: "Contact",
+        link: "/contact",
       },
     ],
     logo: {

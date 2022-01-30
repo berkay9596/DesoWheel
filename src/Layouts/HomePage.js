@@ -3,6 +3,7 @@ import wheel from "../assets/wheel.gif";
 import { Link } from "react-router-dom";
 import WaveEffect from "../Components/WaveEffect";
 import { FaRetweet } from "react-icons/fa";
+import DesoLogin from "../Components/DesoLogin";
 const HomePage = () => {
   return (
     <>
