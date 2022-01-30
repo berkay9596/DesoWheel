@@ -16,6 +16,7 @@ import TopBar from "./Components/TopBar";
 import LikeInput from "./Layouts/LikeInput";
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import RepostInput from './Layouts/RepostInput'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -34,6 +35,7 @@ ReactDOM.render(
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/wheel" element={<Circle3 />}></Route>
           <Route path="/like" element={<LikeInput />}></Route>
+          <Route path="/repost" element={<RepostInput />}></Route>
         </Routes>
         <ToastContainer/>
       </BrowserRouter>

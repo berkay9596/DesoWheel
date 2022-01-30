@@ -40,7 +40,7 @@ const HomePage = () => {
               <b>Likers.</b>
             </h2>
             <div className="d-flex btns" style={{}}>
-              <Link to="/like">
+              <Link to="/repost">
                 <button className="button-49">Reposts</button>
               </Link>
               <Link to="/like">

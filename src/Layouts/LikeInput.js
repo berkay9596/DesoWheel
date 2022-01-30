@@ -27,6 +27,7 @@ const LikeInput = () => {
   return (
     <div style={{ position: "relative", top: "20rem" }}>
       <h1 className="text-center">Your Post URL</h1>
+      <p className='text-center' style={{fontWeight:"bold",color:"white",fontSize:"25px"}}>LIKERS</p>
       <form onSubmit={formSubmit} className="form-group">
         <div
           className="input-group"

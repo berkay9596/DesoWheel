@@ -13,10 +13,16 @@ const Circle3 = () => {
   const [durum, setDurum] = useState(false);
 
   const state = useSelector((state) => state.users);
+  console.log("state",state)
   const getUserNames = async () => {
     if (state?.profiles?.Likers) {
       const a = await Object.values(
         state?.profiles?.Likers?.map((liker) => liker.Username)
+      );
+      setProfileNames(a);
+    }else if(state?.profiles?.Reposters){
+      const a = await Object.values(
+        state?.profiles?.Reposters?.map((reposter) => reposter.Username)
       );
       setProfileNames(a);
     }
