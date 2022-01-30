@@ -26,11 +26,15 @@ const LikeInput = () => {
 
   return (
     <div style={{ position: "relative", top: "20rem" }}>
-      <h1 className="text-center zindex" >Your Post URL</h1>
+      <h1 className="text-center zindex">Your Post URL</h1>
       <p
         className="text-center"
-        style={{ fontWeight: "bold", color: "white", fontSize: "25px",zIndex:-2 }}
-
+        style={{
+          fontWeight: "bold",
+          color: "white",
+          fontSize: "25px",
+          zIndex: -2,
+        }}
       >
         LIKERS
       </p>
@@ -46,17 +50,12 @@ const LikeInput = () => {
         >
           <input
             type="text"
-            className="form-control"
+            className="form-control zindex"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
-            style={{ zIndex: -2 }}
           />
 
-          <button
-            type="submit"
-            className="btn btn-success"
-            style={{ zIndex: -2 }}
-          >
+          <button type="submit" className="btn btn-success">
             Submit
           </button>
         </div>
