@@ -54,9 +54,9 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div style={{ marginTop: "12em" }}>
+      {/* <div style={{ marginTop: "12em" }}>
         <WaveEffect />
-      </div>
+      </div> */}
     </>
   );
 };
