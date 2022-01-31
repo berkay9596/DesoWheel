@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { TailSpin } from "react-loader-spinner";
 import WinnerModal from "../Components/WinnerModal";
-
+import { toast } from "react-toastify";
 const Circle3 = () => {
   const [profileNames, setProfileNames] = useState([]);
   const [mustSpin, setMustSpin] = useState(false);
@@ -13,20 +13,35 @@ const Circle3 = () => {
   const [durum, setDurum] = useState(false);
 
   const state = useSelector((state) => state.users);
-  console.log("state",state)
   const getUserNames = async () => {
     if (state?.profiles?.Likers) {
       const a = await Object.values(
         state?.profiles?.Likers?.map((liker) => liker.Username)
       );
       setProfileNames(a);
-    }else if(state?.profiles?.Reposters){
+    } else if (state?.profiles?.Reposters) {
       const a = await Object.values(
         state?.profiles?.Reposters?.map((reposter) => reposter.Username)
       );
       setProfileNames(a);
     }
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (state?.profiles?.Reposters?.length === 0) {
+        toast.error("Your post has 0 repost.");
+      }
+    }, 8000);
+  }, [state?.profiles?.Reposters]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (state?.profiles?.Likers?.length === 0) {
+        toast.error("Your post has 0 like.");
+      }
+    }, 8000);
+  }, [state?.profiles?.Likers]);
 
   useEffect(() => {
     getUserNames();
@@ -44,7 +59,7 @@ const Circle3 = () => {
   };
 
   return (
-    <div style={{ display: "relative" ,height:"100vh", marginTop:"2rem"}}>
+    <div style={{ display: "relative", height: "100vh", marginTop: "2rem" }}>
       {profileNames.length === 0 ? (
         <div
           style={{
@@ -58,10 +73,10 @@ const Circle3 = () => {
         </div>
       ) : (
         <div
-        className="container"
+          className="container"
           style={{
             display: "flex",
-            flexDirection:"column",
+            flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
             width: "100vw",
@@ -99,10 +114,7 @@ const Circle3 = () => {
             ]}
             textColors={["#ffffff"]}
           />
-          <button
-            className="btn btn-success"
-            onClick={handleSpinClick}
-          >
+          <button className="btn btn-success" onClick={handleSpinClick}>
             SPIN
           </button>
         </div>

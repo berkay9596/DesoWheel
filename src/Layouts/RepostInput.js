@@ -16,7 +16,11 @@ const RepostInput = () => {
     e.preventDefault();
     if (!url) {
       toast.error("Please enter the url.");
-    } else {
+    }else if (!url.includes("post")) {
+      toast.error("Please enter valid url");
+      setUrl("");
+    }  
+    else {
       await dispatch(getProfilesRepost(headers));
       navigate("/wheel");
     }
