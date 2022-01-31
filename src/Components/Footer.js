@@ -10,14 +10,15 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-center text-white">
+    <footer
+      className="bg-dark text-center text-white">
       <div className="container p-4 pb-0">
-        <section className="mb-4">
+        <section>
           <a
             className="btn btn-outline-light btn-floating m-1"
             href="#!"
             role="button"
-            style={{borderRadius:"20px"}}
+            style={{ borderRadius: "20px" }}
           >
             <FaFacebook />
           </a>
@@ -26,7 +27,7 @@ const Footer = () => {
             className="btn btn-outline-light btn-floating m-1"
             href="#!"
             role="button"
-            style={{borderRadius:"20px"}}
+            style={{ borderRadius: "20px" }}
           >
             <FaTwitter />
           </a>
@@ -35,7 +36,7 @@ const Footer = () => {
             className="btn btn-outline-light btn-floating m-1"
             href="#!"
             role="button"
-            style={{borderRadius:"20px"}}
+            style={{ borderRadius: "20px" }}
           >
             <FaGoogle />
           </a>
@@ -44,7 +45,7 @@ const Footer = () => {
             className="btn btn-outline-light btn-floating m-1"
             href="#!"
             role="button"
-            style={{borderRadius:"20px"}}
+            style={{ borderRadius: "20px" }}
           >
             {/* <i className="fab fa-instagram"></i> */}
             <FaInstagram />
@@ -54,7 +55,7 @@ const Footer = () => {
             className="btn btn-outline-light btn-floating m-1"
             href="#!"
             role="button"
-            style={{borderRadius:"20px"}}
+            style={{ borderRadius: "20px" }}
           >
             <FaLinkedin />
           </a>
@@ -63,7 +64,7 @@ const Footer = () => {
             className="btn btn-outline-light btn-floating m-1"
             href="#!"
             role="button"
-            style={{borderRadius:"20px"}}
+            style={{ borderRadius: "20px" }}
           >
             <FaGithub />
           </a>

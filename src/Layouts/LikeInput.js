@@ -32,7 +32,7 @@ const LikeInput = () => {
       display: "flex",
       flexDirection:"column-reverse",
       justifyContent: "center",
-      flexWrap:"wrap"
+      
     }}
     >
       <form onSubmit={formSubmit} className="form-group">

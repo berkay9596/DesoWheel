@@ -14,13 +14,13 @@ import HomePage from "./Layouts/HomePage";
 import Circle3 from "./Layouts/Circle3";
 import TopBar from "./Components/TopBar";
 import LikeInput from "./Layouts/LikeInput";
-import {ToastContainer} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import RepostInput from './Layouts/RepostInput'
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import RepostInput from "./Layouts/RepostInput";
 import Roadmap from "./Layouts/Roadmap";
 import WhatIsDesoWheel from "./Layouts/WhatIsDesoWheel";
 import Contact from "./Layouts/Contact";
-import Footer from './Components/Footer'
+import Footer from "./Components/Footer";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -44,10 +44,9 @@ ReactDOM.render(
           <Route path="/desowheel" element={<WhatIsDesoWheel />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
         </Routes>
-      
-        <ToastContainer/>
-        <div style={{ position: "fixed", bottom: "0", width: "100%" }} >
-        <Footer />
+        <ToastContainer />
+        <div style={{ marginTop: "120px" }}>
+          <Footer />
         </div>
       </BrowserRouter>
     </Provider>
