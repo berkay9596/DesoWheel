@@ -45,9 +45,8 @@ ReactDOM.render(
           <Route path="/contact" element={<Contact />}></Route>
         </Routes>
         <ToastContainer />
-        <div style={{ marginTop: "120px" }}>
-          <Footer />
-        </div>
+
+        <Footer />
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,

@@ -44,7 +44,7 @@ const Circle3 = () => {
   };
 
   return (
-    <div style={{ display: "relative" }}>
+    <div style={{ display: "relative" ,height:"100vh"}}>
       {profileNames.length === 0 ? (
         <div
           style={{
@@ -100,8 +100,8 @@ const Circle3 = () => {
             textColors={["#ffffff"]}
           />
           <button
-            className="btn btn-warning"
-            style={{ position: "absolute", top: "75%", cursor: "pointer" }}
+            className="btn btn-success"
+            style={{ position: "absolute", top: "80%", cursor: "pointer" }}
             onClick={handleSpinClick}
           >
             SPIN

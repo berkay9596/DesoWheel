@@ -26,7 +26,7 @@ const RepostInput = () => {
     <div
     className="container"
     style={{
-      height:"80vh",
+      height:"100vh",
       display: "flex",
       flexDirection:"column-reverse",
       justifyContent: "center",

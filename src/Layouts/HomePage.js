@@ -5,12 +5,12 @@ import { FaRetweet } from "react-icons/fa";
 
 const HomePage = () => {
   return (
-    <>
-      <div
+    <div className="d-flex" style={{ height: "100vh",marginTop:"6rem"}} >
+    <div
         className="container d-flex align-items-center justify-content-center"
-        style={{ height: "100vh" }}
+       
       >
-        <div className="row container d-flex justify-content-center" style={{height:"45vh"}}>
+        <div className="row container d-flex justify-content-center">
           <div className="row col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-flex res">
             <h1
               style={{
@@ -55,7 +55,9 @@ const HomePage = () => {
       
       </div>
       
-    </>
+    </div>
+
+      
   );
 };
 
