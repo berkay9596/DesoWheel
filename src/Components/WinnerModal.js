@@ -13,8 +13,11 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
     width: '65%',
     height: "305px",
-    zIndex: "1",
+    zIndex: "10000",
   },
+  overlay:{
+    zIndex: "10000",
+  }
 };
 Modal.setAppElement("#root");
 

@@ -65,7 +65,6 @@ const Circle3 = () => {
             justifyContent: "center",
             width: "100vw",
             height: "85vh",
-            zIndex: "-2",
           }}
         >
           <Wheel
