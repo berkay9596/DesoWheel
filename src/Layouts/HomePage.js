@@ -1,14 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import wheel from "../assets/wheel.gif";
 import { Link } from "react-router-dom";
 import { FaRetweet } from "react-icons/fa";
+import DesoLogin from '../Components/DesoLogin'
+import { getInfo } from '../redux/actions/userInfoActions'
+import { useDispatch, useSelector } from "react-redux";
+import BasicInfo from "../Components/BasicInfo";
 
 const HomePage = () => {
+  const dispatch = useDispatch();
+  const state = useSelector(state => state.info)
+  const public_key = localStorage.getItem('publicKey');
+  const headers = {
+    public_key: public_key,
+  };
+  console.log("token", public_key)
+  console.log("state", state)
+  useEffect(() => {
+    dispatch(getInfo(headers))
+  }, [public_key])
   return (
     <div className="d-flex" style={{ height: "100vh", marginTop: "6rem" }}>
+
       <div className="container d-flex align-items-center justify-content-center">
         <div className="row container d-flex justify-content-center">
           <div className="row col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-flex res">
+            {public_key ? "" : <DesoLogin />}
+            
+            <BasicInfo />
             <h1
               style={{
                 color: "black",

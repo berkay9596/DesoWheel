@@ -11,8 +11,8 @@ const TopBar = () => {
         link: "/",
       },
       {
-        text: "Roadmap",
-        link: "/roadmap",
+        text: "My posts",
+        link: "/posts",
       },
       {
         text: "What is Deso Wheel?",
@@ -21,6 +21,10 @@ const TopBar = () => {
       {
         text: "Contact",
         link: "/contact",
+      },
+      {
+        text: "Roadmap",
+        link: "/roadmap",
       },
     ],
     logo: {
