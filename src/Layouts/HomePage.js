@@ -5,16 +5,13 @@ import { FaRetweet } from "react-icons/fa";
 
 const HomePage = () => {
   return (
-    <div className="d-flex" style={{ height: "100vh",marginTop:"6rem"}} >
-    <div
-        className="container d-flex align-items-center justify-content-center"
-       
-      >
+    <div className="d-flex" style={{ height: "100vh", marginTop: "6rem" }}>
+      <div className="container d-flex align-items-center justify-content-center">
         <div className="row container d-flex justify-content-center">
           <div className="row col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-flex res">
             <h1
               style={{
-                color: "#007BFF",
+                color: "black",
                 fontWeight: "bold",
                 fontSize: "3rem",
                 zIndex: -2,
@@ -24,7 +21,7 @@ const HomePage = () => {
             </h1>
             <h1
               style={{
-                color: "#007BFF",
+                color: "black",
                 fontWeight: "bold",
                 fontSize: "3rem",
                 zIndex: -1,
@@ -39,8 +36,8 @@ const HomePage = () => {
             </h2>
             <div className="d-flex btns">
               <Link to="/repost">
-                <button className="button-49">
-                  Repost <FaRetweet />
+                <button className="button-49 ">
+                  Repost <FaRetweet className="reclout" />
                 </button>
               </Link>
               <Link to="/like">
@@ -52,12 +49,8 @@ const HomePage = () => {
             <img className="wheel-gif" src={wheel} alt="wheel" />
           </div>
         </div>
-      
       </div>
-      
     </div>
-
-      
   );
 };
 
