@@ -44,7 +44,7 @@ const Circle3 = () => {
   };
 
   return (
-    <div style={{ display: "relative" ,height:"100vh"}}>
+    <div style={{ display: "relative" ,height:"100vh", marginTop:"2rem"}}>
       {profileNames.length === 0 ? (
         <div
           style={{
@@ -58,13 +58,14 @@ const Circle3 = () => {
         </div>
       ) : (
         <div
+        className="container"
           style={{
-            position: "absolute",
             display: "flex",
+            flexDirection:"column",
             alignItems: "center",
             justifyContent: "center",
             width: "100vw",
-            height: "85vh",
+            height: "112vh",
           }}
         >
           <Wheel
@@ -100,7 +101,6 @@ const Circle3 = () => {
           />
           <button
             className="btn btn-success"
-            style={{ position: "absolute", top: "80%", cursor: "pointer" }}
             onClick={handleSpinClick}
           >
             SPIN
