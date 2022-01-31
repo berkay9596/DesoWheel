@@ -1,11 +1,14 @@
-import React from 'react';
+import React from "react";
 
 const Contact = () => {
-   return (
-    <div>
-      <h1 style={{marginTop:"150px"}}>Contact page</h1>
+  return (
+    <div
+      className="d-flex justify-content-center align-items-center"
+      style={{ height: "100vh" }}
+    >
+      <h1>Contact page</h1>
     </div>
-  )
+  );
 };
 
 export default Contact;

@@ -55,10 +55,7 @@ const RepostInput = () => {
             onChange={(e) => setUrl(e.target.value)}
           />
 
-          <button
-            type="submit"
-            className="btn btn-success"
-           >
+          <button type="submit" className="btn btn-success">
             Submit
           </button>
         </div>

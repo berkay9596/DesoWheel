@@ -1,12 +1,14 @@
-import React from 'react';
+import React from "react";
 
 const Roadmap = () => {
   return (
-    <div>
-      <h1 style={{marginTop:"150px"}}>Roadmap page</h1>
+    <div
+      className="d-flex justify-content-center align-items-center"
+      style={{ height: "100vh" }}
+    >
+      <h1>Roadmap page</h1>
     </div>
-  )
-  ;
+  );
 };
 
 export default Roadmap;

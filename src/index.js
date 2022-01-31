@@ -20,6 +20,7 @@ import RepostInput from './Layouts/RepostInput'
 import Roadmap from "./Layouts/Roadmap";
 import WhatIsDesoWheel from "./Layouts/WhatIsDesoWheel";
 import Contact from "./Layouts/Contact";
+import Footer from './Components/Footer'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -43,6 +44,7 @@ ReactDOM.render(
           <Route path="/desowheel" element={<WhatIsDesoWheel />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
         </Routes>
+        <Footer/>
         <ToastContainer/>
       </BrowserRouter>
     </Provider>
