@@ -23,27 +23,19 @@ const RepostInput = () => {
   };
 
   return (
-    <div style={{ position: "relative", top: "20rem" }}>
-      <h1 className="text-center" style={{ zIndex: -2 }}>
-        Your Post URL
-      </h1>
-      <p
-        className="text-center"
-        style={{
-          fontWeight: "bold",
-          color: "white",
-          fontSize: "25px",
-          zIndex: -2,
-        }}
-      >
-        REPOSTERS
-      </p>
+    <div
+    className="container"
+    style={{
+      height:"80vh",
+      display: "flex",
+      flexDirection:"column-reverse",
+      justifyContent: "center",
+    }}
+    >
       <form onSubmit={formSubmit} className="form-group">
         <div
           className="input-group"
           style={{
-            position: "absolute",
-            top: "10rem",
             left: "16%",
             width: "70%",
           }}
@@ -60,6 +52,20 @@ const RepostInput = () => {
           </button>
         </div>
       </form>
+      <h1 className="text-center" style={{ zIndex: -2 }}>
+        Your Post URL
+      </h1>
+      <p
+        className="text-center"
+        style={{
+          fontWeight: "bold",
+          color: "white",
+          fontSize: "25px",
+          zIndex: -2,
+        }}
+      >
+        REPOSTERS
+      </p>
     </div>
   );
 };

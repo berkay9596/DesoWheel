@@ -44,8 +44,11 @@ ReactDOM.render(
           <Route path="/desowheel" element={<WhatIsDesoWheel />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
         </Routes>
-        <Footer/>
+      
         <ToastContainer/>
+        <div style={{ position: "fixed", bottom: "0", width: "100%" }} >
+        <Footer />
+        </div>
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,

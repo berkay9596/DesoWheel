@@ -25,8 +25,39 @@ const LikeInput = () => {
   };
 
   return (
-    <div style={{ position: "relative", top: "20rem" }}>
-      <h1 className="text-center zindex">Your Post URL</h1>
+    <div
+    className="container"
+    style={{
+      height:"80vh",
+      display: "flex",
+      flexDirection:"column-reverse",
+      justifyContent: "center",
+      flexWrap:"wrap"
+    }}
+    >
+      <form onSubmit={formSubmit} className="form-group">
+        <div
+          className="input-group"
+          style={{
+            left: "16%",
+            width: "70%",
+          }}
+        >
+          <input
+            type="text"
+            className="form-control"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+          />
+
+          <button type="submit" className="btn btn-success">
+            Submit
+          </button>
+        </div>
+      </form>
+      <h1 className="text-center" style={{ zIndex: -2 }}>
+        Your Post URL
+      </h1>
       <p
         className="text-center"
         style={{
@@ -38,28 +69,6 @@ const LikeInput = () => {
       >
         LIKERS
       </p>
-      <form onSubmit={formSubmit} className="form-group">
-        <div
-          className="input-group"
-          style={{
-            position: "absolute",
-            top: "10rem",
-            left: "16%",
-            width: "70%",
-          }}
-        >
-          <input
-            type="text"
-            className="form-control zindex"
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-          />
-
-          <button type="submit" className="btn btn-success">
-            Submit
-          </button>
-        </div>
-      </form>
     </div>
   );
 };
