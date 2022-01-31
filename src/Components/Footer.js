@@ -11,7 +11,7 @@ import {
 const Footer = () => {
   return (
     <footer
-      className="bg-dark text-center text-white">
+      className="text-center text-white" style={{background:"#191CA9"}}>
       <div className="container p-4 pb-0">
         <section>
           <a
