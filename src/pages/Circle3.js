@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useEffect } from "react";
 import { TailSpin } from "react-loader-spinner";
-import WinnerModal from "../Components/WinnerModal";
+import WinnerModal from "../components/WinnerModal";
 import { toast } from "react-toastify";
 const Circle3 = () => {
   const [profileNames, setProfileNames] = useState([]);

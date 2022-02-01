@@ -10,18 +10,18 @@ import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "./redux/reducers";
-import HomePage from "./Layouts/HomePage";
-import Circle3 from "./Layouts/Circle3";
-import TopBar from "./Components/TopBar";
-import LikeInput from "./Layouts/LikeInput";
+import HomePage from "./pages/HomePage";
+import Circle3 from "./pages/Circle3";
+import TopBar from "./components/TopBar";
+import LikeInput from "./pages/LikeInput";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import RepostInput from "./Layouts/RepostInput";
-import Roadmap from "./Layouts/Roadmap";
-import WhatIsDesoWheel from "./Layouts/WhatIsDesoWheel";
-import Contact from "./Layouts/Contact";
-import Footer from "./Components/Footer";
-import Posts from "./Layouts/Posts";
+import RepostInput from "./pages/RepostInput";
+import Roadmap from "./pages/Roadmap";
+import WhatIsDesoWheel from "./pages/WhatIsDesoWheel";
+import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
+import Posts from "./pages/Posts";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(

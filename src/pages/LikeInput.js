@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { getProfiles } from ".././redux/actions/profilesActions";
+import { getProfiles } from "../redux/actions/profilesActions";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";

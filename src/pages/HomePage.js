@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import wheel from "../assets/wheel.gif";
 import { Link } from "react-router-dom";
 import { FaRetweet } from "react-icons/fa";
-import DesoLogin from '../Components/DesoLogin'
+import DesoLogin from '../components/DesoLogin'
 import { getInfo } from '../redux/actions/userInfoActions'
 import { useDispatch, useSelector } from "react-redux";
-import BasicInfo from "../Components/BasicInfo";
+import BasicInfo from "../components/BasicInfo";
 
 const HomePage = () => {
   const dispatch = useDispatch();

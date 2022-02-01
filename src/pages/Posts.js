@@ -2,9 +2,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { getInfo } from '../redux/actions/userInfoActions'
 import { TailSpin } from "react-loader-spinner";
+import { getProfilesRepost } from '../redux/actions/profilesActions'
+import { getProfiles } from '../redux/actions/profilesActions'
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Posts = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
     const state = useSelector(state => state.info)
     const public_key = localStorage.getItem('publicKey');
@@ -24,9 +29,49 @@ const Posts = () => {
             return setLoading(true)
         }
     }, [state])
+
+    // const body = {
+    //     public_key: public_key
+    // }
+    // const apireq = async () => {
+    //     return await axios.post('https://api-diamondapp-likes-on-posts.herokuapp.com/API/GET_USER_COIN_PRICE', body).then(resp => setCoinPrice(resp.data))
+    // }
+    // useEffect(() => {
+    //     apireq();
+    // }, [])
+
+    const handleClickRepost = async (body) => {
+        console.log(body)
+        const headers = {
+            post_url: `https://bitclout.com/nft/${body.PostHashHex}?tab=posts`,
+            reader_public_key:
+                "BC1YLianxEsskKYNyL959k6b6UPYtRXfZs4MF3GkbWofdoFQzZCkJRB",
+        };
+        if (body.RepostCount === 0) {
+            toast("Your post has no reposts")
+        } else {
+            await dispatch(getProfilesRepost(headers));
+            navigate("/wheel")
+        }
+
+    }
+    const handleClickLike = async (body) => {
+        const headers = {
+            post_url: `https://bitclout.com/nft/${body.PostHashHex}?tab=posts`,
+            reader_public_key:
+                "BC1YLianxEsskKYNyL959k6b6UPYtRXfZs4MF3GkbWofdoFQzZCkJRB",
+        };
+        if (body.LikeCount === 0) {
+            toast('Your post has no likes')
+        } else {
+            await dispatch(getProfiles(headers));
+            navigate("/wheel")
+        }
+
+    }
     return (
         <div className="container d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
-            < div className="container d-flex align-items-center justify-content-center" style={{ height: "100vh", flexWrap: "wrap", marginTop: "5rem" }}>
+            < div className="container d-flex align-items-center justify-content-center" style={{ height: "100vg", flexWrap: "wrap", marginTop: "5rem" }}>
                 {loading ? <div
                     style={{
                         position: "absolute",
@@ -44,8 +89,9 @@ const Posts = () => {
                                 <div className="card-body">
                                     <img src={state?.info?.ProfilePicture} alt="Profile" style={{ width: "40px", borderRadius: "20px" }} /><span style={{ fontWeight: "bold" }}> {state?.info?.UserName}</span>
                                     <p className="card-text">{post?.Body}</p>
-                                    <a href="/posts" className="btn btn-primary mx-1">Reposts ({post?.RecloutCount}) </a>
-                                    <a href="/posts" className="btn btn-danger">Likes  ({post?.LikeCount})</a>
+                                    <img alt="" src={post?.ImageURLs ? post?.ImageURLs[0] : ""} style={{ width: "50vw", marginBottom: "5px" }} />
+                                    <button className="btn btn-primary mx-1" onClick={() => handleClickRepost(post)}>Reposts ({post?.RecloutCount}) </button>
+                                    <button className="btn btn-danger" onClick={() => handleClickLike(post)}>Likes  ({post?.LikeCount})</button>
                                 </div>
                             </div>
                         </div>
