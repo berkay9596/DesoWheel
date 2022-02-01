@@ -18,6 +18,7 @@ const HomePage = () => {
   console.log("state", state)
   useEffect(() => {
     dispatch(getInfo(headers))
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [public_key])
   return (
     <div className="d-flex" style={{ height: "100vh", marginTop: "6rem" }}>
@@ -25,9 +26,11 @@ const HomePage = () => {
       <div className="container d-flex align-items-center justify-content-center">
         <div className="row container d-flex justify-content-center">
           <div className="row col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-flex res">
-            {public_key ? "" : <DesoLogin />}
-            
-            <BasicInfo />
+
+            <div style={{ position: "fixed", top: 16, left: 60, width: "300px", display: "flex", alignItems: "center", justifyContent: "start" }}>
+              {public_key ? <BasicInfo /> : <DesoLogin />}
+
+            </div>
             <h1
               style={{
                 color: "black",

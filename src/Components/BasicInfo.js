@@ -1,13 +1,12 @@
 import { useSelector } from "react-redux";
 
 const BasicInfo = () => {
-    const public_key = localStorage.getItem('publicKey');
     const state = useSelector(state => state.info);
 
     return (
         <>
 
-            {public_key ? <div className="dropdown">
+            {state ? <div className="dropdown">
                 <a
                     className="dropdown-toggle text-info text-decoration-none"
                     type="button"
