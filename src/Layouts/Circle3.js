@@ -28,20 +28,16 @@ const Circle3 = () => {
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      if (state?.profiles?.Reposters?.length === 0) {
-        toast.error("Your post has 0 repost.");
-      }
-    }, 8000);
-  }, [state?.profiles?.Reposters]);
+    if (state?.profiles?.Reposters?.length === 0) {
+      toast.error("Your post has 0 repost.");
+    }
+  }, [state]);
 
   useEffect(() => {
-    setTimeout(() => {
-      if (state?.profiles?.Likers?.length === 0) {
-        toast.error("Your post has 0 like.");
-      }
-    }, 8000);
-  }, [state?.profiles?.Likers]);
+    if (state?.profiles?.Likers?.length === 0) {
+      toast.error("Your post has 0 like.");
+    }
+  }, [state]);
 
   useEffect(() => {
     getUserNames();

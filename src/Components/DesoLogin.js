@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import BitcloutLogin from "react-bitclout-login";
 import { useDispatch } from "react-redux";
-import { toast } from "react-toastify";
 import { getInfo } from '../redux/actions/userInfoActions'
 import { makeStyles } from '@material-ui/core/styles';
 import { MdLogin } from 'react-icons/md';
@@ -36,7 +35,6 @@ const DesoLogin = () => {
         public_key: public_key,
       };
       dispatch(getInfo(headers))
-      toast('Login successful')
     }
   };
 
