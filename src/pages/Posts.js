@@ -70,8 +70,9 @@ const Posts = () => {
 
     }
     return (
-        <div className="container d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
-            < div className="container d-flex align-items-center justify-content-center" style={{ height: "100vg", flexWrap: "wrap", marginTop: "5rem" }}>
+
+        <div className="container d-flex justify-content-center align-items-center" style={{ height: "100vh",width:"50%" ,marginTop:"5px"}}>
+            < div className="container d-flex align-items-center justify-content-center" style={{ height: "100vh", flexWrap: "wrap",}}>
                 {loading ? <div
                     style={{
                         position: "absolute",
@@ -81,26 +82,29 @@ const Posts = () => {
                     }}
                 >
                     <TailSpin heigth="100" width="100" color="red" ariaLabel="loading" />
-                </div> : <>
+                </div> : <div style={{ height: "100vh" }}>
                     <h2>You can simply click on the buttons to make a draw among the post that you clicked.</h2>
                     {state?.info?.UserPosts?.Posts?.map((post, index) =>
                         <div key={index}>
-                            <div className="card" style={{ width: "60vw" }}>
-                                <div className="card-body">
+                            <div className="card" style={{ width: "70vw" }}>
+                                <div className="card-body d-flex" style={{ flexDirection: "column" }}>
                                     <img src={state?.info?.ProfilePicture} alt="Profile" style={{ width: "40px", borderRadius: "20px" }} /><span style={{ fontWeight: "bold" }}> {state?.info?.UserName}</span>
                                     <p className="card-text">{post?.Body}</p>
-                                    <img alt="" src={post?.ImageURLs ? post?.ImageURLs[0] : ""} style={{ width: "50vw", marginBottom: "5px" }} />
-                                    <button className="btn btn-primary mx-1" onClick={() => handleClickRepost(post)}>Reposts ({post?.RecloutCount}) </button>
-                                    <button className="btn btn-danger" onClick={() => handleClickLike(post)}>Likes  ({post?.LikeCount})</button>
+                                    <img alt="" src={post?.ImageURLs ? post?.ImageURLs[0] : ""} style={{ width: "33%", marginBottom: "5px" }} />
+                                    <div>
+                                        <button className="btn btn-primary mx-1" onClick={() => handleClickRepost(post)}>Reposts ({post?.RecloutCount}) </button>
+                                        <button className="btn btn-danger" onClick={() => handleClickLike(post)}>Likes  ({post?.LikeCount})</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     )}
 
-                </>
+                </div>
                 }
             </div>
         </div>
+
     )
 }
 

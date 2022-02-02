@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <div
       className="d-flex justify-content-center align-items-center"
-      style={{ height: "100vh" }}
+      style={{ height: "100%" }}
     >
       <h1>Contact page</h1>
     </div>

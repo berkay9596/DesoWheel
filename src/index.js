@@ -33,9 +33,9 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <div style={{ position: "fixed", top: "0", width: "100%" }}>
+     
           <TopBar />
-        </div>
+    
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/wheel" element={<Circle3 />}></Route>

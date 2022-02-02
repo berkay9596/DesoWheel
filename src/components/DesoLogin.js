@@ -3,7 +3,7 @@ import BitcloutLogin from "react-bitclout-login";
 import { useDispatch } from "react-redux";
 import { getInfo } from '../redux/actions/userInfoActions'
 import { makeStyles } from '@material-ui/core/styles';
-import { MdLogin } from 'react-icons/md';
+import { CgProfile } from 'react-icons/cg';
 
 const useStyles = makeStyles((theme) => ({
   loginButton: {
@@ -13,12 +13,12 @@ const useStyles = makeStyles((theme) => ({
     color: '#FFF',
     '&:hover': {
       color: "black",
-      backgroundColor:"white"
-   },
+      backgroundColor: "white"
+    },
     borderRadius: "10px",
-    padding:"0.7rem",
-    width:"100px", 
-    letterSpacing:"3px"  
+    padding: "0.7rem",
+    width: "150px",
+    letterSpacing: "3px"
   },
 }));
 
@@ -53,7 +53,7 @@ const DesoLogin = () => {
         JWT={JWT}
         customText="Login"
         customization={{ className: classes.loginButton }}
-        customIcon={<MdLogin />}
+        customIcon={<CgProfile />}
       />
     </div>
   );
