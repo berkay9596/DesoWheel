@@ -1,0 +1,94 @@
+@import url(//db.onlinewebfonts.com/c/47d5fd8c3738de46ef0b3fe3f68c289a?family=Perfect+DOS+VGA+437);
+@font-face {
+  font-family: "Perfect DOS VGA 437";
+  src: url("//db.onlinewebfonts.com/t/47d5fd8c3738de46ef0b3fe3f68c289a.eot");
+  src: url("//db.onlinewebfonts.com/t/47d5fd8c3738de46ef0b3fe3f68c289a.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/47d5fd8c3738de46ef0b3fe3f68c289a.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/47d5fd8c3738de46ef0b3fe3f68c289a.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/47d5fd8c3738de46ef0b3fe3f68c289a.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/47d5fd8c3738de46ef0b3fe3f68c289a.svg#Perfect DOS VGA 437")
+      format("svg");
+}
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: auto;
+  /* background: #3d7eaa !important;
+  background: -webkit-linear-gradient(to right, #ffe47a, #3d7eaa) !important ;
+  background: linear-gradient(to right, #ffe47a, #3d7eaa) !important ; */
+  background: #f0a30a !important;
+}
+h1 {
+  font-family: "Perfect DOS VGA 437", sans-serif;
+}
+h2 {
+  font-family: 'Roboto",sans-serif';
+  z-index: -1;
+}
+.reclout{
+  font-size: 25px;
+}
+
+@media only screen and (max-width: 400px) {
+  .reclout {
+    font-size: 20px;
+  }
+}
+.button-49 {
+  border-radius: 30px;
+  width: 170px;
+  height: 76px;
+  line-height: 78px;
+  font-size: 20px;
+  font-family: "Bebas Neue", sans-serif;
+  background: linear-gradient(45deg, transparent 5%, #0b0c06 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  outline: transparent;
+  z-index: -10 !important;
+}
+.button-49:hover {
+  background: white !important;
+  color: black;
+}
+.res {
+  letter-spacing: 3px;
+}
+
+@media (max-width: 992px) {
+  .res {
+    text-align: center;
+  }
+  .btns {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .res {
+    text-align: center;
+  }
+  .btns {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 472px) {
+  .btns {
+    justify-content: flex-start;
+  }
+  .button-49 {
+    width: 8rem;
+  }
+  h1 {
+    line-height: 10px;
+    padding: 10px;
+  }
+}
