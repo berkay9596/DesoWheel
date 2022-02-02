@@ -48,7 +48,7 @@ const Posts = () => {
                 "BC1YLianxEsskKYNyL959k6b6UPYtRXfZs4MF3GkbWofdoFQzZCkJRB",
         };
         if (body.RepostCount === 0) {
-            toast("Your post has no reposts")
+            toast.error("Your post has no reposts")
         } else {
             await dispatch(getProfilesRepost(headers));
             navigate("/wheel")
@@ -62,7 +62,7 @@ const Posts = () => {
                 "BC1YLianxEsskKYNyL959k6b6UPYtRXfZs4MF3GkbWofdoFQzZCkJRB",
         };
         if (body.LikeCount === 0) {
-            toast('Your post has no likes')
+            toast.error('Your post has no likes')
         } else {
             await dispatch(getProfiles(headers));
             navigate("/wheel")
