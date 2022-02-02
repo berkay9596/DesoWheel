@@ -19,7 +19,7 @@ const BasicInfo = () => {
                     <img
                         src={state?.info?.ProfilePicture}
                         className="rounded-circle"
-                        alt="Profil resmi"
+                        alt="Username"
                         width="32px"
                     />
                 </a>

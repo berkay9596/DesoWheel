@@ -83,7 +83,7 @@ const Posts = () => {
                 >
                     <TailSpin heigth="100" width="100" color="red" ariaLabel="loading" />
                 </div> : <div style={{ height: "100vh" }}>
-                    <h2>You can simply click on the buttons to make a draw among the post that you clicked.</h2>
+                    <h2>You can simply click on the buttons to <span style={{fontWeight:"bold"}}>make a wheel draw</span> among the post that you clicked.</h2>
                     {state?.info?.UserPosts?.Posts?.map((post, index) =>
                         <div key={index}>
                             <div className="card" style={{ width: "70vw" }}>

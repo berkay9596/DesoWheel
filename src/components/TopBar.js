@@ -34,7 +34,11 @@ const TopBar = () => {
     },
     style: {
       barStyles: {
-        background: "#191CA9",
+        background: "#FFFFFF",
+      },
+      linkStyles: {
+        color: 'black',
+        fontWeight:"bold"
       },
       sidebarStyles: {
         background: "black",

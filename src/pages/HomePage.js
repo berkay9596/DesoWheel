@@ -27,7 +27,7 @@ const HomePage = () => {
         <div className="row container d-flex justify-content-center">
           <div className="row col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-flex res">
 
-            <div style={{ position: "absolute", top: "22px", left: "66px", width: "300px", display: "flex", alignItems: "center", justifyContent: "start" }}>
+            <div style={{ position: "absolute", top: "18px", left: "66px", width: "300px", display: "flex", alignItems: "center", justifyContent: "start" }}>
               {public_key ? <BasicInfo /> : <DesoLogin />}
 
             </div>

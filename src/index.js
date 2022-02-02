@@ -48,7 +48,7 @@ ReactDOM.render(
         </Routes>
         <ToastContainer />
 
-        <Footer />
+        {/* <Footer /> */}
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,

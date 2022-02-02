@@ -7,7 +7,7 @@ import { CgProfile } from 'react-icons/cg';
 
 const useStyles = makeStyles((theme) => ({
   loginButton: {
-    backgroundColor: 'black',
+    backgroundColor: "#0056B3",
     textTransform: 'none',
     fontWeight: "bold",
     color: '#FFF',
