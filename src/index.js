@@ -20,7 +20,7 @@ import RepostInput from "./pages/RepostInput";
 import Roadmap from "./pages/Roadmap";
 import WhatIsDesoWheel from "./pages/WhatIsDesoWheel";
 import Contact from "./pages/Contact";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import Posts from "./pages/Posts";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

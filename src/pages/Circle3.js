@@ -55,7 +55,7 @@ const Circle3 = () => {
   };
 
   return (
-    <div style={{ display: "relative", height: "100vh", marginTop: "2rem" }}>
+    <div style={{ height: "100vh" }}>
       {profileNames.length === 0 ? (
         <div
           style={{
@@ -75,8 +75,8 @@ const Circle3 = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            width: "100vw",
-            height: "112vh",
+            // width: "100vw",
+            height: "100vh",
           }}
         >
           <Wheel

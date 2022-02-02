@@ -34,10 +34,10 @@ const TopBar = () => {
     },
     style: {
       barStyles: {
-        background: "#FFFFFF",
+        background: "#f0a30a",
       },
       linkStyles: {
-        color: 'black',
+        color: 'white',
         fontWeight:"bold"
       },
       sidebarStyles: {
