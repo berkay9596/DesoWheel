@@ -2,34 +2,52 @@ import React, { useEffect } from "react";
 import wheel from "../assets/wheel.gif";
 import { Link } from "react-router-dom";
 import { FaRetweet } from "react-icons/fa";
-import DesoLogin from '../components/DesoLogin'
-import { getInfo } from '../redux/actions/userInfoActions'
+import DesoLogin from "../components/DesoLogin";
+import { getInfo } from "../redux/actions/userInfoActions";
 import { useDispatch, useSelector } from "react-redux";
 import BasicInfo from "../components/BasicInfo";
-
+import axios from "axios";
 const HomePage = () => {
   const dispatch = useDispatch();
-  const state = useSelector(state => state.info)
-  const public_key = localStorage.getItem('publicKey');
+  const state = useSelector((state) => state.info);
+  const public_key = localStorage.getItem("publicKey");
   const headers = {
     public_key: public_key,
   };
-  console.log("token", public_key)
-  console.log("state", state)
+  console.log("token", public_key);
+  console.log("state", state);
   useEffect(() => {
-    dispatch(getInfo(headers))
+    dispatch(getInfo(headers));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [public_key])
-  return (
-    <div className="d-flex" style={{ height: "100vh", }}>
+  }, [public_key]);
 
+  const body = {
+    PublicKey: "BC1YLg62nDkdQQ9U6Uzv7D4KsCCrZHMTSK8xYDmf5erCPCkts3VaggD",
+  };
+  const apireq = () => {
+    return axios.post(
+      "https://deso-wheel.herokuapp.com/api/get-users-holders",
+      body
+    );
+  };
+  apireq();
+  return (
+    <div className="d-flex" style={{ height: "100vh" }}>
       <div className="container d-flex align-items-center justify-content-center">
         <div className="row container d-flex justify-content-center">
           <div className="row col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-flex res">
-
-            <div style={{ position: "absolute", top: "18px", left: "66px", width: "300px", display: "flex", alignItems: "center", justifyContent: "start" }}>
+            <div
+              style={{
+                position: "absolute",
+                top: "22px",
+                left: "66px",
+                width: "200px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "start",
+              }}
+            >
               {public_key ? <BasicInfo /> : <DesoLogin />}
-
             </div>
             <h1
               style={{
@@ -80,13 +98,9 @@ const HomePage = () => {
               Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis.
               Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus,
               non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.</p> */}
-
           </div>
-
         </div>
-
       </div>
-
     </div>
   );
 };

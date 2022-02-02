@@ -10,8 +10,8 @@ const LikeInput = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const headers = {
-    post_url: url,
-    reader_public_key:
+    PostUrl: url,
+    ReaderPublicKey:
       "BC1YLianxEsskKYNyL959k6b6UPYtRXfZs4MF3GkbWofdoFQzZCkJRB",
   };
   const formSubmit = async (e) => {

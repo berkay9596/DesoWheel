@@ -6,11 +6,13 @@ import { getProfilesRepost } from "../redux/actions/profilesActions";
 import { getProfiles } from "../redux/actions/profilesActions";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+// import axios from "axios";
 
 const Posts = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
+  // const [coinprice, setCoinPrice] = useState(0);
   const state = useSelector((state) => state.info);
   const public_key = localStorage.getItem("publicKey");
   const headers = {
@@ -31,15 +33,18 @@ const Posts = () => {
   }, [state]);
 
   // const body = {
-  //     public_key: public_key
-  // }
-  // const apireq = async () => {
-  //     return await axios.post('https://api-diamondapp-likes-on-posts.herokuapp.com/API/GET_USER_COIN_PRICE', body).then(resp => setCoinPrice(resp.data))
-  // }
+  //   publicKey: public_key,
+  // };
+  // const getCoinPrice = () => {
+  //   return axios
+  //     .post("https://api-diamondapp-likes-on-posts.herokuapp.com/API/GET_USER_COIN_PRICE",
+  //       body
+  //     )
+  //     .then((resp) => console.log(resp));
+  // };
   // useEffect(() => {
-  //     apireq();
-  // }, [])
-
+  //   getCoinPrice();
+  // }, []);
   const handleClickRepost = async (body) => {
     console.log(body);
     const headers = {
@@ -70,7 +75,7 @@ const Posts = () => {
   return (
     <div
       className="container d-flex justify-content-center align-items-center"
-      style={{ height: "100vh",width:"50%", marginTop: "25px" }}
+      style={{ height: "100vh", width: "50%", marginTop: "25px" }}
     >
       <div
         className="container d-flex align-items-center justify-content-center"
@@ -109,7 +114,11 @@ const Posts = () => {
                     <img
                       src={state?.info?.ProfilePicture}
                       alt="Profile"
-                      style={{ width: "40px", borderRadius: "20px" }}
+                      style={{
+                        width: "50px",
+                        height: "50px",
+                        borderRadius: "50px",
+                      }}
                     />
                     <span style={{ fontWeight: "bold" }}>
                       {" "}
