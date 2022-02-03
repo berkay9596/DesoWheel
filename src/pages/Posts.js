@@ -128,7 +128,7 @@ const Posts = () => {
                     <img
                       alt=""
                       src={post?.ImageURLs ? post?.ImageURLs[0] : ""}
-                      style={{ width: "33%", marginBottom: "5px" }}
+                      style={{ width: "50%", marginBottom: "5px" }}
                     />
                     <div>
                       <button
