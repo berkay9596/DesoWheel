@@ -62,7 +62,6 @@ const LikeInput = () => {
           fontWeight: "bold",
           color: "#0056B3",
           fontSize: "25px",
-          fontWeight:"bold",
           zIndex: -2,
         }}
       >
