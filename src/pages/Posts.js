@@ -75,11 +75,11 @@ const Posts = () => {
   return (
     <div
       className="container d-flex justify-content-center align-items-center"
-      style={{ height: "100vh", width: "50%", marginTop: "25px" }}
+      style={{ height: "92vh", width: "50%", marginTop: "25px" }}
     >
       <div
         className="container d-flex align-items-center justify-content-center"
-        style={{ height: "100vh", flexWrap: "wrap" }}
+        style={{ height: "92vh", flexWrap: "wrap" }}
       >
         {loading ? (
           <div
@@ -98,15 +98,15 @@ const Posts = () => {
             />
           </div>
         ) : (
-          <div style={{ height: "100vh" }}>
+          <div>
             <h2>
-              You can simply click on the buttons to{" "}
+              You can simply{" "}
               <span style={{ fontWeight: "bold" }}>make a wheel draw</span>{" "}
               among the post that you clicked.
             </h2>
             {state?.info?.UserPosts?.Posts?.map((post, index) => (
               <div key={index}>
-                <div className="card" style={{ width: "50vw" }}>
+                <div className="card card-resp" style={{ width: "50vw" , marginBottom:"10px" }}>
                   <div
                     className="card-body d-flex"
                     style={{ flexDirection: "column" }}

@@ -28,7 +28,7 @@ const store = createStore(
   rootReducer,
   composeEnhancers(applyMiddleware(thunk))
 );
-const publicKey = localStorage.getItem('publicKey')
+const publicKey = localStorage.getItem("publicKey");
 
 ReactDOM.render(
   <React.StrictMode>
@@ -43,7 +43,10 @@ ReactDOM.render(
           <Route path="/repost" element={<RepostInput />}></Route>
           <Route path="/roadmap" element={<Roadmap />}></Route>
           <Route path="/desowheel" element={<WhatIsDesoWheel />}></Route>
-          <Route path="/posts" element={publicKey? <Posts /> : <HomePage/>}></Route>
+          <Route
+            path="/posts"
+            element={publicKey ? <Posts /> : <HomePage />}
+          ></Route>
           <Route path="/contact" element={<Contact />}></Route>
         </Routes>
         <ToastContainer />

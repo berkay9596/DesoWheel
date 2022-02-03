@@ -23,7 +23,7 @@ body {
   background: -webkit-linear-gradient(to right, #ffe47a, #3d7eaa) !important ;
   background: linear-gradient(to right, #ffe47a, #3d7eaa) !important ; */
   background: #f0a30a !important;
-  background: #F7F9F9 !important;
+  background: #f7f9f9 !important;
 }
 h1 {
   font-family: "Perfect DOS VGA 437", sans-serif;
@@ -32,7 +32,7 @@ h2 {
   font-family: 'Roboto",sans-serif';
   z-index: -1;
 }
-.reclout{
+.reclout {
   font-size: 25px;
 }
 
@@ -48,7 +48,7 @@ h2 {
   line-height: 78px;
   font-size: 20px;
   font-family: "Bebas Neue", sans-serif;
-  background: linear-gradient(45deg, transparent 5%, #0056B3 5%);
+  background: linear-gradient(45deg, transparent 5%, #0056b3 5%);
   border: 0;
   color: #fff;
   letter-spacing: 3px;
@@ -94,35 +94,8 @@ h2 {
   }
 }
 
-
-/* .page-section {
-  padding: 100px 0;
-}
-.page-section h2.section-heading {
-  font-size: 40px;
-  margin-top: 0;
-  margin-bottom: 15px;
-}
-.page-section h3.section-subheading {
-  font-size: 16px;
-  font-weight: 400;
-  font-style: italic;
-  margin-bottom: 75px;
-  text-transform: none;
-  font-family: "Droid Serif", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-@media (min-width: 768px) {
-  section {
-    padding: 150px 0;
+@media (max-width: 472px) {
+  .card-resp {
+    width: 80vw !important;
   }
 }
-::-moz-selection {
-  background: #fed136;
-  text-shadow: none;
-}
-::selection {
-  background: #fed136;
-  text-shadow: none;
-} */
