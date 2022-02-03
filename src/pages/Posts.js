@@ -132,13 +132,13 @@ const Posts = () => {
                     />
                     <div>
                       <button
-                        className="btn btn-primary mx-1"
+                        className="btn btn-primary"
                         onClick={() => handleClickRepost(post)}
                       >
                         Reposts ({post?.RecloutCount}){" "}
                       </button>
                       <button
-                        className="btn btn-danger"
+                        className="btn btn-danger mx-1"
                         onClick={() => handleClickLike(post)}
                       >
                         Likes ({post?.LikeCount})
