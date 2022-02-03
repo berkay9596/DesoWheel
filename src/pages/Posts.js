@@ -106,7 +106,7 @@ const Posts = () => {
             </h2>
             {state?.info?.UserPosts?.Posts?.map((post, index) => (
               <div key={index}>
-                <div className="card" style={{ width: "70vw" }}>
+                <div className="card" style={{ width: "50vw" }}>
                   <div
                     className="card-body d-flex"
                     style={{ flexDirection: "column" }}

@@ -26,6 +26,11 @@ const BasicInfo = () => {
           </a>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li>
+              <a className="dropdown-item" href="/posts">
+                My posts
+              </a>
+            </li>
+            <li>
               <a
                 onClick={() => localStorage.removeItem("publicKey")}
                 className="dropdown-item"
