@@ -3,8 +3,8 @@ import React from "react";
 const Contact = () => {
   return (
     <div
-      className="d-flex justify-content-center align-items-center"
-      style={{ height: "100%" }}
+      className="container d-flex justify-content-center align-items-center"
+      style={{ height: "91vh" }}
     >
       <h1>Contact page</h1>
     </div>

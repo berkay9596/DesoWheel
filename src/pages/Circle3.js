@@ -55,7 +55,7 @@ const Circle3 = () => {
   };
 
   return (
-    <div style={{ height: "100vh" }}>
+    <div style={{ height: "91vh" }}>
       {profileNames.length === 0 ? (
         <div
           style={{

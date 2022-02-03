@@ -81,7 +81,7 @@ const Roadmap = () => {
   //     </div>
   //   </div>
   // </section>
-  <div className="d-flex align-items-center justify-content-center h-100">
+  <div className="container d-flex align-items-center justify-content-center" style={{height:"91vh"}}>
   <h1>Roadmap Page</h1>
   </div>
   );
