@@ -72,6 +72,7 @@ const Posts = () => {
       navigate("/wheel");
     }
   };
+  console.log("state?.info?.UserPosts?.Posts", state?.info?.UserPosts?.Posts);
   return (
     <div
       className="container d-flex justify-content-center align-items-center"
@@ -106,7 +107,10 @@ const Posts = () => {
             </h2>
             {state?.info?.UserPosts?.Posts?.map((post, index) => (
               <div key={index}>
-                <div className="card card-resp" style={{ width: "50vw" , marginBottom:"10px" }}>
+                <div
+                  className="card card-resp"
+                  style={{ width: "50vw", marginBottom: "10px" }}
+                >
                   <div
                     className="card-body d-flex"
                     style={{ flexDirection: "column" }}
@@ -125,9 +129,28 @@ const Posts = () => {
                       {state?.info?.UserName}
                     </span>
                     <p className="card-text">{post?.Body}</p>
+                    {post?.RecloutedPostEntryResponse !== null ? (
+                      <p className="card-text">
+                        <span style={{fontWeight:"bold", color:"red"}}> Reposted post </span>
+                        <p className="card-text">
+                          {" "}
+                          {post?.RecloutedPostEntryResponse?.Body}
+                        </p>
+                      </p>
+                    ) : (
+                      ""
+                    )}
                     <img
                       alt=""
                       src={post?.ImageURLs ? post?.ImageURLs[0] : ""}
+                      style={{ width: "50%", marginBottom: "5px" }}
+                    />
+                    <img
+                      src={
+                        post?.RecloutedPostEntryResponse !== null
+                          ? post?.RecloutedPostEntryResponse?.ImageURLs
+                          : ""
+                      }
                       style={{ width: "50%", marginBottom: "5px" }}
                     />
                     <div>
