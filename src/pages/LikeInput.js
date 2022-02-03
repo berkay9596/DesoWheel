@@ -11,18 +11,16 @@ const LikeInput = () => {
   const navigate = useNavigate();
   const headers = {
     PostUrl: url,
-    ReaderPublicKey:
-      "BC1YLianxEsskKYNyL959k6b6UPYtRXfZs4MF3GkbWofdoFQzZCkJRB",
+    ReaderPublicKey: "BC1YLianxEsskKYNyL959k6b6UPYtRXfZs4MF3GkbWofdoFQzZCkJRB",
   };
   const formSubmit = async (e) => {
     e.preventDefault();
     if (!url) {
       toast.error("Please enter the url.");
-    }else if (!url.includes("post")) {
+    } else if (!url.includes("post")) {
       toast.error("Please enter valid url");
       setUrl("");
-    } 
-    else {
+    } else {
       await dispatch(getProfiles(headers));
       navigate("/wheel");
     }
@@ -30,14 +28,13 @@ const LikeInput = () => {
 
   return (
     <div
-    className="container"
-    style={{
-      height:"100vh",
-      display: "flex",
-      flexDirection:"column-reverse",
-      justifyContent: "center",
-      
-    }}
+      className="container"
+      style={{
+        height: "91vh",
+        display: "flex",
+        flexDirection: "column-reverse",
+        justifyContent: "center",
+      }}
     >
       <form onSubmit={formSubmit} className="form-group">
         <div
@@ -59,20 +56,22 @@ const LikeInput = () => {
           </button>
         </div>
       </form>
-      <h1 className="text-center" style={{ zIndex: -2 }}>
-        Your Post URL
-      </h1>
       <p
         className="text-center"
         style={{
           fontWeight: "bold",
-          color: "white",
+          color: "#0056B3",
           fontSize: "25px",
+          fontWeight:"bold",
           zIndex: -2,
         }}
       >
-        LIKERS
+       ( LIKERS ) 
       </p>
+      <h1 className="text-center" style={{ zIndex: -2 , lineHeight:"45px"}}>
+        Your Post URL
+      </h1>
+  
     </div>
   );
 };

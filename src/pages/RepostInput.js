@@ -30,7 +30,7 @@ const RepostInput = () => {
     <div
     className="container"
     style={{
-      height:"100vh",
+      height:"92vh",
       display: "flex",
       flexDirection:"column-reverse",
       justifyContent: "center",
@@ -56,20 +56,21 @@ const RepostInput = () => {
           </button>
         </div>
       </form>
-      <h1 className="text-center" style={{ zIndex: -2 }}>
-        Your Post URL
-      </h1>
       <p
         className="text-center"
         style={{
           fontWeight: "bold",
-          color: "white",
+          color: "#0056B3",
           fontSize: "25px",
           zIndex: -2,
         }}
       >
-        REPOSTERS
+       ( REPOSTERS )
       </p>
+      <h1 className="text-center" style={{ zIndex: -2, lineHeight:"45px" }}>
+        Your Post URL
+      </h1>
+    
     </div>
   );
 };
