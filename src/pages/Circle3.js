@@ -26,7 +26,6 @@ const Circle3 = () => {
       setProfileNames(a);
     }
   };
-
   useEffect(() => {
     if (state?.profiles?.Reposters?.length === 0) {
       toast.error("Your post has 0 repost.");
@@ -45,7 +44,7 @@ const Circle3 = () => {
   }, [state]);
 
   const result = profileNames?.map((obj, i) =>
-    Object.assign({ option: profileNames[i] }, obj)
+    Object.assign({ option: profileNames[i] })
   );
 
   const handleSpinClick = () => {
@@ -87,6 +86,9 @@ const Circle3 = () => {
               setMustSpin(false);
               setDurum(true);
             }}
+            fontSize={14}
+            radiusLineWidth={1}
+            outerBorderWidth={0}
             backgroundColors={[
               "#5D8AA8",
               "blue",
@@ -135,6 +137,7 @@ const Circle3 = () => {
               "#C32148	",
             ]}
             textColors={["#ffffff"]}
+            
           />
           <button className="btn btn-success" onClick={handleSpinClick}>
             SPIN
