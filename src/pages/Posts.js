@@ -149,7 +149,6 @@ const Posts = () => {
                           ? post?.RecloutedPostEntryResponse?.ImageURLs
                           : ""
                       }
-                      alt="repost"
                       style={{ width: "50%", marginBottom: "5px" }}
                     />
                     <div>
