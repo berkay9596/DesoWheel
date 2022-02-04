@@ -6,13 +6,13 @@ import { getProfilesRepost } from "../redux/actions/profilesActions";
 import { getProfiles } from "../redux/actions/profilesActions";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-// import axios from "axios";
+import axios from "axios";
 
 const Posts = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
-  // const [coinprice, setCoinPrice] = useState(0);
+  const [coinPrice, setCoinPrice] = useState(0);
   const state = useSelector((state) => state.info);
   const public_key = localStorage.getItem("publicKey");
   const headers = {
@@ -32,19 +32,18 @@ const Posts = () => {
     }
   }, [state]);
 
-  // const body = {
-  //   publicKey: public_key,
-  // };
-  // const getCoinPrice = () => {
-  //   return axios
-  //     .post("https://api-diamondapp-likes-on-posts.herokuapp.com/API/GET_USER_COIN_PRICE",
-  //       body
-  //     )
-  //     .then((resp) => console.log(resp));
-  // };
-  // useEffect(() => {
-  //   getCoinPrice();
-  // }, []);
+  const body = {
+    PublicKey: public_key,
+  };
+  const getCoinPrice = () => {
+    return axios
+      .post("https://deso-wheel.herokuapp.com/api/get-users-coin-price", body)
+      .then((resp) => setCoinPrice(resp.data.coinPrice));
+  };
+  useEffect(() => {
+    getCoinPrice();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const handleClickRepost = async (body) => {
     const headers = {
       PostUrl: `https://bitclout.com/posts/${body.PostHashHex}?tab=posts`,
@@ -111,7 +110,7 @@ const Posts = () => {
                 >
                   <div
                     className="card-body d-flex"
-                    style={{ flexDirection: "column"}}
+                    style={{ flexDirection: "column" }}
                   >
                     <img
                       src={state?.info?.ProfilePicture}
@@ -122,14 +121,24 @@ const Posts = () => {
                         borderRadius: "50px",
                       }}
                     />
-                    <span style={{ fontWeight: "bold" }}>
-                      {" "}
-                      {state?.info?.UserName}
-                    </span>
+                    <div className="d-flex">
+                      <span style={{ fontWeight: "bold" }}>
+                        {" "}
+                        {state?.info?.UserName}
+                      </span>
+                      ~
+                      <span style={{ fontWeight: "bold" }}>
+                        {" "}
+                        ${coinPrice} Coin Price
+                      </span>
+                    </div>
                     <p className="card-text">{post?.Body}</p>
                     {post?.RecloutedPostEntryResponse !== null ? (
                       <p className="card-text">
-                        <span style={{fontWeight:"bold", color:"red"}}> Reposted post </span>
+                        <span style={{ fontWeight: "bold", color: "red" }}>
+                          {" "}
+                          Reposted post{" "}
+                        </span>
                         <p className="card-text">
                           {" "}
                           {post?.RecloutedPostEntryResponse?.Body}

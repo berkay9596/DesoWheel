@@ -6,7 +6,7 @@ import DesoLogin from "../components/DesoLogin";
 import { getInfo } from "../redux/actions/userInfoActions";
 import { useDispatch, useSelector } from "react-redux";
 import BasicInfo from "../components/BasicInfo";
-import axios from "axios";
+// import axios from "axios";
 const HomePage = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.info);
