@@ -90,6 +90,8 @@ const Circle3 = () => {
             backgroundColors={[
               "#5D8AA8",
               "blue",
+              "red",
+              "orange",
               "purple",
               "black",
               "green",
