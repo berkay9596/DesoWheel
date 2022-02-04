@@ -88,25 +88,44 @@ const Circle3 = () => {
               setDurum(true);
             }}
             backgroundColors={[
-              "red",
-              "lightblue",
-              "black",
+              "#5D8AA8",
+              "#F0F8FF	",
+              "#E32636	",
               "gold",
-              "orange",
-              "rebeccapurple",
-              "brown",
-              "gray",
+              "#E52B50	",
+              "#FFBF00	",
+              "#A4C639	",
+              "#8DB600	",
               "pink",
-              "darkgreen",
-              "blue",
-              "lime",
-              "magenta",
-              "silver",
-              "whitesmoke",
-              "ruby",
-              "earlsgreen",
-              "paleleaf",
-              "dazzledblue",
+              "#FBCEB1	",
+              "#7FFFD4	",
+              "#4B5320	",
+              "#3B444B	",
+              "#E9D66B	",
+              "#B2BEB5	",
+              "#87A96B	",
+              "#FF9966	",
+              "#6D351A	",
+              "#007FFF	",
+              "#89CFF0	",
+              "#A1CAF1	",
+              "#F4C2C2	",
+              "#FFD12A	",
+              "#848482	",
+              "#98777B	",
+              "#F5F5DC	",
+              "#3D2B1F	",
+              "#318CE7	",
+              "#FAF0BE	",
+              "#0000FF	",
+              "#DE5D83	",
+              "#79443B	",
+              "#CC0000	",
+              "#B5A642	",
+              "#66FF00	",
+              "#BF94E4	",
+
+              "#C32148	",
             ]}
             textColors={["#ffffff"]}
           />
@@ -114,10 +133,7 @@ const Circle3 = () => {
             SPIN
           </button>
         </div>
-     
-      )
-
-      }
+      )}
 
       {durum && (
         <div style={{ position: "relative", top: "20%" }}>
