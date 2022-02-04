@@ -75,11 +75,10 @@ const Circle3 = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            // width: "100vw",
+            width: "100vw",
             height: "92vh",
           }}
         >
-          <div className="row">
           <Wheel
             mustStartSpinning={mustSpin}
             prizeNumber={prizeNumber}
@@ -115,7 +114,7 @@ const Circle3 = () => {
             SPIN
           </button>
         </div>
-        </div>
+     
       )
 
       }
