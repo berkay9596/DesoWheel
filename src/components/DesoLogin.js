@@ -32,7 +32,7 @@ const DesoLogin = () => {
       await localStorage.setItem("publicKey", publicKey);
       const public_key = localStorage.getItem('publicKey');
       const headers = {
-        public_key: public_key,
+        PublicKey: public_key,
       };
       dispatch(getInfo(headers))
     }

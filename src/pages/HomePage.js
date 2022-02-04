@@ -12,7 +12,7 @@ const HomePage = () => {
   const state = useSelector((state) => state.info);
   const public_key = localStorage.getItem("publicKey");
   const headers = {
-    public_key: public_key,
+    PublicKey: public_key,
   };
   console.log("token", public_key);
   console.log("state", state);
@@ -21,16 +21,16 @@ const HomePage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [public_key]);
 
-  const body = {
-    PublicKey: "BC1YLg62nDkdQQ9U6Uzv7D4KsCCrZHMTSK8xYDmf5erCPCkts3VaggD",
-  };
-  const apireq = () => {
-    return axios.post(
-      "https://deso-wheel.herokuapp.com/api/get-users-holders",
-      body
-    );
-  };
-  apireq();
+  // const body = {
+  //   PublicKey: "BC1YLjY7KnccPLkwd322FeKsDJts6SsLt1BfBjxDJrpHuP4Bjyb1WQa",
+  // };
+  // const apireq = () => {
+  //   return axios.post(
+  //     "https://deso-wheel.herokuapp.com/api/get-users-holders",
+  //     body
+  //   ).then(resp=> console.log("resp",resp));
+  // };
+  // apireq();
   return (
     <div className="d-flex" style={{ height: "92vh" }}>
       <div className="container d-flex align-items-center justify-content-center">

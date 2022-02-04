@@ -16,7 +16,7 @@ const Posts = () => {
   const state = useSelector((state) => state.info);
   const public_key = localStorage.getItem("publicKey");
   const headers = {
-    public_key: public_key,
+    PublicKey: public_key,
   };
   useEffect(() => {
     dispatch(getInfo(headers));
@@ -46,10 +46,9 @@ const Posts = () => {
   //   getCoinPrice();
   // }, []);
   const handleClickRepost = async (body) => {
-    console.log(body);
     const headers = {
-      post_url: `https://bitclout.com/nft/${body.PostHashHex}?tab=posts`,
-      reader_public_key:
+      PostUrl: `https://bitclout.com/posts/${body.PostHashHex}?tab=posts`,
+      ReaderPublicKey:
         "BC1YLianxEsskKYNyL959k6b6UPYtRXfZs4MF3GkbWofdoFQzZCkJRB",
     };
     if (body.RepostCount === 0) {
@@ -61,8 +60,8 @@ const Posts = () => {
   };
   const handleClickLike = async (body) => {
     const headers = {
-      post_url: `https://bitclout.com/nft/${body.PostHashHex}?tab=posts`,
-      reader_public_key:
+      PostUrl: `https://bitclout.com/posts/${body.PostHashHex}?tab=posts`,
+      ReaderPublicKey:
         "BC1YLianxEsskKYNyL959k6b6UPYtRXfZs4MF3GkbWofdoFQzZCkJRB",
     };
     if (body.LikeCount === 0) {
@@ -72,7 +71,6 @@ const Posts = () => {
       navigate("/wheel");
     }
   };
-  console.log("state?.info?.UserPosts?.Posts", state?.info?.UserPosts?.Posts);
   return (
     <div
       className="container d-flex justify-content-center align-items-center"
@@ -109,11 +107,11 @@ const Posts = () => {
               <div key={index}>
                 <div
                   className="card card-resp"
-                  style={{ width: "50vw", marginBottom: "10px" }}
+                  style={{ width: "50vw%", marginBottom: "10px" }}
                 >
                   <div
                     className="card-body d-flex"
-                    style={{ flexDirection: "column" }}
+                    style={{ flexDirection: "column"}}
                   >
                     <img
                       src={state?.info?.ProfilePicture}
@@ -151,6 +149,7 @@ const Posts = () => {
                           ? post?.RecloutedPostEntryResponse?.ImageURLs
                           : ""
                       }
+                      alt="repost"
                       style={{ width: "50%", marginBottom: "5px" }}
                     />
                     <div>

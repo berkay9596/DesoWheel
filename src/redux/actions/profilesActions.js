@@ -4,7 +4,7 @@ export const getProfiles = (body) => {
   return (dispatch) => {
     axios
       .post(
-        "https://api-diamondapp-likes-on-posts.herokuapp.com/API/GET_USERS_WHO_LIKED_POST",
+        "https://deso-wheel.herokuapp.com/api/get-users-who-liked-post",
         body
       )
       .then((resp) =>
@@ -21,7 +21,7 @@ export const getProfilesRepost = (body) => {
   return (dispatch) => {
     axios
       .post(
-        "https://api-diamondapp-likes-on-posts.herokuapp.com/API/GET_USERS_WHO_RE_POSTED_POST",
+        "https://deso-wheel.herokuapp.com/api/get-users-who-re-posted-any-post",
         body
       )
       .then((resp) =>

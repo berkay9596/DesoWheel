@@ -76,9 +76,10 @@ const Circle3 = () => {
             alignItems: "center",
             justifyContent: "center",
             // width: "100vw",
-            height: "100vh",
+            height: "92vh",
           }}
         >
+          <div className="row">
           <Wheel
             mustStartSpinning={mustSpin}
             prizeNumber={prizeNumber}
@@ -114,7 +115,10 @@ const Circle3 = () => {
             SPIN
           </button>
         </div>
-      )}
+        </div>
+      )
+
+      }
 
       {durum && (
         <div style={{ position: "relative", top: "20%" }}>

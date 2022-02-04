@@ -4,7 +4,7 @@ export const getInfo = (body) => {
   return (dispatch) => {
     axios
       .post(
-        "https://api-diamondapp-likes-on-posts.herokuapp.com/API/GET_USER_INFO",
+        "https://deso-wheel.herokuapp.com/api/get-users-username-pp-posts",
         body
       )
       .then((resp) =>
