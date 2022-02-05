@@ -32,7 +32,7 @@ const HomePage = () => {
   // };
   // apireq();
   return (
-    <div className="d-flex" style={{ height: "100vh" }}>
+    <div className="d-flex" style={{ height: "92vh" }}>
       <div className="container d-flex align-items-center justify-content-center">
         <div className="row container d-flex justify-content-center">
           <div className="row col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-flex res">
