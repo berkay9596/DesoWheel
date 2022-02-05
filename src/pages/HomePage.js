@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import wheel from "../assets/wheel.gif";
+import wheel from "../assets/desologogif.gif";
 import { Link } from "react-router-dom";
-import { FaRetweet } from "react-icons/fa";
 import DesoLogin from "../components/DesoLogin";
 import { getInfo } from "../redux/actions/userInfoActions";
 import { useDispatch, useSelector } from "react-redux";
 import BasicInfo from "../components/BasicInfo";
 // import axios from "axios";
+
 const HomePage = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.info);
@@ -32,7 +32,7 @@ const HomePage = () => {
   // };
   // apireq();
   return (
-    <div className="d-flex" style={{ height: "92vh" }}>
+    <div className="d-flex" style={{ height: "100vh" }}>
       <div className="container d-flex align-items-center justify-content-center">
         <div className="row container d-flex justify-content-center">
           <div className="row col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-flex res">
@@ -55,11 +55,12 @@ const HomePage = () => {
                 fontWeight: "bold",
                 fontSize: "3rem",
                 zIndex: -2,
+                lineHeight: "70px",
               }}
             >
-              Deso
+              Deso Wheel
             </h1>
-            <h1
+            {/* <h1
               style={{
                 color: "black",
                 fontWeight: "bold",
@@ -68,36 +69,33 @@ const HomePage = () => {
               }}
             >
               Wheel
-            </h1>
+            </h1> */}
             <h2 style={{ color: "black" }}>
               Paste the URL of any post on DESO.
-              <br /> Get a winner among the lucky <b>Reposters</b> or{" "}
-              <b>Likers.</b>
+              <br /> Get a winner among the lucky <b>Reposters</b>,{" "}
+              <b>Diamonders</b> or <b>Likers.</b>
             </h2>
             <div className="d-flex btns">
+              <Link to="/like">
+                <button className="button-49">
+                  Diamonds
+                  <i class="far fa-gem" style={{color:"#006AF9"}}></i>
+                </button>
+              </Link>
               <Link to="/repost">
-                <button className="button-49 ">
-                  Repost <FaRetweet className="reclout" />
+                <button className="button-49 mx-1">
+                  Repost <i class="fas fa-retweet" style={{color:"white"}}></i>
                 </button>
               </Link>
               <Link to="/like">
-                <button className="button-49 mx-3">Likes ❤️</button>
+                <button className="button-49 mx-1">
+                  Likes <i class="fas fa-heart" style={{color:"red"}}></i>
+                </button>
               </Link>
             </div>
           </div>
           <div className="row col-xl-6 col-lg-6 col-md-12 col-12 col-sm-12">
             <img className="wheel-gif" src={wheel} alt="wheel" />
-            {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros,
-              pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus.
-              Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex,
-              in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent
-              per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut
-              vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor.
-              Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat
-              faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc.
-              Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis.
-              Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus,
-              non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.</p> */}
           </div>
         </div>
       </div>

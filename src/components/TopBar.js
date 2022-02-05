@@ -2,7 +2,7 @@ import React from "react";
 
 import { Navbar } from "responsive-navbar-react";
 import "responsive-navbar-react/dist/index.css";
-import Logo from "../assets/wheel.gif";
+import Logo from "../assets/desologo.png";
 const TopBar = () => {
   const publicKey = localStorage.getItem("publicKey");
   const props = {
