@@ -53,35 +53,16 @@ const Posts = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const handleClickRepost = async (body) => {
-    const headers = {
-      PostUrl: `https://bitclout.com/posts/${body.PostHashHex}?tab=posts`,
-      ReaderPublicKey:
-        "BC1YLianxEsskKYNyL959k6b6UPYtRXfZs4MF3GkbWofdoFQzZCkJRB",
-    };
-    if (body.RepostCount === 0) {
-      toast.error("Your post has no reposts");
-    } else {
-      await dispatch(getProfilesRepost(headers));
+      await dispatch(getProfilesRepost(body));
       navigate("/wheel");
-    }
   };
   const handleClickLike = async (body) => {
-    const headers = {
-      PostUrl: `https://bitclout.com/posts/${body.PostHashHex}?tab=posts`,
-      ReaderPublicKey:
-        "BC1YLianxEsskKYNyL959k6b6UPYtRXfZs4MF3GkbWofdoFQzZCkJRB",
-    };
-    if (body.LikeCount === 0) {
-      toast.error("Your post has no likes");
-    } else {
-    await dispatch(getProfiles(headers));
+    await dispatch(getProfiles(body));
     navigate("/wheel");
-    }
   };
   const handleClickFilter = async (body) => {
-    console.log("body", body);
     const headers = {
-      PostUrl: `https://bitclout.com/posts/${body.PostHashHex}?tab=posts`,
+      PostUrl: `https://bitclout.com/posts/${body?.PostHashHex}?tab=posts`,
       ReaderPublicKey:
         "BC1YLiCaF8wLPve9Rhj1pp2QFJeC73sBET5fKt1ZrrQTAAis2tL11Zj",
       IsLiker: like,
@@ -89,7 +70,7 @@ const Posts = () => {
       IsDiamondSender: diamond,
     };
     const headersSingle = {
-      PostUrl: `https://bitclout.com/posts/${body.PostHashHex}?tab=posts`,
+      PostUrl: `https://bitclout.com/posts/${body?.PostHashHex}?tab=posts`,
       ReaderPublicKey:
         "BC1YLiCaF8wLPve9Rhj1pp2QFJeC73sBET5fKt1ZrrQTAAis2tL11Zj",
     };
