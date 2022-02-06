@@ -217,22 +217,10 @@ const Posts = () => {
                     />
                     <div>
                       <button
-                        className="btn btn-primary"
-                        onClick={() => handleClickRepost(post)}
-                      >
-                        Reposts ({post?.RecloutCount}){" "}
-                      </button>
-                      <button
-                        className="btn btn-danger mx-1"
-                        onClick={() => handleClickLike(post)}
-                      >
-                        Likes ({post?.LikeCount})
-                      </button>
-                      <button
-                        className="btn btn-danger mx-1"
+                        className="btn btn-danger my-1"
                         onClick={() => handleClickFilter(post)}
                       >
-                        Filter the post ({post?.LikeCount})
+                        Filter the post
                       </button>
                     </div>
                   </div>
