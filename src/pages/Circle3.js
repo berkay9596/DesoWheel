@@ -15,15 +15,20 @@ const Circle3 = () => {
   const state = useSelector((state) => state.users);
   const getUserNames = async () => {
     if (state?.profiles?.Likers) {
-      const a = await Object.values(
+      const likers = await Object.values(
         state?.profiles?.Likers?.map((liker) => liker.Username)
       );
-      setProfileNames(a);
+      setProfileNames(likers);
     } else if (state?.profiles?.Reposters) {
-      const a = await Object.values(
+      const reposters = await Object.values(
         state?.profiles?.Reposters?.map((reposter) => reposter.Username)
       );
-      setProfileNames(a);
+      setProfileNames(reposters);
+    } else {
+      const filteredProfiles = await Object.values(
+        state?.profiles?.map((profile) => profile.Username)
+      );
+      setProfileNames(filteredProfiles);
     }
   };
   useEffect(() => {
@@ -52,7 +57,6 @@ const Circle3 = () => {
     setPrizeNumber(newPrizeNumber);
     setMustSpin(true);
   };
-
   return (
     <div style={{ height: "91vh" }}>
       {profileNames.length === 0 ? (
@@ -137,7 +141,6 @@ const Circle3 = () => {
               "#C32148	",
             ]}
             textColors={["#ffffff"]}
-            
           />
           <button className="btn btn-success" onClick={handleSpinClick}>
             SPIN

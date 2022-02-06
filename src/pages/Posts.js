@@ -2,17 +2,25 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { getInfo } from "../redux/actions/userInfoActions";
 import { TailSpin } from "react-loader-spinner";
-import { getProfilesRepost } from "../redux/actions/profilesActions";
+import {
+  getProfilesFiltered,
+  getProfilesRepost,
+} from "../redux/actions/profilesActions";
 import { getProfiles } from "../redux/actions/profilesActions";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
+// import FilterPostModal from "../components/FilterPostModal";
 
 const Posts = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
+  // const [filterModal, setFilterModal] = useState(false);
   const [coinPrice, setCoinPrice] = useState(0);
+  const [like, setLike] = useState(false);
+  const [repost, setRepost] = useState(false);
+  const [diamond, setDiamond] = useState(false);
   const state = useSelector((state) => state.info);
   const public_key = localStorage.getItem("publicKey");
   const headers = {
@@ -66,10 +74,37 @@ const Posts = () => {
     if (body.LikeCount === 0) {
       toast.error("Your post has no likes");
     } else {
-      await dispatch(getProfiles(headers));
+    await dispatch(getProfiles(headers));
+    navigate("/wheel");
+    }
+  };
+  const handleClickFilter = async (body) => {
+    console.log("body", body);
+    const headers = {
+      PostUrl: `https://bitclout.com/posts/${body.PostHashHex}?tab=posts`,
+      ReaderPublicKey:
+        "BC1YLiCaF8wLPve9Rhj1pp2QFJeC73sBET5fKt1ZrrQTAAis2tL11Zj",
+      IsLiker: like,
+      IsRePoster: repost,
+      IsDiamondSender: diamond,
+    };
+    const headersSingle = {
+      PostUrl: `https://bitclout.com/posts/${body.PostHashHex}?tab=posts`,
+      ReaderPublicKey:
+        "BC1YLiCaF8wLPve9Rhj1pp2QFJeC73sBET5fKt1ZrrQTAAis2tL11Zj",
+    };
+    if (like === true && repost === false && diamond === false) {
+      await handleClickLike(headersSingle);
+    } else if (like === false && repost === true && diamond === false) {
+      await handleClickRepost(headersSingle);
+    } else if (like === false && repost === false && diamond === true) {
+      await alert("diamond tekil isteği");
+    } else {
+      await dispatch(getProfilesFiltered(headers));
       navigate("/wheel");
     }
   };
+
   return (
     <div
       className="container d-flex justify-content-center align-items-center"
@@ -160,6 +195,26 @@ const Posts = () => {
                       }
                       style={{ width: "50%", marginBottom: "5px" }}
                     />
+                    <label>Like</label>{" "}
+                    <input
+                      type="checkbox"
+                      value={like}
+                      onChange={() => setLike(!like)}
+                    />
+                    <br />
+                    <label>Repost</label>{" "}
+                    <input
+                      type="checkbox"
+                      value={repost}
+                      onChange={() => setRepost(!repost)}
+                    />
+                    <br />
+                    <label>Diamond</label>{" "}
+                    <input
+                      type="checkbox"
+                      value={diamond}
+                      onChange={() => setDiamond(!diamond)}
+                    />
                     <div>
                       <button
                         className="btn btn-primary"
@@ -172,6 +227,12 @@ const Posts = () => {
                         onClick={() => handleClickLike(post)}
                       >
                         Likes ({post?.LikeCount})
+                      </button>
+                      <button
+                        className="btn btn-danger mx-1"
+                        onClick={() => handleClickFilter(post)}
+                      >
+                        Filter the post ({post?.LikeCount})
                       </button>
                     </div>
                   </div>
