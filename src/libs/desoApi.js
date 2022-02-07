@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const DEFAULT_NODE_URL = "https://api.desodev.com/api";
+const DEFAULT_NODE_URL = "https://node.deso.org/api";
 let client = null;
 
 class DesoApi {
