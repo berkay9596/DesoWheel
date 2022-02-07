@@ -5,6 +5,7 @@ import DesoLogin from "../components/DesoLogin";
 import { getInfo } from "../redux/actions/userInfoActions";
 import { useDispatch, useSelector } from "react-redux";
 import BasicInfo from "../components/BasicInfo";
+import Login from "../components/Login";
 // import axios from "axios";
 
 const HomePage = () => {
@@ -20,6 +21,10 @@ const HomePage = () => {
     dispatch(getInfo(headers));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [public_key]);
+  const identity = localStorage.getItem("identityUsersV2");
+  console.log(",identity", identity);
+  const publickey = identity.publicKey;
+  console.log("pubblickKey", publickey);
 
   // const body = {
   //   PublicKey: "BC1YLjY7KnccPLkwd322FeKsDJts6SsLt1BfBjxDJrpHuP4Bjyb1WQa",
@@ -47,8 +52,10 @@ const HomePage = () => {
                 justifyContent: "start",
               }}
             >
-              {public_key ? <BasicInfo /> : <DesoLogin />}
+              <Login />
+              {/* {public_key ? <BasicInfo /> : <DesoLogin />} */}
             </div>
+
             <h1
               style={{
                 color: "black",
@@ -79,17 +86,19 @@ const HomePage = () => {
               <Link to="/like">
                 <button className="button-49">
                   Diamonds
-                  <i class="far fa-gem" style={{color:"#006AF9"}}></i>
+                  <i className="far fa-gem" style={{ color: "#006AF9" }}></i>
                 </button>
               </Link>
               <Link to="/repost">
                 <button className="button-49 mx-1">
-                  Repost <i class="fas fa-retweet" style={{color:"white"}}></i>
+                  Repost{" "}
+                  <i className="fas fa-retweet" style={{ color: "white" }}></i>
                 </button>
               </Link>
               <Link to="/like">
                 <button className="button-49 mx-1">
-                  Likes <i class="fas fa-heart" style={{color:"red"}}></i>
+                  Likes{" "}
+                  <i className="fas fa-heart" style={{ color: "red" }}></i>
                 </button>
               </Link>
             </div>

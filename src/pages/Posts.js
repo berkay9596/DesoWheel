@@ -16,13 +16,16 @@ const Posts = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
-  // const [filterModal, setFilterModal] = useState(false);
   const [coinPrice, setCoinPrice] = useState(0);
   const [like, setLike] = useState(false);
   const [repost, setRepost] = useState(false);
   const [diamond, setDiamond] = useState(false);
   const state = useSelector((state) => state.info);
-  const public_key = localStorage.getItem("publicKey");
+  console.log("state", state);
+  const identity = localStorage.getItem("identityUsersV2");
+  console.log(",identity", identity);
+  const public_key = identity["publicKey"];
+  console.log("pubblickKey", public_key);
   const headers = {
     PublicKey: public_key,
   };
@@ -53,14 +56,15 @@ const Posts = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const handleClickRepost = async (body) => {
-      await dispatch(getProfilesRepost(body));
-      navigate("/wheel");
+    await dispatch(getProfilesRepost(body));
+    navigate("/wheel");
   };
   const handleClickLike = async (body) => {
     await dispatch(getProfiles(body));
     navigate("/wheel");
   };
   const handleClickFilter = async (body) => {
+    console.log("heş", body?.PostHashHex);
     const headers = {
       PostUrl: `https://bitclout.com/posts/${body?.PostHashHex}?tab=posts`,
       ReaderPublicKey:
@@ -76,6 +80,7 @@ const Posts = () => {
     };
     if (like === true && repost === false && diamond === false) {
       await handleClickLike(headersSingle);
+      localStorage.setItem("hash", body?.PostHashHex);
     } else if (like === false && repost === true && diamond === false) {
       await handleClickRepost(headersSingle);
     } else if (like === false && repost === false && diamond === true) {
@@ -149,20 +154,23 @@ const Posts = () => {
                       </span>
                     </div>
                     <p className="card-text">{post?.Body}</p>
-                    {post?.RecloutedPostEntryResponse !== null ? (
-                      <p className="card-text">
-                        <span style={{ fontWeight: "bold", color: "red" }}>
-                          {" "}
-                          Reposted post{" "}
-                        </span>
-                        <p className="card-text">
-                          {" "}
-                          {post?.RecloutedPostEntryResponse?.Body}
-                        </p>
-                      </p>
-                    ) : (
-                      ""
-                    )}
+                    {
+                      (0,
+                      post?.RecloutedPostEntryResponse !== null ? (
+                        <div className="card-text">
+                          <span style={{ fontWeight: "bold", color: "red" }}>
+                            {" "}
+                            Reposted post{" "}
+                          </span>
+                          <p className="card-text">
+                            {" "}
+                            {post?.RecloutedPostEntryResponse?.Body}
+                          </p>
+                        </div>
+                      ) : (
+                        ""
+                      ))
+                    }
                     <img
                       alt=""
                       src={post?.ImageURLs ? post?.ImageURLs[0] : ""}
