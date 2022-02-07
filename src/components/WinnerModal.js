@@ -32,7 +32,6 @@ const WinnerModal = ({ winner }) => {
   const [loggedIn, setLoggedIn] = useState(false);
   const hash = localStorage.getItem("hash");
 
-  console.log("publickey", publicKey);
   function closeModal() {
     setIsOpen(false);
   }

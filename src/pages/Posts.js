@@ -21,11 +21,10 @@ const Posts = () => {
   const [repost, setRepost] = useState(false);
   const [diamond, setDiamond] = useState(false);
   const state = useSelector((state) => state.info);
-  console.log("state", state);
-  const identity = localStorage.getItem("identityUsersV2");
-  console.log(",identity", identity);
-  const public_key = identity["publicKey"];
-  console.log("pubblickKey", public_key);
+
+  const user = JSON.parse(localStorage.getItem("identityUsersV2"));
+  const public_key = user?.publicKey;
+
   const headers = {
     PublicKey: public_key,
   };

@@ -1,42 +1,23 @@
 import React, { useEffect } from "react";
 import wheel from "../assets/desologogif.gif";
 import { Link } from "react-router-dom";
-import DesoLogin from "../components/DesoLogin";
 import { getInfo } from "../redux/actions/userInfoActions";
 import { useDispatch, useSelector } from "react-redux";
-import BasicInfo from "../components/BasicInfo";
 import Login from "../components/Login";
-// import axios from "axios";
 
 const HomePage = () => {
-  console.log("TEST");
   const dispatch = useDispatch();
-  const state = useSelector((state) => state.info);
-  const public_key = localStorage.getItem("publicKey");
-  const headers = {
-    PublicKey: public_key,
-  };
-  console.log("token", public_key);
-  console.log("state", state);
-  useEffect(() => {
-    dispatch(getInfo(headers));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [public_key]);
-  const identity = localStorage.getItem("identityUsersV2");
-  console.log(",identity", identity);
-  // const publickey = identity.publicKey;
-  // console.log("pubblickKey", publickey);
+  // const state = useSelector((state) => state.info);
+  // const user = JSON.parse(localStorage.getItem("identityUsersV2"));
+  // const public_key = user.publicKey;
+  // const headers = {
+  //   PublicKey: public_key,
+  // };
+  // useEffect(() => {
+  //   dispatch(getInfo(headers));
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [public_key]);
 
-  // const body = {
-  //   PublicKey: "BC1YLjY7KnccPLkwd322FeKsDJts6SsLt1BfBjxDJrpHuP4Bjyb1WQa",
-  // };
-  // const apireq = () => {
-  //   return axios.post(
-  //     "https://deso-wheel.herokuapp.com/api/get-users-holders",
-  //     body
-  //   ).then(resp=> console.log("resp",resp));
-  // };
-  // apireq();
   return (
     <div className="d-flex" style={{ height: "92vh" }}>
       <div className="container d-flex align-items-center justify-content-center">
@@ -68,16 +49,6 @@ const HomePage = () => {
             >
               Deso Wheel
             </h1>
-            {/* <h1
-              style={{
-                color: "black",
-                fontWeight: "bold",
-                fontSize: "3rem",
-                zIndex: -1,
-              }}
-            >
-              Wheel
-            </h1> */}
             <h2 style={{ color: "black" }}>
               Paste the URL of any post on DESO.
               <br /> Get a winner among the lucky <b>Reposters</b>,{" "}
