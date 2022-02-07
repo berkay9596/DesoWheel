@@ -9,6 +9,7 @@ import Login from "../components/Login";
 // import axios from "axios";
 
 const HomePage = () => {
+  console.log("TEST");
   const dispatch = useDispatch();
   const state = useSelector((state) => state.info);
   const public_key = localStorage.getItem("publicKey");
