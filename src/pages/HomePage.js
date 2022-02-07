@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
 import wheel from "../assets/desologogif.gif";
 import { Link } from "react-router-dom";
-import { getInfo } from "../redux/actions/userInfoActions";
-import { useDispatch, useSelector } from "react-redux";
+// import { getInfo } from "../redux/actions/userInfoActions";
+// import { useDispatch, useSelector } from "react-redux";
 import Login from "../components/Login";
 
 const HomePage = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // const state = useSelector((state) => state.info);
   // const user = JSON.parse(localStorage.getItem("identityUsersV2"));
   // const public_key = user.publicKey;

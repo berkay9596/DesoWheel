@@ -168,13 +168,14 @@ class DesoIdentity {
       // console.log(message)
 
       const {
-        data: { id: id, method: method, service: service, payload: payload },
+        data: { method: method, service: service, payload: payload },
       } = message;
+      /*eslint no-useless-rename: ["error", { ignoreDestructuring: true }]*/
       if (service !== "identity") {
         return;
       }
 
-      if (method == "initialize") {
+      if (method === "initialize") {
         this.handleInit(message);
       } else if ("signedTransactionHex" in payload) {
         console.log("signedTransactionHex", payload);
@@ -182,7 +183,7 @@ class DesoIdentity {
       } else if ("approvalRequired" in payload) {
         console.log("approvalRequired", payload);
         this.approveSignTx(this.transactionHex);
-      } else if (method == "login") {
+      } else if (method === "login") {
         this.handleLogin(payload);
       }
     });
