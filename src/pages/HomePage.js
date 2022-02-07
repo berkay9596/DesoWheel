@@ -24,8 +24,8 @@ const HomePage = () => {
   }, [public_key]);
   const identity = localStorage.getItem("identityUsersV2");
   console.log(",identity", identity);
-  const publickey = identity.publicKey;
-  console.log("pubblickKey", publickey);
+  // const publickey = identity.publicKey;
+  // console.log("pubblickKey", publickey);
 
   // const body = {
   //   PublicKey: "BC1YLjY7KnccPLkwd322FeKsDJts6SsLt1BfBjxDJrpHuP4Bjyb1WQa",
