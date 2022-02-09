@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DesoIdentity from "../libs/desoIdentity";
+import BasicInfo from "./BasicInfo";
 
 // import DesoApi from "./libs/desoApi";
 
@@ -29,24 +30,26 @@ const Login = () => {
     }
     // eslint-disable-line react-hooks/exhaustive-deps
   }, []);
+  console.log(publicKey);
   const login = async () => {
     const user = await desoIdentity.loginAsync(4);
     setSetPublicKey(user.publicKey);
     setLoggedIn(true);
   };
   const logout = async () => {
-    await desoIdentity.logout(publicKey);
-    setSetPublicKey(null);
-    setLoggedIn(false);
+    localStorage.removeItem("identityUsersV2");
   };
+
   return (
     <>
       {loggedIn ? (
-        <button className="btn btn-danger" onClick={logout}>
-          Logout
-        </button>
+        <BasicInfo logout={logout} />
       ) : (
-        <button className="btn" style={{backgroundColor:"#191CA9",color:"white"}} onClick={login}>
+        <button
+          className="btn btn-success"
+          style={{ width: "100px", fontWeight: "bold", fontSize: "13px" }}
+          onClick={login}
+        >
           Login
         </button>
       )}

@@ -10,49 +10,40 @@ import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "./redux/reducers";
-import HomePage from "./pages/HomePage";
-import Circle3 from "./pages/Circle3";
-import TopBar from "./components/TopBar";
-import LikeInput from "./pages/LikeInput";
+
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 import RepostInput from "./pages/RepostInput";
-import Roadmap from "./pages/Roadmap";
-import WhatIsDesoWheel from "./pages/WhatIsDesoWheel";
-import Contact from "./pages/Contact";
-// import Footer from "./components/Footer";
 import Posts from "./pages/Posts";
+import HomePage from "./pages/HomePage";
+import Circle3 from "./pages/Circle3";
+import LikeInput from "./pages/LikeInput";
+
+import Footer from "./components/footer/Footer";
+import Navbar from "./components/navbar/Navbar";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   rootReducer,
   composeEnhancers(applyMiddleware(thunk))
 );
-const user = JSON.parse(localStorage.getItem("identityUsersV2"));
-const public_key = user?.publicKey;
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <TopBar />
-
+        <div className="header-bg-2">
+          <Navbar />
+        </div>
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/wheel" element={<Circle3 />}></Route>
           <Route path="/like" element={<LikeInput />}></Route>
           <Route path="/repost" element={<RepostInput />}></Route>
-          <Route path="/roadmap" element={<Roadmap />}></Route>
-          <Route path="/desowheel" element={<WhatIsDesoWheel />}></Route>
-          <Route
-            path="/posts"
-            element={public_key ? <Posts /> : <HomePage />}
-          ></Route>
-          <Route path="/contact" element={<Contact />}></Route>
+          <Route path="/posts" element={<Posts />}></Route>
         </Routes>
         <ToastContainer />
-
-        {/* <Footer /> */}
+        <Footer />
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,

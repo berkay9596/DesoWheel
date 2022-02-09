@@ -1,4 +1,4 @@
-@import url(//db.onlinewebfonts.com/c/47d5fd8c3738de46ef0b3fe3f68c289a?family=Perfect+DOS+VGA+437);
+/* @import url(//db.onlinewebfonts.com/c/47d5fd8c3738de46ef0b3fe3f68c289a?family=Perfect+DOS+VGA+437);
 @font-face {
   font-family: "Perfect DOS VGA 437";
   src: url("//db.onlinewebfonts.com/t/47d5fd8c3738de46ef0b3fe3f68c289a.eot");
@@ -12,21 +12,21 @@
       format("truetype"),
     url("//db.onlinewebfonts.com/t/47d5fd8c3738de46ef0b3fe3f68c289a.svg#Perfect DOS VGA 437")
       format("svg");
-}
-body {
+} */
+/* body {
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* background: #3d7eaa !important;
+  background: #3d7eaa !important;
   background: -webkit-linear-gradient(to right, #ffe47a, #3d7eaa) !important ;
-  background: linear-gradient(to right, #ffe47a, #3d7eaa) !important ; */
+  background: linear-gradient(to right, #ffe47a, #3d7eaa) !important ;
   background: #f0a30a !important;
   background: #f7f9f9 !important;
-  /* background: #12adad !important; */
-}
-h1 {
+  background: #12adad !important;
+} */
+/* h1 {
   font-family: "Perfect DOS VGA 437", sans-serif;
 }
 h2 {
@@ -41,6 +41,7 @@ h2 {
     font-size: 20px;
   }
 }
+
 .button-49 {
   border-radius: 30px;
   width: 150px;
@@ -106,5 +107,138 @@ h2 {
     height: max-content;
     margin-top: 10px;
   }
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --font-family: "Poppins", sans-serif;
+  --dark-blue: #0a1930;
+  --light-blue: #1f93ff;
+
+  --color-white: #fff;
+  --dark-text: #333;
+  --form-button: #2da5ff;
+  --color-grey: #eae6eb;
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  width: 100%;
+  padding: 8rem 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Text styles */
+.u-text-small {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  font-weight: 300;
+}
+.u-text-custom{
+  font-size :3rem;
+  line-height: 1.4;
+  font-weight: 300;
+  
+}
+
+.u-text-dark {
+  color: var(--dark-text);
+}
+.u-text-light {
+  color: var(--dark-text);
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+/* Title */
+.u-title {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.header-bg {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background: #0a1930;
+}
+.header-bg-2{
+  width: 100%;
+  background: #0a1930;
+}
+
+
+.u-title h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--dark-text);
+  margin: 1.5rem 0;
+}
+
+.u-title p {
+  width: 50%;
+  min-width: 40rem;
+  margin: 0 auto;
+  color: var(--dark-text);
+}
+
+.button-49 {
+  border-radius: 30px;
+  width: 150px;
+  height: 76px;
+  line-height: 78px;
+  font-size: 20px;
+  font-family: "Bebas Neue", sans-serif;
+  background: linear-gradient(45deg, transparent 5%, black 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 2px;
+  outline: transparent;
+  z-index: -10 !important;
+}
+.button-49:hover {
+  background: white !important;
+  color: black;
+}
+.btns{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+@media (max-width: 521px) {
+  .btns {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .button-49 {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+}

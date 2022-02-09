@@ -30,10 +30,12 @@ const LikeInput = () => {
     <div
       className="container"
       style={{
-        height: "91vh",
+        height: "100vh",
         display: "flex",
         flexDirection: "column-reverse",
         justifyContent: "center",
+
+        width:"100%"
       }}
     >
       <form onSubmit={formSubmit} className="form-group">

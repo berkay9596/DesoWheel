@@ -27,15 +27,13 @@ const FilterPostModal = ({
   setRepost,
   diamond,
   setDiamond,
-  formSubmit
+  formSubmit,
 }) => {
   const [modalIsOpen, setIsOpen] = useState(true);
 
   function closeModal() {
     setIsOpen(false);
   }
-
-  
 
   return (
     <div>
@@ -60,7 +58,8 @@ const FilterPostModal = ({
             type="checkbox"
             value={diamond}
             onChange={() => setDiamond(!diamond)}
-          /> <br/>
+          />{" "}
+          <br />
           <button>Submit</button>
         </form>
       </Modal>

@@ -8,9 +8,7 @@ import {
 } from "../redux/actions/profilesActions";
 import { getProfiles } from "../redux/actions/profilesActions";
 import { useNavigate } from "react-router-dom";
-// import { toast } from "react-toastify";
 import axios from "axios";
-// import FilterPostModal from "../components/FilterPostModal";
 
 const Posts = () => {
   const dispatch = useDispatch();
@@ -89,7 +87,6 @@ const Posts = () => {
       navigate("/wheel");
     }
   };
-
   return (
     <div
       className="container d-flex justify-content-center align-items-center"
@@ -122,7 +119,9 @@ const Posts = () => {
               <span style={{ fontWeight: "bold" }}>make a wheel draw</span>{" "}
               among the post that you clicked.
             </h2>
-            {state?.info?.UserPosts?.Posts?.map((post, index) => (
+            {state?.info?.UserPosts?.Posts?.filter(
+              (x) => x.RecloutedPostEntryResponse === null
+            ).map((post, index) => (
               <div key={index}>
                 <div
                   className="card card-resp"
@@ -153,34 +152,9 @@ const Posts = () => {
                       </span>
                     </div>
                     <p className="card-text">{post?.Body}</p>
-                    {
-                      (0,
-                      post?.RecloutedPostEntryResponse !== null ? (
-                        <div className="card-text">
-                          <span style={{ fontWeight: "bold", color: "red" }}>
-                            {" "}
-                            Reposted post{" "}
-                          </span>
-                          <p className="card-text">
-                            {" "}
-                            {post?.RecloutedPostEntryResponse?.Body}
-                          </p>
-                        </div>
-                      ) : (
-                        ""
-                      ))
-                    }
                     <img
                       alt=""
                       src={post?.ImageURLs ? post?.ImageURLs[0] : ""}
-                      style={{ width: "50%", marginBottom: "5px" }}
-                    />
-                    <img
-                      src={
-                        post?.RecloutedPostEntryResponse !== null
-                          ? post?.RecloutedPostEntryResponse?.ImageURLs
-                          : ""
-                      }
                       style={{ width: "50%", marginBottom: "5px" }}
                     />
                     <label>Like</label>{" "}
