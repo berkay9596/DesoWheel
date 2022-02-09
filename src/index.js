@@ -28,7 +28,8 @@ const store = createStore(
   rootReducer,
   composeEnhancers(applyMiddleware(thunk))
 );
-const publicKey = localStorage.getItem("publicKey");
+const user = JSON.parse(localStorage.getItem("identityUsersV2"));
+const public_key = user?.publicKey;
 
 ReactDOM.render(
   <React.StrictMode>
@@ -45,7 +46,7 @@ ReactDOM.render(
           <Route path="/desowheel" element={<WhatIsDesoWheel />}></Route>
           <Route
             path="/posts"
-            element={publicKey ? <Posts /> : <HomePage />}
+            element={public_key ? <Posts /> : <HomePage />}
           ></Route>
           <Route path="/contact" element={<Contact />}></Route>
         </Routes>

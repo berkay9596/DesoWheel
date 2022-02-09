@@ -26,7 +26,7 @@ const Circle3 = () => {
       setProfileNames(reposters);
     } else {
       const filteredProfiles = await Object.values(
-        state?.profiles?.map((profile) => profile.Username)
+        state?.profiles?.map((profile) => profile?.Username)
       );
       setProfileNames(filteredProfiles);
     }

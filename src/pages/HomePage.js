@@ -1,36 +1,23 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
 import wheel from "../assets/desologogif.gif";
 import { Link } from "react-router-dom";
-import DesoLogin from "../components/DesoLogin";
-import { getInfo } from "../redux/actions/userInfoActions";
-import { useDispatch, useSelector } from "react-redux";
-import BasicInfo from "../components/BasicInfo";
-// import axios from "axios";
+// import { getInfo } from "../redux/actions/userInfoActions";
+// import { useDispatch, useSelector } from "react-redux";
+import Login from "../components/Login";
 
 const HomePage = () => {
-  const dispatch = useDispatch();
-  const state = useSelector((state) => state.info);
-  const public_key = localStorage.getItem("publicKey");
-  const headers = {
-    PublicKey: public_key,
-  };
-  console.log("token", public_key);
-  console.log("state", state);
-  useEffect(() => {
-    dispatch(getInfo(headers));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [public_key]);
+  // const dispatch = useDispatch();
+  // const state = useSelector((state) => state.info);
+  // const user = JSON.parse(localStorage.getItem("identityUsersV2"));
+  // const public_key = user.publicKey;
+  // const headers = {
+  //   PublicKey: public_key,
+  // };
+  // useEffect(() => {
+  //   dispatch(getInfo(headers));
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [public_key]);
 
-  // const body = {
-  //   PublicKey: "BC1YLjY7KnccPLkwd322FeKsDJts6SsLt1BfBjxDJrpHuP4Bjyb1WQa",
-  // };
-  // const apireq = () => {
-  //   return axios.post(
-  //     "https://deso-wheel.herokuapp.com/api/get-users-holders",
-  //     body
-  //   ).then(resp=> console.log("resp",resp));
-  // };
-  // apireq();
   return (
     <div className="d-flex" style={{ height: "92vh" }}>
       <div className="container d-flex align-items-center justify-content-center a">
@@ -47,8 +34,10 @@ const HomePage = () => {
                 justifyContent: "start",
               }}
             >
-              {public_key ? <BasicInfo /> : <DesoLogin />}
+              <Login />
+              {/* {public_key ? <BasicInfo /> : <DesoLogin />} */}
             </div>
+
             <h1
               style={{
                 color: "black",
@@ -71,16 +60,6 @@ const HomePage = () => {
             >
               Wheel
             </h1>
-            {/* <h1
-              style={{
-                color: "black",
-                fontWeight: "bold",
-                fontSize: "3rem",
-                zIndex: -1,
-              }}
-            >
-              Wheel
-            </h1> */}
             <h2 style={{ color: "black" }}>
               Paste the URL of any post on DESO.
               <br /> Get a winner among the lucky <b>Reposters</b>,{" "}
@@ -90,17 +69,19 @@ const HomePage = () => {
               <Link to="/like">
                 <button className="button-49">
                   Diamonds
-                  <i class="far fa-gem" style={{color:"#006AF9"}}></i>
+                  <i className="far fa-gem" style={{ color: "#006AF9" }}></i>
                 </button>
               </Link>
               <Link to="/repost">
                 <button className="button-49 mx-1">
-                  Repost <i class="fas fa-retweet" style={{color:"white"}}></i>
+                  Repost{" "}
+                  <i className="fas fa-retweet" style={{ color: "white" }}></i>
                 </button>
               </Link>
               <Link to="/like">
                 <button className="button-49 mx-1">
-                  Likes <i class="fas fa-heart" style={{color:"red"}}></i>
+                  Likes{" "}
+                  <i className="fas fa-heart" style={{ color: "red" }}></i>
                 </button>
               </Link>
             </div>
