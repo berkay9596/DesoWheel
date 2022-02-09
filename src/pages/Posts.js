@@ -8,7 +8,7 @@ import {
 } from "../redux/actions/profilesActions";
 import { getProfiles } from "../redux/actions/profilesActions";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import axios from "axios";
 // import FilterPostModal from "../components/FilterPostModal";
 

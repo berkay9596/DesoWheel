@@ -41,6 +41,7 @@ const TopBar = () => {
       linkStyles: {
         color: "white",
         fontWeight: "bold",
+        fontFamily : 'Roboto",sans-serif'
       },
       sidebarStyles: {
         background: "black",

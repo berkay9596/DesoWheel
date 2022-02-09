@@ -42,11 +42,11 @@ const Login = () => {
   return (
     <>
       {loggedIn ? (
-        <button className="btn btn-secondary" onClick={logout}>
+        <button className="btn btn-danger" onClick={logout}>
           Logout
         </button>
       ) : (
-        <button className="btn btn-secondary" onClick={login}>
+        <button className="btn" style={{backgroundColor:"#191CA9",color:"white"}} onClick={login}>
           Login
         </button>
       )}

@@ -29,7 +29,7 @@ const WinnerModal = ({ winner }) => {
   const [desoApi, setDesoApi] = useState(null);
   const [publicKey, setSetPublicKey] = useState(null);
   const IdentityUsersKey = "identityUsersV2";
-  const [loggedIn, setLoggedIn] = useState(false);
+
   const hash = localStorage.getItem("hash");
 
   function closeModal() {
@@ -50,7 +50,7 @@ const WinnerModal = ({ winner }) => {
     }
 
     if (user.publicKey) {
-      setLoggedIn(true);
+      
       setSetPublicKey(user.publicKey);
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps

@@ -1,9 +1,10 @@
 // import React, { useEffect } from "react";
-import wheel from "../assets/desologogif.gif";
+import wheel from "../assets/son.png";
 import { Link } from "react-router-dom";
 // import { getInfo } from "../redux/actions/userInfoActions";
 // import { useDispatch, useSelector } from "react-redux";
 import Login from "../components/Login";
+import WaveEffect from '../components/WaveEffect'
 
 const HomePage = () => {
   // const dispatch = useDispatch();
@@ -19,7 +20,8 @@ const HomePage = () => {
   // }, [public_key]);
 
   return (
-    <div className="d-flex" style={{ height: "92vh" }}>
+    <>
+    <div className="d-flex my-4">
       <div className="container d-flex align-items-center justify-content-center a">
         <div className="row container d-flex justify-content-center">
           <div className="row col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-flex res">
@@ -43,7 +45,7 @@ const HomePage = () => {
                 color: "black",
                 fontWeight: "bold",
                 fontSize: "3rem",
-                zIndex: -2,
+                
                 lineHeight: "70px",
               }}
             >
@@ -54,7 +56,7 @@ const HomePage = () => {
                 color: "black",
                 fontWeight: "bold",
                 fontSize: "3rem",
-                zIndex: -2,
+        
                 lineHeight: "70px",
               }}
             >
@@ -75,7 +77,7 @@ const HomePage = () => {
               <Link to="/repost">
                 <button className="button-49 mx-1">
                   Repost{" "}
-                  <i className="fas fa-retweet" style={{ color: "white" }}></i>
+                  <i className="fas fa-retweet" style={{ color: "#7800ff " }}></i>
                 </button>
               </Link>
               <Link to="/like">
@@ -90,8 +92,14 @@ const HomePage = () => {
             <img className="wheel-gif" src={wheel} alt="wheel" />
           </div>
         </div>
+        
       </div>
+
     </div>
+    <div style={{position:"relative",padding:0,margin:0}}>
+      <WaveEffect/>
+      </div>
+    </>
   );
 };
 
