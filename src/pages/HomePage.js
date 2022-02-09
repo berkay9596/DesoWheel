@@ -33,7 +33,7 @@ const HomePage = () => {
   // apireq();
   return (
     <div className="d-flex" style={{ height: "92vh" }}>
-      <div className="container d-flex align-items-center justify-content-center">
+      <div className="container d-flex align-items-center justify-content-center a">
         <div className="row container d-flex justify-content-center">
           <div className="row col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-flex res">
             <div
@@ -58,7 +58,18 @@ const HomePage = () => {
                 lineHeight: "70px",
               }}
             >
-              Deso Wheel
+              Deso
+            </h1>
+            <h1
+              style={{
+                color: "black",
+                fontWeight: "bold",
+                fontSize: "3rem",
+                zIndex: -2,
+                lineHeight: "70px",
+              }}
+            >
+              Wheel
             </h1>
             {/* <h1
               style={{

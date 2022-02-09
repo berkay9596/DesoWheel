@@ -18,7 +18,7 @@ body {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: auto;
+
   /* background: #3d7eaa !important;
   background: -webkit-linear-gradient(to right, #ffe47a, #3d7eaa) !important ;
   background: linear-gradient(to right, #ffe47a, #3d7eaa) !important ; */
@@ -79,6 +79,10 @@ h2 {
   .btns {
     justify-content: center;
   }
+  .a{
+    height: max-content;
+    margin-top: 10px;
+  }
 }
 
 @media (max-width: 472px) {
@@ -91,14 +95,15 @@ h2 {
     width: 80vw;
     margin-bottom: 10px;
   }
-  h1 {
-    line-height: 10px;
-    padding: 10px;
-  }
+
 }
 
 @media (max-width: 472px) {
   .card-resp {
     width: 80vw !important;
+  }
+  .a{
+    height: max-content;
+    margin-top: 10px;
   }
 }
