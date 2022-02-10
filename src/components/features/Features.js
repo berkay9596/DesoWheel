@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./Features.css";
 import { BsFillBookmarkStarFill } from "react-icons/bs";
-import logo from "../../assets/desologo.png";
+import phone from "../../assets/phone.png";
 import Feature from "./Feature";
 import { FeatureList } from "./data";
 
@@ -24,9 +24,9 @@ const Features = () => {
             Deso Wheel has the following features but the numbers of these will increase day by day. 
           </p>
         </div>
-        <div className="features-content">
+        <div className="features-content d-flex align-items-center" style={{marginBottom:"100px"}}>
           <div className="features-left" data-aos="fade-right">
-            <img src={logo} alt="wheel" />
+            <img src={phone} alt="wheel" />
           </div>
           <div className="features-right" data-aos="fade-left">
             {FeatureList.map((feature) => (
