@@ -33,8 +33,8 @@
 }
 
 .nav-links a {
-  font-size: 16px;
-  font-weight: 300;
+  font-size: 20px;
+  font-weight: 350;
   color: #fff;
   text-decoration: none;
   margin-right: 1rem;
@@ -45,23 +45,6 @@
   color: orangered;
 }
 
-/* a.btn {
-  border-radius: 5px;
-  padding: 5px 8px;
-  margin-left: 1rem;
-  font-weight: 500;
-}
-
-a.btn-dark {
-  background: transparent;
-  border: 2px solid #fff;
-}
-a.btn-light {
-  background: #fff;
-  border: 2px solid transparent;
-  color: #0a1930;
-} */
-
 .navbar .menu-icons {
   background: transparent;
   border: none;
@@ -69,13 +52,7 @@ a.btn-light {
 }
 
 /* Media Queries */
-@media screen and (max-width: 769px) {
-  /* hide nav button on navbar */
-  .nav-btn {
-    display: none;
-  }
-}
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 992px) {
   /* show nav button on navbar menu */
   .nav-btn {
     display: block;
@@ -110,7 +87,7 @@ a.btn-light {
   }
 
   .navbar #nav-links-mobile-hide {
-    left: -100%;
+    left: -112%;
     animation: slide-out 0.5s ease-in-out;
   }
   @keyframes slide-out {

@@ -6,13 +6,13 @@ export const questions = [
   },
   {
     id: 2,
-    title: "How can I get started with SocialX?",
+    title: "What are the benefits of logging in?",
     answer:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores quae nisi impedit earum? Molestias eum laborum distinctio iste dolore! Deserunt cum veritatis laboriosam nihil, beatae voluptate sint officia obcaecati quae.",
   },
   {
     id: 3,
-    title: "Is there a refund policy?",
+    title: "What is the vision of the project?",
     answer:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores quae nisi impedit earum? Molestias eum laborum distinctio iste dolore! Deserunt cum veritatis laboriosam nihil, beatae voluptate sint officia obcaecati quae.",
   },

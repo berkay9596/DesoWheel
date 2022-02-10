@@ -21,6 +21,7 @@ import Circle3 from "./pages/Circle3";
 import LikeInput from "./pages/LikeInput";
 
 import Footer from "./components/footer/Footer";
+
 import Navbar from "./components/navbar/Navbar";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -43,7 +44,9 @@ ReactDOM.render(
           <Route path="/posts" element={<Posts />}></Route>
         </Routes>
         <ToastContainer />
+   
         <Footer />
+     
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,

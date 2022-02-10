@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { questions } from "./data.js";
 import Question from "./Question";
 import { MdOutlineLibraryBooks } from "react-icons/md";
-
+import "./Faq.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -17,14 +17,14 @@ const Faq = () => {
       <div className="container faq text-center">
         <div className="text-center" data-aos="fade-up">
           <MdOutlineLibraryBooks color="orangered" size={30} />
-          <h2>FAQs</h2>
-          <p className="u-text-small">
+          <h2 style={{fontWeight:"bold",fontSize:"36px"}}>FAQs</h2>
+          <p className="u-text-small" style={{fontSize:"18px"}}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique
             itaque veniam laudantium, quam quas dolor tempora eligendi officia
             sequi. Iusto.
           </p>
         </div>
-        <div className="questions">
+        <div className="questions" >
           {questions.map((question) => (
             <Question
               key={question.id}

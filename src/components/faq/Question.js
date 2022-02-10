@@ -21,8 +21,15 @@ const Question = ({ title, answer }) => {
           )}
         </button>
       </div>
-      <div className="question-answer">
-        {showAnswer && <p className="u-text-small">{answer}</p>}
+      <div>
+        {showAnswer && (
+          <p
+            style={{ fontSize: "16px", textAlign: "start" }}
+            className="u-text-small"
+          >
+            {answer}
+          </p>
+        )}
       </div>
     </div>
   );
