@@ -15,7 +15,7 @@ const Features = () => {
     });
   }, []);
   return (
-    <section id="features">
+    <section id="features" style={{padding:0}}>
       <div className="container features">
         <div className="text-center" data-aos="fade-up">
           <BsFillBookmarkStarFill color="orangered" size={30} />
