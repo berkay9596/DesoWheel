@@ -92,11 +92,16 @@ const Posts = () => {
       {public_key ? (
         <div
           className="container d-flex justify-content-center align-items-center"
-          style={{ minHeight:"100vh", width: "50%", marginTop: "25px" , position:"relative"}}
+          style={{
+            minHeight: "100vh",
+            width: "50%",
+            marginTop: "25px",
+            position: "relative",
+          }}
         >
           <div
             className="container d-flex align-items-center justify-content-center"
-            style={{ height: "92vh", flexWrap: "wrap" }}
+            style={{ minHeight: "100vh", flexWrap: "wrap" }}
           >
             {loading ? (
               <div
@@ -115,19 +120,21 @@ const Posts = () => {
                 />
               </div>
             ) : (
-              <div style={{position:"relative",minHeight:"100vh"}}>
-                <h2>
+              <div style={{ position: "relative", minHeight: "100vh" }}>
+                <h1 style={{ color: "white" }}>
                   You can simply{" "}
-                  <span style={{ fontWeight: "bold" }}>make a wheel draw</span>{" "}
+                  <span style={{ fontWeight: "bold", color: "red" }}>
+                    make a wheel draw
+                  </span>{" "}
                   among the post that you clicked.
-                </h2>
+                </h1>
                 {state?.info?.UserPosts?.Posts?.filter(
                   (x) => x.RecloutedPostEntryResponse === null
                 ).map((post, index) => (
-                  <div key={index} style={{paddingBottom:"2rem"}}>
+                  <div key={index} style={{ paddingBottom: "2rem" }}>
                     <div
                       className="card card-resp"
-                      style={{ width: "50vw%", marginBottom: "10px" }}
+                      style={{ width: "50vw", marginBottom: "10px" }}
                     >
                       <div
                         className="card-body d-flex"
@@ -198,7 +205,7 @@ const Posts = () => {
       ) : (
         <div
           className="container d-flex justify-content-center align-items-center"
-          style={{ height: "85vh",  }}
+          style={{ height: "85vh" }}
         >
           {" "}
           <h1 style={{ fontSize: "80px", color: "#FFF" }}>
