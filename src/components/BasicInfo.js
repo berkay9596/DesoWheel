@@ -37,11 +37,6 @@ const BasicInfo = ({ logout }) => {
           style={{ backgroundColor: "black" }}
         >
           <li>
-            <a className="dropdown-item" href="/posts">
-              My posts
-            </a>
-          </li>
-          <li>
             <a onClick={logout} className="dropdown-item" href="/">
               Logout
             </a>
