@@ -2,7 +2,7 @@ export const questions = [
   {
     id: 1,
     title: "Can I use Desowheel without logging in?",
-    answer: "Yes, you can use Desowheel by providing us the url link of any post on DESO.",
+    answer: "Yes, you can use Desowheel by providing us the url link of any post on DESO. At the top of the page, there are 3 buttons waiting for you to click :)",
   },
   {
     id: 2,

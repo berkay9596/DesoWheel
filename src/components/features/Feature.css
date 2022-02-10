@@ -1,3 +1,7 @@
+#features{
+  background:#FFF;
+}
+
 .feature {
   display: flex;
   align-items: flex-start;

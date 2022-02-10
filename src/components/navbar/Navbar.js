@@ -43,13 +43,6 @@ const Navbar = () => {
             <a href="/posts">My Posts</a>
           </li>
           <li>
-            <a href="#features">Features</a>
-          </li>
-          <li>
-            <a href="#faq">Learn More</a>
-          </li>
-
-          <li>
             <Login />
           </li>
         </ul>

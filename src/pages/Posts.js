@@ -88,111 +88,125 @@ const Posts = () => {
     }
   };
   return (
-    <div
-      className="container d-flex justify-content-center align-items-center"
-      style={{ height: "92vh", width: "50%", marginTop: "25px" }}
-    >
-      <div
-        className="container d-flex align-items-center justify-content-center"
-        style={{ height: "92vh", flexWrap: "wrap" }}
-      >
-        {loading ? (
+    <>
+      {public_key ? (
+        <div
+          className="container d-flex justify-content-center align-items-center"
+          style={{ minHeight:"100vh", width: "50%", marginTop: "25px" , position:"relative"}}
+        >
           <div
-            style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%,-50%)",
-            }}
+            className="container d-flex align-items-center justify-content-center"
+            style={{ height: "92vh", flexWrap: "wrap" }}
           >
-            <TailSpin
-              heigth="100"
-              width="100"
-              color="red"
-              ariaLabel="loading"
-            />
-          </div>
-        ) : (
-          <div>
-            <h2>
-              You can simply{" "}
-              <span style={{ fontWeight: "bold" }}>make a wheel draw</span>{" "}
-              among the post that you clicked.
-            </h2>
-            {state?.info?.UserPosts?.Posts?.filter(
-              (x) => x.RecloutedPostEntryResponse === null
-            ).map((post, index) => (
-              <div key={index}>
-                <div
-                  className="card card-resp"
-                  style={{ width: "50vw%", marginBottom: "10px" }}
-                >
-                  <div
-                    className="card-body d-flex"
-                    style={{ flexDirection: "column" }}
-                  >
-                    <img
-                      src={state?.info?.ProfilePicture}
-                      alt="Profile"
-                      style={{
-                        width: "50px",
-                        height: "50px",
-                        borderRadius: "50px",
-                      }}
-                    />
-                    <div className="d-flex">
-                      <span style={{ fontWeight: "bold" }}>
-                        {" "}
-                        {state?.info?.UserName}
-                      </span>
-                      ~
-                      <span style={{ fontWeight: "bold" }}>
-                        {" "}
-                        ${coinPrice} Coin Price
-                      </span>
-                    </div>
-                    <p className="card-text">{post?.Body}</p>
-                    <img
-                      alt=""
-                      src={post?.ImageURLs ? post?.ImageURLs[0] : ""}
-                      style={{ width: "50%", marginBottom: "5px" }}
-                    />
-                    <label>Like</label>{" "}
-                    <input
-                      type="checkbox"
-                      value={like}
-                      onChange={() => setLike(!like)}
-                    />
-                    <br />
-                    <label>Repost</label>{" "}
-                    <input
-                      type="checkbox"
-                      value={repost}
-                      onChange={() => setRepost(!repost)}
-                    />
-                    <br />
-                    <label>Diamond</label>{" "}
-                    <input
-                      type="checkbox"
-                      value={diamond}
-                      onChange={() => setDiamond(!diamond)}
-                    />
-                    <div>
-                      <button
-                        className="btn btn-danger my-1"
-                        onClick={() => handleClickFilter(post)}
+            {loading ? (
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%,-50%)",
+                }}
+              >
+                <TailSpin
+                  heigth="100"
+                  width="100"
+                  color="red"
+                  ariaLabel="loading"
+                />
+              </div>
+            ) : (
+              <div style={{position:"relative",minHeight:"100vh"}}>
+                <h2>
+                  You can simply{" "}
+                  <span style={{ fontWeight: "bold" }}>make a wheel draw</span>{" "}
+                  among the post that you clicked.
+                </h2>
+                {state?.info?.UserPosts?.Posts?.filter(
+                  (x) => x.RecloutedPostEntryResponse === null
+                ).map((post, index) => (
+                  <div key={index} style={{paddingBottom:"2rem"}}>
+                    <div
+                      className="card card-resp"
+                      style={{ width: "50vw%", marginBottom: "10px" }}
+                    >
+                      <div
+                        className="card-body d-flex"
+                        style={{ flexDirection: "column" }}
                       >
-                        Filter the post
-                      </button>
+                        <img
+                          src={state?.info?.ProfilePicture}
+                          alt="Profile"
+                          style={{
+                            width: "50px",
+                            height: "50px",
+                            borderRadius: "50px",
+                          }}
+                        />
+                        <div className="d-flex">
+                          <span style={{ fontWeight: "bold" }}>
+                            {" "}
+                            {state?.info?.UserName}
+                          </span>
+                          ~
+                          <span style={{ fontWeight: "bold" }}>
+                            {" "}
+                            ${coinPrice} Coin Price
+                          </span>
+                        </div>
+                        <p className="card-text">{post?.Body}</p>
+                        <img
+                          alt=""
+                          src={post?.ImageURLs ? post?.ImageURLs[0] : ""}
+                          style={{ width: "50%", marginBottom: "5px" }}
+                        />
+                        <label>Like</label>{" "}
+                        <input
+                          type="checkbox"
+                          value={like}
+                          onChange={() => setLike(!like)}
+                        />
+                        <br />
+                        <label>Repost</label>{" "}
+                        <input
+                          type="checkbox"
+                          value={repost}
+                          onChange={() => setRepost(!repost)}
+                        />
+                        <br />
+                        <label>Diamond</label>{" "}
+                        <input
+                          type="checkbox"
+                          value={diamond}
+                          onChange={() => setDiamond(!diamond)}
+                        />
+                        <div>
+                          <button
+                            className="btn btn-danger my-1"
+                            onClick={() => handleClickFilter(post)}
+                          >
+                            Filter the post
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
+                ))}
               </div>
-            ))}
+            )}
           </div>
-        )}
-      </div>
-    </div>
+        </div>
+      ) : (
+        <div
+          className="container d-flex justify-content-center align-items-center"
+          style={{ height: "85vh",  }}
+        >
+          {" "}
+          <h1 style={{ fontSize: "80px", color: "#FFF" }}>
+            You Are Not Authorized For This Page Please Login First.
+          </h1>{" "}
+        </div>
+      )}
+    </>
   );
 };
 

@@ -36,7 +36,7 @@ h1 span:nth-child(3) {
   bottom: 0;
   width: 65%;
   height: 1px;
-  background: var(--color-white);
+  background: var(--color-white)!important;
 }
 
 .header-left p {
@@ -51,7 +51,7 @@ h1 span:nth-child(3) {
 }
 
 .floating-icon {
-  background-color: var(--light-blue);
+  background-color: var(--light-blue) !important;
   width: 5rem;
   height: 5rem;
   border-radius: 50%;

@@ -31,7 +31,11 @@ const BasicInfo = ({ logout }) => {
             style={{ width: "32px", height: "32px" }}
           />
         </a>
-        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <ul
+          className="dropdown-menu"
+          aria-labelledby="dropdownMenuButton1"
+          style={{ backgroundColor: "black" }}
+        >
           <li>
             <a className="dropdown-item" href="/posts">
               My posts
