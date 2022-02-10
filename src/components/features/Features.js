@@ -24,7 +24,7 @@ const Features = () => {
             Deso Wheel has the following features but the numbers of these will increase day by day. 
           </p>
         </div>
-        <div className="features-content d-flex align-items-center" style={{marginBottom:"100px"}}>
+        <div className="features-content d-flex align-items-center">
           <div className="features-left" data-aos="fade-right">
             <img src={phone} alt="wheel" />
           </div>
