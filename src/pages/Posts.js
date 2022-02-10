@@ -121,12 +121,12 @@ const Posts = () => {
               </div>
             ) : (
               <div style={{ position: "relative", minHeight: "100vh" }}>
-                <h1 style={{ color: "white" }}>
+                <h1 style={{ color: "white", marginBottom: "15px" }}>
                   You can simply{" "}
                   <span style={{ fontWeight: "bold", color: "red" }}>
                     make a wheel draw
                   </span>{" "}
-                  among the post that you clicked.
+                  among the post that you filtered.
                 </h1>
                 {state?.info?.UserPosts?.Posts?.filter(
                   (x) => x.RecloutedPostEntryResponse === null
@@ -138,49 +138,97 @@ const Posts = () => {
                     >
                       <div
                         className="card-body d-flex"
-                        style={{ flexDirection: "column" }}
+                        style={{
+                          flexDirection: "column",
+                        }}
                       >
-                        <img
-                          src={state?.info?.ProfilePicture}
-                          alt="Profile"
-                          style={{
-                            width: "50px",
-                            height: "50px",
-                            borderRadius: "50px",
-                          }}
-                        />
-                        <div className="d-flex">
-                          <span style={{ fontWeight: "bold" }}>
-                            {" "}
-                            {state?.info?.UserName}
-                          </span>
-                          ~
-                          <span style={{ fontWeight: "bold" }}>
-                            {" "}
-                            ${coinPrice} Coin Price
-                          </span>
+                        <div>
+                          <img
+                            src={state?.info?.ProfilePicture}
+                            alt="Profile"
+                            style={{
+                              width: "50px",
+                              height: "50px",
+                              borderRadius: "50px",
+                            }}
+                          />
+                          <div className="d-flex">
+                            <span
+                              style={{ fontWeight: "bold", fontSize: "15px" }}
+                            >
+                              {" "}
+                              {state?.info?.UserName}
+                            </span>
+                            ~
+                            <span
+                              style={{ fontWeight: "bold", fontSize: "15px" }}
+                            >
+                              {" "}
+                              ${coinPrice} Coin Price
+                            </span>
+                          </div>
+
+                          <p
+                            className="card-text p-1"
+                            style={{ fontSize: "20px" }}
+                          >
+                            {post?.Body}
+                          </p>
+                          <div
+                            className="d-flex align-items-center"
+                            style={{
+                              borderRadius: "20px",
+                              overflow: "hidden",
+                              position: "relative",
+                              maxHeight: "450px",
+                              fontSize: "15px",
+                            }}
+                          >
+                            <img
+                              alt=""
+                              src={post?.ImageURLs ? post?.ImageURLs[0] : ""}
+                              style={{
+                                flexShrink: 0,
+                                width: "100%",
+                                verticalAlign: "middle",
+                                borderStyle: "none",
+                              }}
+                            />
+                          </div>
                         </div>
-                        <p className="card-text">{post?.Body}</p>
-                        <img
-                          alt=""
-                          src={post?.ImageURLs ? post?.ImageURLs[0] : ""}
-                          style={{ width: "50%", marginBottom: "5px" }}
-                        />
-                        <label>Like</label>{" "}
+                        <label style={{ fontWeight: "bold", fontSize: "20px" }}>
+                          Like{" "}
+                          <i
+                            className="fas fa-heart"
+                            style={{ color: "red" }}
+                          ></i>
+                        </label>{" "}
                         <input
                           type="checkbox"
                           value={like}
                           onChange={() => setLike(!like)}
                         />
                         <br />
-                        <label>Repost</label>{" "}
+                        <label style={{ fontWeight: "bold", fontSize: "20px" }}>
+                          Repost{" "}
+                          <i
+                            className="fas fa-retweet"
+                            style={{ color: "#7800ff " }}
+                          ></i>
+                        </label>{" "}
                         <input
                           type="checkbox"
                           value={repost}
                           onChange={() => setRepost(!repost)}
                         />
                         <br />
-                        <label>Diamond</label>{" "}
+                        <label style={{ fontWeight: "bold", fontSize: "20px" }}>
+                          Diamond{" "}
+                          <i
+                            className="far fa-gem"
+                            style={{ color: "#006AF9" }}
+                          ></i>
+                        </label>{" "}
                         <input
                           type="checkbox"
                           value={diamond}
@@ -188,7 +236,8 @@ const Posts = () => {
                         />
                         <div>
                           <button
-                            className="btn btn-danger my-1"
+                            className="btn btn-danger my-3 p-3"
+                            style={{ fontSize: "15px" }}
                             onClick={() => handleClickFilter(post)}
                           >
                             Filter the post

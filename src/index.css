@@ -242,3 +242,12 @@ section {
   }
 
 }
+@media (max-width: 990px) {
+  .card-resp {
+    width: 80vw !important;
+  }
+  .a{
+    height: max-content;
+    margin-top: 10px;
+  }
+}
