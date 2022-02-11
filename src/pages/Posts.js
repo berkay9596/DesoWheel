@@ -12,17 +12,17 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Switch from "@mui/material/Switch";
 import { alpha, styled } from '@mui/material/styles';
-import { pink } from '@mui/material/colors';
+import { red } from '@mui/material/colors';
 
 const GreenSwitch = styled(Switch)(({ theme }) => ({
   '& .MuiSwitch-switchBase.Mui-checked': {
-    color: pink[600],
+    color: red[600],
     '&:hover': {
-      backgroundColor: alpha(pink[600], theme.palette.action.hoverOpacity),
+      backgroundColor: alpha(red[600], theme.palette.action.hoverOpacity),
     },
   },
   '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
-    backgroundColor: pink[600],
+    backgroundColor: red[600],
   },
 }));
 
@@ -277,7 +277,7 @@ const Posts = () => {
           style={{ height: "85vh" }}
         >
           {" "}
-          <h1 style={{ fontSize: "80px", color: "#FFF" }}>
+          <h1 style={{ fontSize: "6rem", color: "#FFF" }}>
             You Are Not Authorized For This Page Please Login First.
           </h1>{" "}
         </div>
