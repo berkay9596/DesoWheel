@@ -193,7 +193,7 @@ const Posts = () => {
 
                           <p
                             className="card-text p-1"
-                            style={{ fontSize: "20px" }}
+                            style={{ fontSize: "20px" , fontFamily:"'Roboto', sans-serif"}}
                           >
                             {post?.Body}
                           </p>
