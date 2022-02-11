@@ -30,7 +30,7 @@ const RepostInput = () => {
     <div
     className="container"
     style={{
-      height:"92vh",
+      height:"85vh",
       display: "flex",
       flexDirection:"column-reverse",
       justifyContent: "center",
@@ -40,8 +40,8 @@ const RepostInput = () => {
         <div
           className="input-group"
           style={{
-            left: "16%",
-            width: "70%",
+            left: "10%",
+            width: "80%",
           }}
         >
           <input
@@ -49,6 +49,7 @@ const RepostInput = () => {
             className="form-control"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
+            style={{height:"40px"}}
           />
 
           <button type="submit" className="btn btn-success">
@@ -60,14 +61,14 @@ const RepostInput = () => {
         className="text-center"
         style={{
           fontWeight: "bold",
-          color: "#0056B3",
-          fontSize: "25px",
-          zIndex: -2,
+          color: "red",
+          fontSize: "45px",
+    
         }}
       >
        ( REPOSTERS )
       </p>
-      <h1 className="text-center" style={{ zIndex: -2, lineHeight:"45px" }}>
+      <h1 className="text-center" style={{color:"whitesmoke", lineHeight:"45px" }}>
         Your Post URL
       </h1>
     

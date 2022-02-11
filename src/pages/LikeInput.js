@@ -30,7 +30,7 @@ const LikeInput = () => {
     <div
       className="container"
       style={{
-        height: "100vh",
+        height: "85vh",
         display: "flex",
         flexDirection: "column-reverse",
         justifyContent: "center",
@@ -42,8 +42,8 @@ const LikeInput = () => {
         <div
           className="input-group"
           style={{
-            left: "16%",
-            width: "70%",
+            left: "10%",
+            width: "80%",
           }}
         >
           <input
@@ -51,6 +51,7 @@ const LikeInput = () => {
             className="form-control"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
+            style={{height:"40px"}}
           />
 
           <button type="submit" className="btn btn-success">
@@ -62,14 +63,14 @@ const LikeInput = () => {
         className="text-center"
         style={{
           fontWeight: "bold",
-          color: "#0056B3",
-          fontSize: "25px",
-          zIndex: -2,
+          color: "red",
+          fontSize: "45px",
+        
         }}
       >
        ( LIKERS ) 
       </p>
-      <h1 className="text-center" style={{ zIndex: -2 , lineHeight:"45px"}}>
+      <h1 className="text-center" style={{ lineHeight:"45px",color:"whitesmoke"}}>
         Your Post URL
       </h1>
   
