@@ -23,6 +23,7 @@ import LikeInput from "./pages/LikeInput";
 import Footer from "./components/footer/Footer";
 
 import Navbar from "./components/navbar/Navbar";
+import DiamondInput from "./pages/DiamondInput";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -42,6 +43,7 @@ ReactDOM.render(
           <Route path="/like" element={<LikeInput />}></Route>
           <Route path="/repost" element={<RepostInput />}></Route>
           <Route path="/posts" element={<Posts />}></Route>
+          <Route path="/diamond" element={<DiamondInput />}></Route>
         </Routes>
         <ToastContainer />
    

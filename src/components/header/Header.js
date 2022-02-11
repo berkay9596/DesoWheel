@@ -25,7 +25,7 @@ const Header = () => {
             Reposters, Diamonders or Likers.
           </p>
           <div>
-            <Link to="/like">
+            <Link to="/diamond">
               <button className="button-49">
                 Diamonds
                 <i className="far fa-gem" style={{ color: "#006AF9" }}></i>

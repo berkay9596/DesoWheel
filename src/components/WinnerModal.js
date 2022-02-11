@@ -4,6 +4,7 @@ import React from "react";
 import Firework from "./Firework";
 import DesoApi from "../libs/desoApi";
 import DesoIdentity from "../libs/desoIdentity";
+import { toast } from "react-toastify";
 
 const customStyles = {
   content: {
@@ -14,7 +15,7 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     width: "65%",
-    height: "305px",
+    minHeight: "33vh",
     zIndex: "10000",
   },
   overlay: {
@@ -50,7 +51,6 @@ const WinnerModal = ({ winner }) => {
     }
 
     if (user.publicKey) {
-      
       setSetPublicKey(user.publicKey);
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -75,7 +75,8 @@ const WinnerModal = ({ winner }) => {
     );
 
     if (rtnSubmitTransaction) {
-      alert("done");
+      setIsOpen(false);
+      toast.success('Your post has been sent successfully.')
     }
   };
   return (
@@ -95,19 +96,29 @@ const WinnerModal = ({ winner }) => {
           top: 0,
         }}
       ></iframe>
+
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         style={customStyles}
       >
-        <Firework winner={winner} />
-        {publicKey ? (
-          <button className="btn btn-warning" onClick={submitPost}>
-            Share the winner
-          </button>
-        ) : (
-          ""
-        )}
+        <div
+          className="container d-flex justify-content-center align-items-center"
+          style={{ flexDirection: "column" }}
+        >
+          <Firework winner={winner} />
+          {publicKey ? (
+            <button
+              className="btn btn-warning"
+              style={{ width: "33vw",height:"5rem",fontSize:"1.6rem" }}
+              onClick={submitPost}
+            >
+              Share the winner in DESO
+            </button>
+          ) : (
+            ""
+          )}
+        </div>
       </Modal>
     </div>
   );

@@ -54,7 +54,7 @@ const LikeInput = () => {
             style={{height:"40px"}}
           />
 
-          <button type="submit" className="btn btn-success">
+          <button type="submit" className="btn btn-success" title="We will filter the likers for this post.">
             Submit
           </button>
         </div>

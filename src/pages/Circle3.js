@@ -24,7 +24,13 @@ const Circle3 = () => {
         state?.profiles?.Reposters?.map((reposter) => reposter.Username)
       );
       setProfileNames(reposters);
-    } else {
+    }else if (state?.profiles?.DiamondSenders){
+      const diamonders = await Object.values(
+        state?.profiles?.DiamondSenders?.map((diamonders) => diamonders?.DiamondSenderProfile?.Username)
+      );
+      setProfileNames(diamonders);
+    } 
+    else {
       const filteredProfiles = await Object.values(
         state?.profiles?.map((profile) => profile?.Username)
       );
@@ -40,6 +46,11 @@ const Circle3 = () => {
   useEffect(() => {
     if (state?.profiles?.Likers?.length === 0) {
       toast.error("Your post has 0 like.");
+    }
+  }, [state]);
+  useEffect(() => {
+    if (state?.profiles?.DiamondSenders?.length === 0) {
+      toast.error("Your post has 0 diamonds.");
     }
   }, [state]);
 

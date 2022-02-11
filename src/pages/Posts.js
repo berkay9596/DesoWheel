@@ -3,12 +3,28 @@ import { useEffect, useState } from "react";
 import { getInfo } from "../redux/actions/userInfoActions";
 import { TailSpin } from "react-loader-spinner";
 import {
+  getProfilesDiamonders,
   getProfilesFiltered,
   getProfilesRepost,
 } from "../redux/actions/profilesActions";
 import { getProfiles } from "../redux/actions/profilesActions";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Switch from "@mui/material/Switch";
+import { alpha, styled } from '@mui/material/styles';
+import { pink } from '@mui/material/colors';
+
+const GreenSwitch = styled(Switch)(({ theme }) => ({
+  '& .MuiSwitch-switchBase.Mui-checked': {
+    color: pink[600],
+    '&:hover': {
+      backgroundColor: alpha(pink[600], theme.palette.action.hoverOpacity),
+    },
+  },
+  '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
+    backgroundColor: pink[600],
+  },
+}));
 
 const Posts = () => {
   const dispatch = useDispatch();
@@ -60,8 +76,11 @@ const Posts = () => {
     await dispatch(getProfiles(body));
     navigate("/wheel");
   };
+  const handleClickDiamond = async (body) => {
+    await dispatch(getProfilesDiamonders(body));
+    navigate("/wheel");
+  };
   const handleClickFilter = async (body) => {
-    console.log("heş", body?.PostHashHex);
     const headers = {
       PostUrl: `https://bitclout.com/posts/${body?.PostHashHex}?tab=posts`,
       ReaderPublicKey:
@@ -80,10 +99,13 @@ const Posts = () => {
       localStorage.setItem("hash", body?.PostHashHex);
     } else if (like === false && repost === true && diamond === false) {
       await handleClickRepost(headersSingle);
+      localStorage.setItem("hash", body?.PostHashHex);
     } else if (like === false && repost === false && diamond === true) {
-      await alert("diamond tekil isteği");
+      await handleClickDiamond(headersSingle);
+      localStorage.setItem("hash", body?.PostHashHex);
     } else {
       await dispatch(getProfilesFiltered(headers));
+      localStorage.setItem("hash", body?.PostHashHex);
       navigate("/wheel");
     }
   };
@@ -128,6 +150,7 @@ const Posts = () => {
                   </span>{" "}
                   among the post that you filtered.
                 </h1>
+
                 {state?.info?.UserPosts?.Posts?.filter(
                   (x) => x.RecloutedPostEntryResponse === null
                 ).map((post, index) => (
@@ -201,39 +224,36 @@ const Posts = () => {
                           <i
                             className="fas fa-heart"
                             style={{ color: "red" }}
-                          ></i>
+                          ></i>{" "}
+                          <GreenSwitch
+                            value={like}
+                            onChange={() => setLike(!like)}
+                          
+                          />
                         </label>{" "}
-                        <input
-                          type="checkbox"
-                          value={like}
-                          onChange={() => setLike(!like)}
-                        />
-                        <br />
                         <label style={{ fontWeight: "bold", fontSize: "20px" }}>
                           Repost{" "}
                           <i
                             className="fas fa-retweet"
                             style={{ color: "#7800ff " }}
-                          ></i>
+                          ></i>{" "}
+                          <Switch
+                            value={repost}
+                            onChange={() => setRepost(!repost)}
+                            color="secondary"
+                          />
                         </label>{" "}
-                        <input
-                          type="checkbox"
-                          value={repost}
-                          onChange={() => setRepost(!repost)}
-                        />
-                        <br />
                         <label style={{ fontWeight: "bold", fontSize: "20px" }}>
                           Diamond{" "}
                           <i
                             className="far fa-gem"
                             style={{ color: "#006AF9" }}
-                          ></i>
+                          ></i>{" "}
+                          <Switch
+                            value={diamond}
+                            onChange={() => setDiamond(!diamond)}
+                          />
                         </label>{" "}
-                        <input
-                          type="checkbox"
-                          value={diamond}
-                          onChange={() => setDiamond(!diamond)}
-                        />
                         <div>
                           <button
                             className="btn btn-danger my-3 p-3"

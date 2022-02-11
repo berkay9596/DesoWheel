@@ -31,6 +31,21 @@ export const getProfilesRepost = (body) => {
       );
   };
 };
+export const getProfilesDiamonders = (body) => {
+  return (dispatch) => {
+    axios
+      .post(
+        "https://deso-wheel.herokuapp.com/api/get-users-who-sent-diamond-any-post",
+        body
+      )
+      .then((resp) =>
+        dispatch({
+          type: "GET_PROFILES_DIAMONDS",
+          payload: resp.data,
+        })
+      );
+  };
+};
 
 export const getProfilesFiltered = (body) => {
   return (dispatch) => {
