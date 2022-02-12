@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./Features.css";
 import { BsFillBookmarkStarFill } from "react-icons/bs";
-import phone from "../../assets/phone.png";
+import phone from "../../assets/tablet.png";
 import Feature from "./Feature";
 import { FeatureList } from "./data";
 

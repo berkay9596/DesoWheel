@@ -67,7 +67,7 @@ const RepostInput = () => {
           fontSize: "45px",
         }}
       >
-        ( REPOSTERS )
+         REPOSTERS 
       </p>
       <h1
         className="text-center"

@@ -19,9 +19,7 @@ const Faq = () => {
           <MdOutlineLibraryBooks color="orangered" size={30} />
           <h2 style={{fontWeight:"bold",fontSize:"36px"}}>FAQs</h2>
           <p className="u-text-small" style={{fontSize:"18px"}}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique
-            itaque veniam laudantium, quam quas dolor tempora eligendi officia
-            sequi. Iusto.
+          Everything you need to know so you can use Deso Wheel properly.
           </p>
         </div>
         <div className="questions" >

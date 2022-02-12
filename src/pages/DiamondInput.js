@@ -68,7 +68,7 @@ const DiamondInput = () => {
         
         }}
       >
-       ( DIAMOND SENDERS ) 
+        DIAMOND SENDERS 
       </p>
       <h1 className="text-center" style={{ lineHeight:"45px",color:"whitesmoke"}}>
         Your Post URL

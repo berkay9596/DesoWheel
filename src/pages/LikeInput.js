@@ -68,7 +68,7 @@ const LikeInput = () => {
         
         }}
       >
-       ( LIKERS ) 
+        LIKERS 
       </p>
       <h1 className="text-center" style={{ lineHeight:"45px",color:"whitesmoke"}}>
         Your Post URL
