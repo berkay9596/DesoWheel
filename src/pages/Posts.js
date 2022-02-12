@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { getInfo } from "../redux/actions/userInfoActions";
+import {getPosts} from '../redux/actions/postActions'
 import { TailSpin } from "react-loader-spinner";
 import {
   getProfilesDiamonders,
@@ -34,24 +35,25 @@ const Posts = () => {
   const [like, setLike] = useState(false);
   const [repost, setRepost] = useState(false);
   const [diamond, setDiamond] = useState(false);
-  const state = useSelector((state) => state.info);
-
+  const state = useSelector((state) => state.posts);
+  const profileInfo = useSelector((state)=> state.info)
   const user = JSON.parse(localStorage.getItem("identityUsersV2"));
   const public_key = user?.publicKey;
-
+console.log("state",state)
   const headers = {
     PublicKey: public_key,
   };
   useEffect(() => {
+    dispatch(getPosts(headers));
     dispatch(getInfo(headers));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [public_key]);
 
   useEffect(() => {
-    if (state?.info?.UserPosts?.Posts) {
+    if (state?.posts?.UserPosts?.Posts) {
       setLoading(false);
     }
-    if (!state?.info?.UserPosts?.Posts) {
+    if (!state?.posts?.UserPosts?.Posts) {
       return setLoading(true);
     }
   }, [state]);
@@ -151,7 +153,7 @@ const Posts = () => {
                   among the post that you filtered.
                 </h1>
 
-                {state?.info?.UserPosts?.Posts?.filter(
+                {state?.posts?.UserPosts?.Posts?.filter(
                   (x) => x.RecloutedPostEntryResponse === null
                 ).map((post, index) => (
                   <div key={index} style={{ paddingBottom: "2rem" }}>
@@ -167,7 +169,7 @@ const Posts = () => {
                       >
                         <div>
                           <img
-                            src={state?.info?.ProfilePicture}
+                            src={profileInfo?.info?.ProfilePicture}
                             alt="Profile"
                             style={{
                               width: "50px",
@@ -180,7 +182,7 @@ const Posts = () => {
                               style={{ fontWeight: "bold", fontSize: "15px" }}
                             >
                               {" "}
-                              {state?.info?.UserName}
+                              {profileInfo?.info?.UserName}
                             </span>
                             ~
                             <span

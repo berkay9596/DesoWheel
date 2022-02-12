@@ -10,7 +10,7 @@ const BasicInfo = ({ logout }) => {
   useEffect(() => {
     dispatch(getInfo({ PublicKey: public_key }));
   }, [public_key, dispatch]);
-
+// console.log("basicinfo",state)
   return (
     <>
       <div className="dropdown">

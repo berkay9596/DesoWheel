@@ -4,7 +4,7 @@ export const getInfo = (body) => {
   return (dispatch) => {
     axios
       .post(
-        "https://deso-wheel.herokuapp.com/api/get-users-username-pp-posts",
+        "https://deso-wheel.herokuapp.com/api/get-users-username-and-profile-picture",
         body
       )
       .then((resp) =>
@@ -15,3 +15,4 @@ export const getInfo = (body) => {
       );
   };
 };
+
