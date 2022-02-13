@@ -34,7 +34,7 @@ const BasicInfo = ({ logout }) => {
         <ul
           className="dropdown-menu"
           aria-labelledby="dropdownMenuButton1"
-          style={{ backgroundColor: "black", width: "100%" }}
+          style={{ backgroundColor: "black" }}
         >
           <li>
             <a onClick={logout} className="dropdown-item" href="/" style={{ backgroundColor: "black", width: "100%" }}>
