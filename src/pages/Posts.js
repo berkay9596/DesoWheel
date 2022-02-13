@@ -39,7 +39,7 @@ const Posts = () => {
   const profileInfo = useSelector((state)=> state.info)
   const user = JSON.parse(localStorage.getItem("identityUsersV2"));
   const public_key = user?.publicKey;
-console.log("state",state)
+
   const headers = {
     PublicKey: public_key,
   };

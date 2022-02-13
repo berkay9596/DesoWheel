@@ -10,7 +10,7 @@ const BasicInfo = ({ logout }) => {
   useEffect(() => {
     dispatch(getInfo({ PublicKey: public_key }));
   }, [public_key, dispatch]);
-// console.log("basicinfo",state)
+  // console.log("basicinfo",state)
   return (
     <>
       <div className="dropdown">
@@ -34,10 +34,10 @@ const BasicInfo = ({ logout }) => {
         <ul
           className="dropdown-menu"
           aria-labelledby="dropdownMenuButton1"
-          style={{ backgroundColor: "black" }}
+          style={{ backgroundColor: "black", width: "100%" }}
         >
           <li>
-            <a onClick={logout} className="dropdown-item" href="/">
+            <a onClick={logout} className="dropdown-item" href="/" style={{ backgroundColor: "black", width: "100%" }}>
               Logout
             </a>
           </li>

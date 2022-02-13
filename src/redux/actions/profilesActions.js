@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export const getProfiles = (body) => {
   return (dispatch) => {
@@ -12,7 +13,8 @@ export const getProfiles = (body) => {
           type: "GET_PROFILES",
           payload: resp.data,
         })
-      );
+      )
+      .catch((e) => toast.error(e.response.data.detail));
   };
 };
 
@@ -28,7 +30,8 @@ export const getProfilesRepost = (body) => {
           type: "GET_PROFILES_REPOST",
           payload: resp.data,
         })
-      );
+      )
+      .catch((e) => toast.error(e.response.data.detail));
   };
 };
 export const getProfilesDiamonders = (body) => {
@@ -43,7 +46,8 @@ export const getProfilesDiamonders = (body) => {
           type: "GET_PROFILES_DIAMONDS",
           payload: resp.data,
         })
-      );
+      )
+      .catch((e) => toast.error(e.response.data.detail))  ;
   };
 };
 
@@ -59,6 +63,6 @@ export const getProfilesFiltered = (body) => {
           type: "GET_PROFILES_FILTERED",
           payload: resp.data,
         })
-      );
+      ).catch((e) => toast.error(e.response.data.detail));
   };
 };

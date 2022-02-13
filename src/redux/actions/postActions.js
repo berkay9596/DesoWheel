@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export const getPosts = (body) => {
     return (dispatch) => {
@@ -9,7 +10,7 @@ export const getPosts = (body) => {
             type: "GET_POSTS",
             payload: resp.data,
           })
-        );
+        ).catch((e) => toast.error(e.response.data.detail));
     };
   };
   
