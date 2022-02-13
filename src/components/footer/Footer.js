@@ -5,7 +5,7 @@ const Footer = () => {
     <section id="footer" style={{padding:"40px"}}>
       <div className="container d-flex align-items-center justify-content-center">
         <p className="u-text-small mx-5" style={{ marginTop: "4px" }}>
-          &copy; Copyright 2022. DesoWheel.com
+          &copy; Copyright 2022. <a href="http://deso-wheel.com">Deso-Wheel.com</a>
         </p>
         <p className="u-text-small">
           Built with{" "}
@@ -22,8 +22,18 @@ const Footer = () => {
           >
             {" "}
             @Berkayuksel{" "}
+          </a> and 
+          <a
+            href="https://diamondapp.com/u/kaankaracan"
+            style={{ textDecoration: "none", color: "rebeccapurple" }}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {" "}
+            @KaanKaracan{" "}
           </a>
         </p>
+      
       </div>
     </section>
   );

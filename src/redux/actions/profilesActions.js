@@ -66,3 +66,9 @@ export const getProfilesFiltered = (body) => {
       ).catch((e) => toast.error(e.response.data.detail));
   };
 };
+export const clearReduxStoreForPeople = () => {
+  return {
+    type: "CLEAR_REDUX",
+    payload: null
+  }
+}

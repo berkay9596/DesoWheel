@@ -6,11 +6,14 @@ import { useEffect } from "react";
 import { TailSpin } from "react-loader-spinner";
 import WinnerModal from "../components/WinnerModal";
 import { toast } from "react-toastify";
+import {clearReduxStoreForPeople} from '../redux/actions/profilesActions'
+import { useDispatch } from "react-redux";
 const Circle3 = () => {
   const [profileNames, setProfileNames] = useState([]);
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
   const [durum, setDurum] = useState(false);
+  const dispatch= useDispatch();
 
   const state = useSelector((state) => state.users);
   const getUserNames = async () => {
@@ -60,6 +63,11 @@ const Circle3 = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state]);
 
+  useEffect(()=>{
+    return ()=>{
+      dispatch(clearReduxStoreForPeople())
+    }
+  })
   const result = profileNames?.map((obj, i) =>
     Object.assign({ option: profileNames[i] })
   );

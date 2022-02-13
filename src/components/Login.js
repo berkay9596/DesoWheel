@@ -30,7 +30,7 @@ const Login = () => {
     }
     // eslint-disable-line react-hooks/exhaustive-deps
   }, []);
-  console.log(publicKey);
+ 
   const login = async () => {
     const user = await desoIdentity.loginAsync(4);
     setSetPublicKey(user.publicKey);
