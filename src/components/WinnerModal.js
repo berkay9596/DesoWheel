@@ -16,10 +16,10 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
     width: "65%",
     minHeight: "33vh",
-    zIndex: "10000",
+    zIndex: "100",
   },
   overlay: {
-    zIndex: "10000",
+    zIndex: "1000",
   },
 };
 Modal.setAppElement("#root");

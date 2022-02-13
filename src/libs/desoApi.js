@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const DEFAULT_NODE_URL = "https://node.deso.org/api";
 let client = null;
@@ -118,7 +119,7 @@ class DesoApi {
       localStorage.removeItem("hash");
       return result.data;
     } catch (error) {
-      console.log(error);
+          toast.error(error.response.data.error);
       return null;
     }
   }
@@ -140,7 +141,7 @@ class DesoApi {
       const result = await this.getClient().post(path, data);
       return result.data;
     } catch (error) {
-      console.log(error);
+      toast.error(error.response.data.error);
       return null;
     }
   }
@@ -159,7 +160,7 @@ class DesoApi {
       const result = await this.getClient().post(path, data);
       return result.data;
     } catch (error) {
-      console.log(error);
+      toast.error(error.response.data.error);
       return null;
     }
   }

@@ -24,13 +24,14 @@ const Circle3 = () => {
         state?.profiles?.Reposters?.map((reposter) => reposter.Username)
       );
       setProfileNames(reposters);
-    }else if (state?.profiles?.DiamondSenders){
+    } else if (state?.profiles?.DiamondSenders) {
       const diamonders = await Object.values(
-        state?.profiles?.DiamondSenders?.map((diamonders) => diamonders?.DiamondSenderProfile?.Username)
+        state?.profiles?.DiamondSenders?.map(
+          (diamonders) => diamonders?.DiamondSenderProfile?.Username
+        )
       );
       setProfileNames(diamonders);
-    } 
-    else {
+    } else {
       const filteredProfiles = await Object.values(
         state?.profiles?.map((profile) => profile?.Username)
       );
@@ -109,6 +110,9 @@ const Circle3 = () => {
               "blue",
               "red",
               "orange",
+              "#3B444B	",
+              "#E9D66B	",
+              "#B2BEB5	",
               "purple",
               "black",
               "green",
@@ -124,9 +128,6 @@ const Circle3 = () => {
               "#FBCEB1	",
               "#7FFFD4	",
               "#4B5320	",
-              "#3B444B	",
-              "#E9D66B	",
-              "#B2BEB5	",
               "#87A96B	",
               "#FF9966	",
               "#6D351A	",

@@ -155,11 +155,10 @@ section {
   line-height: 1.4;
   font-weight: 300;
 }
-.u-text-custom{
-  font-size :3rem;
+.u-text-custom {
+  font-size: 3rem;
   line-height: 1.4;
   font-weight: 300;
-  
 }
 
 .u-text-dark {
@@ -184,11 +183,10 @@ section {
   min-height: 100vh;
   background: #0a1930;
 }
-.header-bg-2{
+.header-bg-2 {
   width: 100%;
   background: #0a1930;
 }
-
 
 .u-title h2 {
   font-size: 2.5rem;
@@ -224,7 +222,7 @@ section {
   background: white !important;
   color: black;
 }
-.btns{
+.btns {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -240,14 +238,20 @@ section {
     width: 100%;
     margin-bottom: 10px;
   }
-
 }
 @media (max-width: 990px) {
   .card-resp {
     width: 80vw !important;
   }
-  .a{
+  .a {
     height: max-content;
     margin-top: 10px;
   }
+}
+
+.Toastify__toast--error {
+  border: 1px solid #eb5757;
+  border-radius: 20px !important;
+  background: #fae1e2 !important;
+  z-index: 100000 !important;
 }
