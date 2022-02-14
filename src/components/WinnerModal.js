@@ -56,7 +56,9 @@ const WinnerModal = ({ winner }) => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const submitPost = async () => {
-    const body = `Congratz ${winner} we have a winner`;
+    const body = `Congratz @${winner} you are the winner.
+    
+    This raffle is powered by @Desowheel`;
     const extraData = {
       app: "Congratz we have a winner",
       type: "Congratz we have a winner",
