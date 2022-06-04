@@ -81,7 +81,7 @@ const Header = () => {
             loop
             animationData={lottieJson}
             play
-            style={{ width: 550, height: 550 }}
+            style={{ width: 400, height: 450 }}
           />
         </div>
       </div>
