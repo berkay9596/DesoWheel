@@ -14,7 +14,6 @@ import axios from "axios";
 import Switch from "@mui/material/Switch";
 import { alpha, styled } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
-
 const GreenSwitch = styled(Switch)(({ theme }) => ({
   '& .MuiSwitch-switchBase.Mui-checked': {
     color: red[600],
@@ -35,6 +34,8 @@ const Posts = () => {
   const [like, setLike] = useState(false);
   const [repost, setRepost] = useState(false);
   const [diamond, setDiamond] = useState(false);
+  const [bidder, setBidder] = useState(false);
+  const [holder, setHolder] = useState(false);
   const state = useSelector((state) => state.posts);
   const profileInfo = useSelector((state)=> state.info)
   const user = JSON.parse(localStorage.getItem("identityUsersV2"));
@@ -90,19 +91,21 @@ const Posts = () => {
       IsLiker: like,
       IsRePoster: repost,
       IsDiamondSender: diamond,
+      IsNftBidder : bidder,
+      IsNftHolder : holder
     };
     const headersSingle = {
       PostUrl: `https://bitclout.com/posts/${body?.PostHashHex}?tab=posts`,
       ReaderPublicKey:
         "BC1YLiCaF8wLPve9Rhj1pp2QFJeC73sBET5fKt1ZrrQTAAis2tL11Zj",
     };
-    if (like === true && repost === false && diamond === false) {
+    if (like === true && repost === false && diamond === false && bidder === false && holder ===false) {
       await handleClickLike(headersSingle);
       localStorage.setItem("hash", body?.PostHashHex);
-    } else if (like === false && repost === true && diamond === false) {
+    } else if (like === false && repost === true && diamond === false && bidder === false && holder ===false) {
       await handleClickRepost(headersSingle);
       localStorage.setItem("hash", body?.PostHashHex);
-    } else if (like === false && repost === false && diamond === true) {
+    } else if (like === false && repost === false && diamond === true && bidder === false && holder ===false) {
       await handleClickDiamond(headersSingle);
       localStorage.setItem("hash", body?.PostHashHex);
     } else {
@@ -121,6 +124,7 @@ const Posts = () => {
             width: "50%",
             marginTop: "25px",
             position: "relative",
+          
           }}
         >
           <div
@@ -159,12 +163,13 @@ const Posts = () => {
                   <div key={index} style={{ paddingBottom: "2rem" }}>
                     <div
                       className="card card-resp"
-                      style={{ width: "50vw", marginBottom: "10px" }}
+                      style={{ width: "50vw", marginBottom: "10px",   borderRadius:"26px" }}
                     >
                       <div
                         className="card-body d-flex"
                         style={{
                           flexDirection: "column",
+                       
                         }}
                       >
                         <div>
@@ -254,6 +259,24 @@ const Posts = () => {
                           <Switch
                             value={diamond}
                             onChange={() => setDiamond(!diamond)}
+                          />
+                        </label>{" "}
+                        <label style={{ fontWeight: "bold", fontSize: "20px" }}>
+                          NFT Bidders{" "}
+                          <i className="fa-solid fa-hand-holding-dollar" style={{color: "green"}}></i>
+                          <Switch
+                            value={bidder}
+                            onChange={() => setBidder(!bidder)}
+                              color="success"
+                          />
+                        </label>{" "}
+                        <label style={{ fontWeight: "bold", fontSize: "20px" }}>
+                          NFT Holders{" "}
+                          <i className="fa fa-hands-holding"  style={{ color: "#ed6c02" }}></i>
+                          <Switch
+                            value={holder}
+                            onChange={() => setHolder(!holder)}
+                            color="warning"
                           />
                         </label>{" "}
                         <div>

@@ -8,6 +8,8 @@ const profileReducer = (state = [], action) => {
         return{...state , profiles : action.payload};  
         case "GET_PROFILES_FILTERED":
         return{...state , profiles : action.payload};  
+        case "GET_PROFILES_FOLLOWERS":
+        return{...state , profiles : action.payload};  
         case "CLEAR_REDUX":
           return{...state , profiles : {}};  
       default:

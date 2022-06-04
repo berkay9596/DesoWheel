@@ -10,7 +10,7 @@ class DesoIdentity {
     this.signTxResolve = null;
     this.IdentityUsersKey = "identityUsersV2";
     this.transactionHex = "";
-
+    this.jwtResolve = null;
     this.addListener();
   }
 
@@ -65,6 +65,29 @@ class DesoIdentity {
           id: id,
           service: "identity",
           method: "sign",
+          payload: payload,
+        },
+        "*"
+      );
+    });
+  }
+
+  getJWT() {
+    return new Promise((resolve, reject) => {
+      console.log("in getJWT()");
+      this.jwtResolve = resolve;
+      const id = this.uuid();
+      const user = JSON.parse(localStorage.getItem(this.IdentityUsersKey));
+      const payload = {
+        accessLevel: user.accessLevel,
+        accessLevelHmac: user.accessLevelHmac,
+        encryptedSeedHex: user.encryptedSeedHex,
+      };
+      this.source.postMessage(
+        {
+          id: id,
+          service: "identity",
+          method: "jwt",
           payload: payload,
         },
         "*"
@@ -139,7 +162,9 @@ class DesoIdentity {
       "*"
     );
   }
-
+  handleJwt(jwt) {
+    this.jwtResolve(jwt);
+  }
   handleInit(e) {
     if (!this.init) {
       this.init = true;
@@ -168,13 +193,14 @@ class DesoIdentity {
       // console.log(message)
 
       const {
-        data: { method: method, service: service, payload: payload },
+        data: { id: id, method: method, service: service, payload: payload },
       } = message;
-      /*eslint no-useless-rename: ["error", { ignoreDestructuring: true }]*/
       if (service !== "identity") {
         return;
       }
-
+      if (payload.jwt) {
+        this.handleJwt(payload.jwt);
+      }
       if (method === "initialize") {
         this.handleInit(message);
       } else if ("signedTransactionHex" in payload) {

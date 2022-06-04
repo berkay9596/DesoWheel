@@ -1,7 +1,9 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const DEFAULT_NODE_URL = "https://node.deso.org/api";
+const DEFAULT_NODE_URL = "https://love4src.com/api";
+// const DEFAULT_NODE_URL = "https://api.desodev.com/api"
+// const DEFAULT_NODE_URL = "https://node.deso.org/api";
 let client = null;
 
 class DesoApi {
@@ -60,6 +62,42 @@ class DesoApi {
     }
   }
 
+  async getFollowers(PublicKeyBase58Check) {
+    const path = "/v0/get-follows-stateless";
+    const data = {
+      GetEntriesFollowingUsername: true,
+      LastPublicKeyBase58Check: "",
+      NumToFetch: 1000000,
+      PublicKeyBase58Check: PublicKeyBase58Check,
+      Username: "",
+    };
+    try {
+      const result = await this.getClient().post(path, data);
+      return result.data;
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
+  }
+  async uploadImage(file, publicKey, JwtToken) {
+    if (!publicKey) {
+      alert(" logged in public key not found");
+    }
+    const path = "/v0/upload-image";
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("UserPublicKeyBase58Check", publicKey);
+    formData.append("JWT", JwtToken);
+    //content type multipart/form-data
+    try {
+      const result = await this.getUploadClient().post(path, formData);
+      return result.data;
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
+  }
+
   async getSinglePost(
     postHash,
     commentLimit = 20,
@@ -89,8 +127,27 @@ class DesoApi {
       return null;
     }
   }
-
-  async submitPost(publicKey, body, postExtraData, RepostedPostHashHex) {
+  // async uploadImage(file, jwt, publicKey) {
+  //   const path = "/v0/upload-image";
+  //   const data = {
+  //     file: file,
+  //     UserPublicKeyBase58Check: publicKey,
+  //     JWT: jwt,
+  //   };
+  //   try {
+  //     const result = await this.getClient().post(path, data, {
+  //       headers: {
+  //         "content-type":
+  //           "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",
+  //       },
+  //     });
+  //     return result.data;
+  //   } catch (error) {
+  //     console.log(error);
+  //     return null;
+  //   }
+  // }
+  async submitPost(publicKey, body, postExtraData, RepostedPostHashHex,imgUrl) {
     if (!publicKey) {
       console.log("publicKey is required");
       return;
@@ -107,7 +164,7 @@ class DesoApi {
       PostHashHexToModify: "",
       ParentStakeID: "",
       Title: "",
-      BodyObj: { Body: body, ImageURLs: [] },
+      BodyObj: { Body: body, ImageURLs: [imgUrl] },
       RepostedPostHashHex: RepostedPostHashHex,
       PostExtraData: postExtraData,
       Sub: "",
@@ -119,7 +176,7 @@ class DesoApi {
       localStorage.removeItem("hash");
       return result.data;
     } catch (error) {
-          toast.error(error.response.data.error);
+      toast.error(error.response.data.error);
       return null;
     }
   }
@@ -211,6 +268,17 @@ class DesoApi {
       baseURL: this.baseUrl,
       headers: {
         "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    });
+    return client;
+  }
+  getUploadClient() {
+    if (client) return client;
+    client = axios.create({
+      baseURL: "https://node.deso.org/api",
+      headers: {
+        "Content-Type": "multipart/form-data",
         Accept: "application/json",
       },
     });

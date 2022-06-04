@@ -66,6 +66,23 @@ export const getProfilesFiltered = (body) => {
       ).catch((e) => toast.error(e.response.data.detail));
   };
 };
+
+export const getProfilesFollowers = (body) => {
+  return (dispatch) => {
+    axios
+      .post(
+        "https://deso-wheel.herokuapp.com/api/get-users-followers",
+        body
+      )
+      .then((resp) =>
+        dispatch({
+          type: "GET_PROFILES_FOLLOWERS",
+          payload: resp.data,
+        })
+      ).catch((e) => toast.error(e.response.data.detail));
+  };
+};
+
 export const clearReduxStoreForPeople = () => {
   return {
     type: "CLEAR_REDUX",

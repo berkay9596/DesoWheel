@@ -78,7 +78,7 @@ const Footer = () => {
         // style="background-color: rgba(0, 0, 0, 0.2);"
       >
         © 2022 Copyright:
-        <a className="text-white mx-2" href="https://desowheel.com/">
+        <a className="text-white mx-2" href="https://www.deso-wheel.com/">
           Desowheel.com
         </a>
       </div>
