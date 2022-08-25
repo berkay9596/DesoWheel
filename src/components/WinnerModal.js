@@ -65,21 +65,21 @@ console.log("imageurllll",imageUrl)
   };
 
   const submitPost = async () => {
-    await getJwt();
-    const imgPayload = await desoApi.uploadImage(
-      file[file.length - 1],
-      publicKey,
-      jwt
-    );
-    setImageUrl(imgPayload?.ImageURL);
-    console.log("imgPayload", imgPayload);
-    console.log("imageUrl", imageUrl);
+    // await getJwt();
+    // const imgPayload = await desoApi.uploadImage(
+    //   file[file.length - 1],
+    //   publicKey,
+    //   jwt
+    // );
+    // setImageUrl(imgPayload?.ImageURL);
+    // console.log("imgPayload", imgPayload);
+    // console.log("imageUrl", imageUrl);
     // if(imgPayload){
     //   setImageUrl(imgPayload.ImageURL)
     //   console.log("imageUrl",imageUrl)
 
     // }
-    if (imageUrl !== null) {
+    // if (imageUrl !== null) {
       const body = `Congratz @${winner} you are the winner.
     
       This raffle is powered by @Desowheel`;
@@ -93,7 +93,7 @@ console.log("imageurllll",imageUrl)
         body,
         extraData,
         RepostedPostHashHex,
-        imageUrl
+        // imageUrl
       );
       const transactionHex = await rtnSubmitPost.TransactionHex;
       const signedTransactionHex = await desoIdentity.signTxAsync(
@@ -107,11 +107,11 @@ console.log("imageurllll",imageUrl)
         setIsOpen(false);
         toast.success("Your post has been sent successfully.");
       }
-    }
+    // }
   };
   return (
     <div>
-      {/* <iframe
+      <iframe
         title="desoidentity"
         id="identity"
         frameBorder="0"
@@ -125,7 +125,7 @@ console.log("imageurllll",imageUrl)
           left: 0,
           top: 0,
         }}
-      ></iframe> */}
+      ></iframe>
 
       <Modal
         isOpen={modalIsOpen}

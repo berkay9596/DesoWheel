@@ -173,7 +173,7 @@ const Circle3 = () => {
 
   return (
     <div ref={ref} style={{ height: "91vh" }}>
-        <iframe
+        {/* <iframe
         title="desoidentity"
         id="identity"
         frameBorder="0"
@@ -187,7 +187,7 @@ const Circle3 = () => {
           left: 0,
           top: 0,
         }}
-      ></iframe>
+      ></iframe> */}
       {profileNames.length === 0 ? (
         <div
           style={{
@@ -274,7 +274,7 @@ const Circle3 = () => {
           <button className="btn btn-success" onClick={handleSpinClick}>
             SPIN
           </button>
-          <img width={100} src={image} alt={"Screenshot"} />
+          {/* <img width={100} src={image} alt={"Screenshot"} /> */}
         </div>
       )}
 
