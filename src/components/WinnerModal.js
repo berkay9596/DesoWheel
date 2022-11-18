@@ -139,11 +139,11 @@ console.log("imageurllll",imageUrl)
           <Firework winner={winner} />
           {publicKey ? (
             <button
-              className="btn btn-warning"
-              style={{ width: "100%", height: "4rem", fontSize: "1.2rem" }}
+              className="btn btn-success"
+              style={{ width: "50%", height: "3rem", fontSize: "1.2rem" }}
               onClick={submitPost}
             >
-              Share the winner in DESO
+              Share the winner
             </button>
           ) : (
             ""
