@@ -140,7 +140,7 @@ console.log("imageurllll",imageUrl)
           {publicKey ? (
             <button
               className="btn btn-success"
-              style={{ width: "50%", height: "3rem", fontSize: "1.2rem" }}
+              style={{ width: "50%", height: "3rem", fontSize: "1.2rem" , zIndex:9999}}
               onClick={submitPost}
             >
               Share the winner
