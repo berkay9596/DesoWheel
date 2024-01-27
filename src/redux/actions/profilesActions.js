@@ -5,7 +5,7 @@ export const getProfiles = (body) => {
   return (dispatch) => {
     axios
       .post(
-        "https://deso-wheel.herokuapp.com/api/get-users-who-liked-post",
+        "https://fastapi-on-koyeb-desowheel.koyeb.app/api/get-users-who-liked-post",
         body
       )
       .then((resp) =>
@@ -22,7 +22,7 @@ export const getProfilesRepost = (body) => {
   return (dispatch) => {
     axios
       .post(
-        "https://deso-wheel.herokuapp.com/api/get-users-who-re-posted-any-post",
+        "https://fastapi-on-koyeb-desowheel.koyeb.app/api/get-users-who-re-posted-any-post",
         body
       )
       .then((resp) =>
@@ -38,7 +38,7 @@ export const getProfilesDiamonders = (body) => {
   return (dispatch) => {
     axios
       .post(
-        "https://deso-wheel.herokuapp.com/api/get-users-who-sent-diamond-any-post",
+        "https://fastapi-on-koyeb-desowheel.koyeb.app/api/get-users-who-sent-diamond-any-post",
         body
       )
       .then((resp) =>
@@ -55,7 +55,7 @@ export const getProfilesFiltered = (body) => {
   return (dispatch) => {
     axios
       .post(
-        "https://deso-wheel.herokuapp.com/api/get-users-who-liked-re-posted-diamond-sent",
+        "https://fastapi-on-koyeb-desowheel.koyeb.app/api/get-users-who-liked-re-posted-diamond-sent",
         body
       )
       .then((resp) =>
@@ -71,7 +71,7 @@ export const getProfilesFollowers = (body) => {
   return (dispatch) => {
     axios
       .post(
-        "https://deso-wheel.herokuapp.com/api/get-users-followers",
+        "https://fastapi-on-koyeb-desowheel.koyeb.app/api/get-users-followers",
         body
       )
       .then((resp) =>

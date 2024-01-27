@@ -4,7 +4,7 @@ export const getInfo = (body) => {
   return (dispatch) => {
     axios
       .post(
-        "https://deso-wheel.herokuapp.com/api/get-users-username-and-profile-picture",
+        "https://fastapi-on-koyeb-desowheel.koyeb.app/api/get-users-username-and-profile-picture",
         body
       )
       .then((resp) =>

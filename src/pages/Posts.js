@@ -64,7 +64,7 @@ const Posts = () => {
   };
   const getCoinPrice = () => {
     return axios
-      .post("https://deso-wheel.herokuapp.com/api/get-users-coin-price", body)
+      .post("https://fastapi-on-koyeb-desowheel.koyeb.app/api/get-users-coin-price", body)
       .then((resp) => setCoinPrice(resp.data.coinPrice));
   };
   useEffect(() => {
