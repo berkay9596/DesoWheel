@@ -128,7 +128,7 @@ class DesoIdentity {
   }
 
   handleLogin(payload) {
-    console.log(payload);
+
     if (this.identityWindow) {
       this.identityWindow.close();
       this.identityWindow = null;
@@ -142,7 +142,6 @@ class DesoIdentity {
   }
 
   handleSign(payload) {
-    console.log(payload);
 
     const signedTransactionHex = payload["signedTransactionHex"];
     if (this.identityWindow) {

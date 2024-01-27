@@ -38,7 +38,6 @@ const WinnerModal = ({ winner, file }) => {
   function closeModal() {
     setIsOpen(false);
   }
-console.log("imageurllll",imageUrl)
   useEffect(() => {
     const di = new DesoIdentity();
     setDesoIdentity(di);

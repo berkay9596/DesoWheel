@@ -1,9 +1,9 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const DEFAULT_NODE_URL = "https://love4src.com/api";
+// const DEFAULT_NODE_URL = "https://love4src.com/api";
 // const DEFAULT_NODE_URL = "https://api.desodev.com/api"
-// const DEFAULT_NODE_URL = "https://node.deso.org/api";
+const DEFAULT_NODE_URL = "https://node.deso.org/api";
 let client = null;
 
 class DesoApi {

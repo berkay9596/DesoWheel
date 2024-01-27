@@ -14,13 +14,10 @@ import lottieJson from './my-lottie.json'
 
 const Header = () => {
   const user = JSON.parse(localStorage.getItem("identityUsersV2"));
-  console.log("user", user);
   const public_key = user?.publicKey;
   const navigate = useNavigate();
 
-  console.log("pb", public_key);
   const dispatch = useDispatch();
-  console.log("public_key", public_key);
 
   useEffect(() => {
     AOS.init({

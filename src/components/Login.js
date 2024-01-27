@@ -29,10 +29,9 @@ const Login = () => {
   }, []);
 
   const login = async () => {
-    const user = await desoIdentity.loginAsync(4);
+    const user = await desoIdentity.loginAsync(1);
     setSetPublicKey(user.publicKey);
     setLoggedIn(true);
-    console.log(publicKey);
     window.location.reload(false);
   };
   const logout = async () => {
